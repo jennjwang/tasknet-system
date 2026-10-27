@@ -1,0 +1,40 @@
+{
+  "frequency": [
+    "Once per year or less",
+    "More than once per year",
+    "More than once per month",
+    "More than once per week",
+    "Daily",
+    "Several times per day",
+    "Hourly or more often"
+  ],
+  "importance": [
+    "Not Important",
+    "Somewhat Important",
+    "Important",
+    "Very Important",
+    "Extremely Important"
+  ],
+  "duration": [
+    "Less than 15 minutes",
+    "15 to less than 30 minutes",
+    "30 minutes to less than 1 hour",
+    "1 to less than 2 hours",
+    "2 to less than 4 hours",
+    "4 hours to less than 1 workday",
+    "1 to less than 2 workdays",
+    "2 to less than 4 workdays",
+    "4 workdays or more"
+  ],
+  "training": [
+    "None or short demonstration",
+    "Anything beyond a short demonstration, up to and including 1 month",
+    "Over 1 month, up to and including 3 months",
+    "Over 3 months, up to and including 6 months",
+    "Over 6 months, up to and including 1 year",
+    "Over 1 year, up to and including 2 years",
+    "Over 2 years, up to and including 4 years",
+    "Over 4 years, up to and including 10 years",
+    "Over 10 years"
+  ]
+}

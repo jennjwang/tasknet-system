@@ -1,0 +1,82 @@
+Rewrite each work task as a clean O*NET-style task statement, in the plain language a worker
+would use to describe it to a coworker. You are normalizing PHRASING only — keep the activity
+and its specifics; do not add, drop, merge, or split tasks (a separate step handles splitting).
+
+## FIRST decide: does it even need rewriting? (default = LEAVE IT ALONE)
+Most tasks arrive already clean. If a statement ALREADY has a concrete action verb + a specific
+object, and has NO defect — no brand/product name, no corporate-speak, no vague offender verb, no
+missing verb, no first-person, not over ~18 words — then RETURN IT VERBATIM (unchanged, character
+for character). Only rewrite to fix an ACTUAL defect from the rules below. Two hard prohibitions,
+even while fixing:
+- NEVER swap a working verb or word for a SYNONYM ("mine"→"examine", "secure"→"obtain",
+  "assess"→"evaluate", "improve"→"enhance", "explain"→"clarify", "skills"→"techniques" are all
+  FORBIDDEN — they change nothing or subtly shift meaning). Keep the worker's own word.
+- NEVER drop an item from a specific list or a specific qualifier ("model, prompt, and parameter
+  versions" must NOT become "model versions"; "validate benchmark and tuning results" must NOT
+  become "validate results"). Keep every named specific.
+When you touch a statement, change ONLY the defective part and leave the rest identical.
+
+## Shape
+- A verb-led action statement: a concrete action verb + a specific object + (when natural) a
+  short context or purpose phrase. Not a one-word verb, not a multi-clause story.
+- 8–18 words, sentence case, terminal period.
+- Plain, direct words — the way someone would actually say it to a coworker. Avoid corporate-
+  speak ("stakeholders", "leverage", "drive alignment", "cross-functional", "ideate") and formal
+  constructions ("in order to ensure", "to determine feasibility of", "in accordance with",
+  "based on X and Y"). Cut any clause that doesn't add meaning.
+
+## Use a REAL action verb — the observable-action test
+Imagine a 30-second video of the person doing this task. Could you describe what they are
+physically doing? If the best you can say is "they're managing / handling / overseeing it," the
+verb is vague — even when the object is concrete ("Manage electrical permits" is still vague).
+Replace status / outcome / aggregate verbs with the action the worker would actually name.
+- Offender verbs (vague even with a concrete noun): manage, oversee, supervise (unless literally
+  managing people), handle, deal with, take care of, engage, participate, advance, drive,
+  progress, own, ensure, facilitate, enable, support, do, perform, address, work on.
+- Replace with the verb they'd use to a coworker: file, call, write, review, count, decide,
+  draft, send, install, diagnose, teach, inspect, treat, administer, schedule, submit, …
+    "Manage electrical permits"  → "Pull and follow up on electrical permits with the city."
+    "Oversee inventory"          → "Count inventory and order restocks each week."
+    "Handle client issues"       → "Respond to client requests and questions by email and phone."
+
+## Be self-explanatory and specific
+The statement must stand on its own — read once, in the context of the person's job, and be
+immediately clear. Name the actual artifact, audience, output, or context; don't go vague.
+    "Run inspections"  → "Inspect rental properties before tenant move-out to document condition."
+    "Write docs"       → "Draft design documents specifying new feature requirements for review."
+Cross-job test: if the statement could apply UNCHANGED to a completely unrelated job (teacher →
+chef → accountant), it's too vague — name the role's specific artifact, audience, or output.
+
+## Keep their world — but generalize brand names
+Preserve the person's OWN vocabulary — their domain nouns, artifacts, audiences, locations, and
+outputs. Do NOT genericize THOSE into abstract office language; the role's specific nouns are what
+make the task clear and recognizable.
+EXCEPTION — proprietary product/brand names. Task statements describe work at the OCCUPATION level,
+not at a specific employer or product, so replace a specific company / product / tool brand with
+the generic category it belongs to. Generic occupational terms (REST API, SQL, blood pressure, tax
+return, lesson plan) are NOT brands — keep them.
+    "Jira" / "Asana"        → "project tracking tool"   (or drop if the context is already clear)
+    "Epic" / "Cerner"       → "electronic health record system"
+    "QuickBooks" / "SAP"    → "accounting software" / "enterprise resource planning system"
+    "Slack" / "Teams"       → "team messaging platform"
+    "GitHub"                → "source control platform"
+    "ERPNext" / "DocuSeal"  → "ERP system" / "e-signature platform"
+CATCH-ALL for brands you may NOT recognize: ANY capitalized product, software, platform, system, or
+company name that is not a common English word or a generic occupational term is a BRAND — replace it
+with its generic category. When unsure whether a capitalized proper noun is a brand, TREAT IT AS ONE
+and genericize. E.g. "Costpoint" / "Deltek" / "NetSuite" → "ERP system"; "Tableau" → "data
+visualization tool". NEVER leave a specific product or company name in the final statement.
+
+## Neutral phrasing
+No first person and no "our" / "my" / "the team's" — use neutral articles ("the schedule",
+"a customer order", "tenants"). Present-tense action verb, never a gerund ("Fix", not "Fixing").
+
+## Don't change the activity
+Normalize phrasing only. Do not invent detail the original doesn't support, and do not split a
+compound into pieces here. If a task is already well-phrased, return it with only minimal cleanup.
+
+Input (JSON array of {"id": int, "text": str}):
+$tasks_json
+
+Return ONLY a JSON array — no markdown:
+[{"id": 0, "normalized": "..."}, ...]

@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tasknet"
+version = "0.1.0"
+description = "TaskNet System: interview workers, aggregate what they say into an occupational task list, validate it."
+requires-python = ">=3.10"
+license = {text = "CC0-1.0"}
+dependencies = [
+    "openai>=1.0",
+    "numpy>=1.26",
+]
+
+[project.scripts]
+tasknet = "tasknet.cli:main"
+
+# The package is `tasknet`; its source, prompts included (aggregate/prompts/), stays in aggregate/, mapped here. Install with `pip install -e .` from a checkout or
+# `pip install .` for a copy; either way modules import each other as tasknet.<module>.
+[tool.setuptools]
+package-dir = {"tasknet" = "aggregate"}
+packages = ["tasknet", "tasknet.aggregation", "tasknet.processing"]
+
+[tool.setuptools.package-data]
+tasknet = ["prompts/**/*.txt"]

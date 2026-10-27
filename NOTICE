@@ -1,0 +1,15 @@
+The TaskNet System is released under CC0 1.0 (see LICENSE), except for the O*NET-derived files listed below.
+
+O*NET data
+----------
+These files contain information from the O*NET database, which is licensed under the Creative Commons
+Attribution 4.0 International License (CC BY 4.0, https://creativecommons.org/licenses/by/4.0/). O*NET® is a
+trademark of the U.S. Department of Labor, Employment and Training Administration (USDOL/ETA). The files were
+modified (reduced to the fields the TaskNet System uses) by its authors. USDOL/ETA has not approved, endorsed, or
+tested these modifications.
+
+  interviewer/data/onet-soc.json                    occupation codes, titles and definitions
+  interviewer/data/onet-related.json                related occupations (built by interviewer/scripts/build_onet_related.mjs)
+
+Source: O*NET database, National Center for O*NET Development, https://www.onetcenter.org/database.html
+The pipeline's O*NET task statements are not redistributed; aggregate/fetch_onet.py downloads them.

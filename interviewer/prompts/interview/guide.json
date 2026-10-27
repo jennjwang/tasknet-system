@@ -1,0 +1,77 @@
+{
+  "_comment": "The interview guide: the spine topics lib/planner.js covers, in order. Per topic: `text` (the question), `criteria` (what counts as covered), `static` (ask `text` verbatim the first time), and on stakeholders `closingQuestion` (the shadow catch-all asked last).",
+  "questions": [
+    {
+      "field": "jobTitle",
+      "text": "To start, what's your job and what field is it in?",
+      "criteria": [
+        "Named a job title or role. Any brief mention is sufficient. Whichever job they name is the subject of the whole interview — do NOT ask whether it's their current or main one, and do NOT push them toward a different job.",
+        "It is clear what field or industry that job is in."
+      ]
+    },
+    {
+      "field": "tenure",
+      "text": "And how long have you been doing this job?",
+      "_staticWhy": "Asked verbatim: the planner's own phrasing kept drifting back to 'how long have you been in this role', which presumes the job is the one they hold now — participants qualify on a specific job experience that need not be current. The question needs no adaptation, so there is nothing to lose by pinning it.",
+      "static": true,
+      "criteria": [
+        "Indicated roughly how long they've been doing this job — a rough range is enough (e.g. 'a few years', 'just started'), and a tenure cue already given earlier ('first-year PhD', 'new grad') also satisfies this. Do NOT re-ask or clarify duration once any answer is present; accept it and move on."
+      ]
+    },
+    {
+      "field": "responsibilities",
+      "text": "What are your primary responsibilities at work?",
+      "criteria": [
+        "FLOOR (basically single-touch) — once they've named what they're responsible for, or even just what they do, this topic is COVERED. Granular activities count — the typical-week question right after captures the task-level detail, so do NOT re-probe here to 'lift the altitude'. NEVER re-ask the responsibilities question in reworded form ('What are your main responsibilities?' then 'What would you say you're mainly responsible for?' is the repeat to avoid).",
+        "ONLY follow up if the answer was genuinely EMPTY or evasive ('a bit of everything', 'hard to say', 'depends'). When you do, make it a GENUINELY different question — don't restate the topic; nudge for one concrete thing they handle ('What's the main thing that lands on your plate?'). Do NOT use insider phrasing ('areas you own', 'ownership altitude') — that's a note for you, not words to say."
+      ]
+    },
+    {
+      "field": "typicalWeek",
+      "text": "Walk me through a typical week. What are the recurring tasks you do?",
+      "criteria": [
+        "FLOOR — named at least one real recurring activity/task. If none, follow up asking what they regularly do.",
+        "BREADTH — if only ONE activity, acknowledge then ask whether there are others. If several distinct, covered.",
+        "SUBSTANCE — give the TASKS the work involves, not generic labels. If a central activity is a bare label, ask what they have to DO for it (the smaller tasks it breaks into) — NOT its topic. Probe ONE thread per turn.",
+        "DEEPEN THE CENTER (lightly) — if ONE activity DOMINATES (e.g. a developer who mostly programs), ask ONCE about the different KINDS of work within that core activity (e.g. 'what are the different kinds of programming work that come up?'). KINDS of work = tasks, not content. ONE such follow-up is enough — do NOT exhaustively decompose the core across several turns. Covered as soon as the core has more than a bare label, or if no single activity dominates.",
+        "RESPONSIBILITY COVERAGE — if a responsibility named earlier does NOT map to a task they mentioned, follow up ONCE asking whether they regularly do anything on it. Probe ONE per turn."
+      ]
+    },
+    {
+      "field": "periodicTasks",
+      "text": "Beyond your usual week, are there tasks that come up on a longer cycle — monthly, quarterly, or once a year?",
+      "criteria": [
+        "FLOOR — COVERED only once periodicity has been EXPLICITLY addressed: either the participant has already named a task on a longer-than-weekly cycle (monthly/quarterly/annual/seasonal — e.g. month-end close, quarterly reviews, year-end or audits, renewals, planning or budget cycles) anywhere in the interview, OR — having been asked this question — they say their work is essentially the same week to week. A description of a typical WEEK does NOT cover this: a weekly routine says nothing about monthly/quarterly/annual work, so ASK this question unless periodic work has actually been mentioned.",
+        "Frame it so 'no, it's pretty consistent week to week' is a perfectly natural answer — do NOT presume they have periodic work. Accept a 'no' (or any brief answer) as complete and move on; ONLY follow up if the answer was empty or evasive, and then just once.",
+        "IF they ALREADY named some longer-cycle work earlier (e.g. a month-end close or year-end audit came up), do NOT re-ask generically — acknowledge what they said and ask whether there's anything ELSE on a monthly/quarterly/annual rhythm, so it reads as expanding rather than repeating."
+      ]
+    },
+    {
+      "field": "outputs",
+      "text": "What do you produce or deliver in your work?",
+      "criteria": [
+        "FLOOR (single-touch) — once they've named at least one concrete thing they produce or deliver, this topic is COVERED. Do NOT drill DELIVERY/READINESS for each artifact, and do NOT work through every output type or reflexively ask 'anything else you produce' — the typical-week and emergent phases already capture task-level detail.",
+        "ONLY follow up if the answer was genuinely EMPTY or evasive ('stuff', 'depends', 'not sure'). When you do, ask once for one concrete thing they produce or deliver, then move on."
+      ]
+    },
+    {
+      "field": "stakeholders",
+      "text": "Who do you do your work for or with — the people, teams, or clients you deal with?",
+      "closingQuestion": "One last thing — if someone shadowed you for a couple weeks, what would they catch you doing that hasn't come up yet?",
+      "criteria": [
+        "FLOOR — named at least one person/team/role/outside party they work for or with. If NONE, follow up asking who they work for or with.",
+        "RELATIONAL TASKS (THE GOAL) — surface the concrete COMMUNICATION / COORDINATION tasks of the SINGLE most central relationship they named — what they run, write, report, hand off, review, escalate, present, or give/get feedback on (e.g. running the weekly sync, writing the client update, reporting to a manager). When that party is a bare label, follow up ONCE with a clear, plain, OPEN question framed as INTERACTION / ENGAGEMENT — 'How do you usually interact with them?', 'How do you engage with them?', 'What do those interactions usually look like?' — rather than the flat 'what do you do with/for them'. Aim to surface the relational tasks, do NOT lead. ONE follow-up is enough; do NOT work through every party.",
+        "GO DEEPER, NOT WIDER — do NOT ask 'who else do you work with'. The goal is the communication tasks, not collecting names. Covered once the single most central relationship carries one concrete task — then move on; do NOT keep drilling additional relationships."
+      ]
+    },
+    {
+      "field": "importantTasks",
+      "text": "Of everything you've described, which of those do you spend the most time on?",
+      "static": true,
+      "criteria": [
+        "FLOOR — named at least one task or activity that takes up a lot of their time. A rough sense is enough; this is about TIME, not importance — do NOT ask them to rank or judge what matters most, and do NOT press for precise percentages.",
+        "ADAPTIVE FOLLOW-UP — only if the first answer was genuinely empty or evasive ('it varies', 'hard to say', 'depends on the day'), or they pushed back on singling things out. Do NOT repeat the question verbatim. Acknowledge what they said, then reframe concretely — e.g. which parts of a typical day or week eat up the most time, or what they find themselves doing most often. Accept a rough answer and move on."
+      ]
+    }
+  ]
+}

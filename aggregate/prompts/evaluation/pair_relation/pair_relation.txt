@@ -1,0 +1,52 @@
+You are comparing TWO TASK STATEMENTS written for the same occupation, one from each of two task inventories that were written independently. One inventory is a national occupational survey: terse, written by analysts, naming a duty and illustrating it with a few representative objects. The other was written from what workers said: fuller, naming the people, the system, the setting and the purpose. You are not told which is which, and it does not matter. Your job is to name the relation between the two statements, and to answer with ONE LETTER.
+
+THE FOUR ANSWERS, stated about statement X relative to statement Y:
+
+    S    X is a SUBTASK of Y. Doing X is one way of doing Y, or one step or one constituent of it, and X covers no work outside Y. Y names an act that X does not answer to; X names nothing Y does not.
+    P    X is a SUPERTASK of Y. The mirror image: doing Y is one way, one step or one constituent of doing X, and Y covers no work outside X. X names an act that Y does not answer to; Y names nothing X does not.
+    O    X and Y OVERLAP. They name at least some of the same work, and neither sits strictly inside the other: either they are the same work at the same level in other words, or they meet while each reaches past the other.
+    N    X and Y do NOT overlap. Neither names work the other names.
+
+WHAT THIS IS NOT. It is not a similarity rating and it is not a coverage question with a default answer. Two inventories describing one occupation contain a great deal of the same work in different words AND a great deal of different work, so neither answer is the safe one. Decide from the act and the object, not from which verdict feels cautious, and not from how many words either side carries.
+
+STEP 1. SPLIT EACH STATEMENT INTO ACT AND OBJECT. The ACT is the verb, what the worker does. The OBJECT is what it is done to. A purpose clause ("to ...", "for ...", "so that ...") is neither: it can support a reading but never establishes one on its own. A statement joining several verbs names several acts. A statement whose verbs are a fixed phrase for one act ("prepare and serve", "clean and sanitize") names one act.
+
+STEP 2. ASK, SEPARATELY IN EACH DIRECTION, WHETHER ONE SIDE NAMES AN ACT THE OTHER DOES NOT. Would a worker doing X necessarily be doing something Y names? Would a worker doing Y necessarily be doing something X names? Answer each on its own merits; deciding one does not decide the other. Then read off:
+    Y names an extra act, X does not         ->  S
+    X names an extra act, Y does not         ->  P
+    both name an extra act, some act shared  ->  O
+    neither names an extra act, act shared   ->  O   (the same work)
+    no act shared at all                     ->  N
+
+FIVE WAYS TO SEE A RELATION THAT IS NOT THERE.
+
+R1. THE SAME VERB ON A DIFFERENT KIND OF THING. Sharing a verb is not sharing an act. "Inspect finished cabinets for defects" and "Inspect the shop floor for hazards" are both inspecting and are different work: one examines a product, the other a workplace. A person, a document, a machine and a premises are different kinds of thing. Extract the object before deciding.
+
+R2. THE SAME ABSTRACT FRAME. Two statements can both be "planning something", "communicating with someone" or "keeping records" and share nothing else. A frame that would fit half the occupation's work is not a relation. Ask what would actually be done, not what category it belongs to.
+
+R3. A CATEGORY HEADING REACHES ONLY ITS OWN CATEGORY. A statement naming a class of work, "perform administrative duties for the shop", contains the members OF THAT CLASS and nothing else. Building a cabinet is not an administrative duty merely because the shop that does administration also builds cabinets. A member of the class IS a subtask of the heading; anything outside the class is unrelated to it.
+
+R4. THE OTHER SIDE OF AN EXCHANGE. One statement puts the worker as performer, author or requester and the other as checker, approver or recipient. Submitting a plan for approval and approving plans others submit share vocabulary and are different work, even when the same worker does both at different times.
+
+R5. A DIFFERENT STAGE OF THE SAME PROCESS. Work on one object passes through stages: finding out what is needed, working out a plan or estimate, preparing, carrying out, presenting or delivering, checking afterwards, and advising someone about it. Two statements at DIFFERENT stages share the object and the process and are different work: a worker doing one is not thereby doing the other. "Measure the room for new flooring" and "Lay the new flooring" are different stages, as are "Estimate the cost and time of a remodel" and "Build the remodel", "Prepare finish samples for the customer" and "Recommend a finish to the customer", "Inspect a cabinet before repair" and "Re-inspect it after the repair". Answer N for stages unless one statement itself names both. Statements at the SAME stage in different words ARE related (M1): "Work out the cutting list" and "Plan the materials for the job" are one act.
+
+FOUR WAYS TO MISS A RELATION THAT IS THERE. These are equally common and equally wrong.
+
+M1. DIFFERENT WORDS FOR THE SAME ACT. The two inventories were written by different people for different purposes; one favours plain language, the other formal survey prose. "Take payment from customers at the register" and "Receive and process customer payments using a point-of-sale system" are the same work. Ordinary synonyms are the same act: direct, supervise and oversee; confer, discuss, consult and advise; prepare, draft, develop and produce; assess, evaluate, examine and review; monitor, observe and track; maintain, service and keep up. Register differences are not scope differences.
+
+M2. A LIST TREATED AS A CHECKLIST. A statement joining objects with "and", "or" or commas is satisfied by ANY ONE of them, and a "such as ..." or "including ..." list is ILLUSTRATIVE of one category, not closed. "Operate shop machinery, such as saws and planers" reaches operating a lathe, and it is ONE act, not three.
+
+M3. THE DETAIL TRAP, AND IT IS THE MOST COMMON ERROR. The fuller statement usually carries more words: which people, which system, which setting, which stage, why it is done, a list of the objects involved, the sub-steps it is carried out in. NONE OF THAT IS AN EXTRA ACT, and none of it makes the fuller statement wider or the terser one narrower. Adding who, which, how, where or why to the same act leaves it the SAME act. "Sand curved trim by hand" is a subtask of "Sand and finish wood surfaces" because the second names a wider range of surfaces and a further act, finishing; it is not made unrelated by the detail, and the detail does not make it the wider one.
+
+M4. A DIFFERENT STATED PURPOSE FOR THE SAME ACT ON THE SAME OBJECT. One inventory states why, the other does not, or states a different why. Judge act and object.
+
+WORKED EXAMPLES, from other trades on purpose.
+    X "Install the countertops"  /  Y "Fabricate, install and repair countertops"                    -> S   (Y names fabricating and repairing, X answers to installing only)
+    X "Sand, stain and wax the floors"  /  Y "Sand the floors"                                       -> P   (X names staining and waxing, Y does not)
+    X "Sand and prime the doors"  /  Y "Sand and hang the doors"                                     -> O   (sanding is shared; each names an act the other does not)
+    X "Take payment from customers at the register"  /  Y "Receive and process customer payments using a point-of-sale system"   -> O   (the same work, in other words)
+    X "Inspect finished cabinets for defects"  /  Y "Inspect the shop floor for hazards"              -> N   (a shared verb on a different kind of thing)
+    X "Measure the room for new flooring"  /  Y "Lay the new flooring"                              -> N   (different stages of one job)
+    X "Build custom cabinets to the customer's drawings"  /  Y "Perform administrative duties for the shop"   -> N   (a heading reaches only its own class)
+
+Reply with exactly one character, S, P, O or N, and nothing else. Do not explain.

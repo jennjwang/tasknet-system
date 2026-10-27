@@ -1,0 +1,116 @@
+WHAT DIVIDES ONE TASK FROM ANOTHER
+
+A task inventory is a taxonomy: every entry exists because something distinguishes it from every other
+entry. Below are the dimensions two pieces of work can differ along, and whether a difference along each
+one earns a SEPARATE ENTRY or belongs INSIDE one as an example.
+
+ONE TEST GOVERNS ALL OF THEM. Does changing this dimension change WHAT THE WORKER DOES — the steps, the
+judgement, the skill it takes? Not what the thing is called, not who is served, not when it happens. If the
+work is the same work, it is one entry however unlike the two instances look.
+
+CUT HORIZONTALLY: THE ACT IS THE ENTRY, NOT THE LARGER JOB IT SERVES. Where the same act — the same
+steps, the same judgement, the same skill — recurs inside several of the occupation's jobs or workstreams,
+it is ONE entry across all of them, with those jobs as its examples. Do not bury an act's instances as steps
+of the larger duties they feed: for an electrician, testing circuits and recording the readings is one entry
+whether the test belongs to a new installation, a fault call, or a scheduled safety check — the installation
+and fault-call entries keep only the work that is theirs alone. A cut that gives each larger job its own copy
+of a shared act hides the occupation's most widespread work inside vertical bundles, and the bundles then
+read as overlapping. When choosing between naming the recurring act once and distributing it into the jobs it
+serves, name the act.
+THE HORIZONTAL CUT NEVER CROSSES A DIVIDING DIMENSION. It gathers INSTANCES of one act across jobs; it
+does not gather DIFFERENT acts under one banner. The two sides of an exchange are two acts — each side is
+named once across all jobs, never one entry spanning both sides; and acts split by a dividing trigger
+stay split, each cut horizontally on its own.
+
+THESE DIVIDE
+  · THE ACT. Different verbs on the same object are different entries — inspecting a roof and repairing
+    one, drafting a document and approving one, loading a machine and servicing it.
+  · THE SIDE OF AN EXCHANGE. Issuing a request and answering one received, sending work out for another
+    party's decision and deciding on work they send in, ordering supplies and filling an order that
+    arrives — these are different acts EVEN WHEN THE SAME WORKERS routinely do both. Each side has its own
+    trigger (the counterpart's move arrives on its own schedule) and its own product, so a shared plan —
+    "handle the exchange end to end" — does not unite them.
+    AN EXCHANGE NEEDS AN OPPOSING OR INDEPENDENT PARTY, one acting in its own interest: a request served
+    on them, their demand answered, their submission ruled on. Question-and-answer inside the worker's own
+    operation is not an exchange — answering staff questions, directing their work and unblocking their
+    tasks are the upkeep of one supervisory responsibility (the CHORES bullet below).
+  · WHAT THE RECEIVER MUST BE TOLD, where it changes what the worker produces. Persuading one receiver,
+    seeking a second's approval before the work can proceed, informing a third after the fact — those are
+    three acts, and they stay three whether the telling is written, spoken face to face, or called in over
+    a radio. It is the verb that divides them, not who receives the work: reach for the act, not for the
+    audience.
+  · WHAT IT TAKES TO PRODUCE IT. Where two outputs demand DIFFERENT JUDGEMENT, they are two acts: an
+    output that carries the worker's own analysis or diagnosis — reasoning only someone trained in the work
+    could produce — and one that relays status or logs what happened are different work, however alike
+    "writing things up" or "keeping records" makes them sound. The medium is not the point: a written
+    report, a spoken handover and a tag hung on a machine can each carry either. Likewise, entries that
+    record the WORK ITSELF divide from entries that run the workplace's own business — time, supplies,
+    money owed. This is NOT the old output-function rubber stamp: two outputs taking the SAME judgement
+    (two kinds of binding instrument, two kinds of filing, two sizes of the same fitting) remain one act
+    with the kinds as examples.
+  · THE TRIGGER, WHERE IT CHANGES THE ACT. What prompts the work can change the work. A TRIGGER THAT IS
+    MERELY THE ARRIVAL OF A JOB TYPE OR CUSTOMER SEGMENT IS THE SUBJECT MATTER, NOT A TRIGGER — phrasing a
+    segment as "when such jobs arrive" does not make it divide. For a maintenance technician, attending a
+    machine because a fault was reported and going round the machines to a schedule are two entries: one
+    starts from a complaint and ends when it is resolved, the other starts from a date and ends when the
+    round is done, and the findings feed different decisions.
+
+THESE DO NOT DIVIDE — they belong inside an entry, as its examples
+  · THE COUNTERPART'S IDENTITY. Which customer, which agency, which colleague, which body — and equally
+    whether the person advised is a walk-in customer, a fleet manager, or an insurer, which is usually the
+    EMPLOYER differing rather than the work. The same act for a different person is the SAME entry, and
+    one entry may name several counterparts in a line: explaining a repair estimate to the vehicle's owner
+    and to the workshop manager is one entry, not two.
+  · SUBJECT MATTER, FIELD, JOB TYPE, CUSTOMER SEGMENT. The act is unchanged by what it is applied to, and
+    workers specialising in different subjects perform the same activities on them.
+    AND THE TRADE'S NAME FOR THE ACT CHANGES WITH THE SUBJECT — do not be fooled by it. Every specialism
+    dresses a shared act in its own vocabulary, so the same moves arrive wearing different names, each
+    setting naming its own equipment, its own paperwork and its own occasions. Strip the vocabulary and ask
+    what the worker DOES, move by move; where only the subject and its trade name change, the versions
+    are ONE entry with each setting's subjects as its examples. An inventory that keeps every setting's
+    renamed copy publishes the division of labor, not the work.
+  · THE KIND OF ARTIFACT. One act of composing, checking, or handing on, applied to many kinds of product,
+    is one entry with the kinds as its examples — however differently the products are named and used.
+    THE OUTPUT'S FORM AND DESTINATION ARE PART OF ITS KIND: a formal written instrument and an
+    outline prepared for live use, one filing form and another, a part fitted on a new build and the same
+    part fitted as a replacement, are kinds of the same made thing where producing them takes the same
+    judgement. Only a difference in the JUDGEMENT of producing it — different moves, not a different
+    template or a different size — marks two acts.
+  · THE STAGE IN A PROCESS, for the same act BEFORE THE SAME COUNTERPART. The check that opens a job and
+    the one that signs it off, both reported to the same recipient, take the same moves. A stage is a
+    property of the job, not of the work. But check the recipient first: if the later point in the process
+    means a DIFFERENT authority applying a different standard, that is a counterpart and it divides.
+  · THE TOOL, SYSTEM, SETTING, OR MEDIUM.
+  · THE CHORES OF ONE ONGOING RESPONSIBILITY. Where a worker is answerable for one continuing thing — a
+    helper's work, a budget they hold, a stock of supplies, the records of their own jobs — the acts its
+    upkeep demands are ONE entry, even though each is articulable, has its own occasion, and would pass an
+    act test taken alone: recording entries and later chasing the ones that have not resolved, directing
+    the day's work and periodically appraising it, counting what is on hand and reordering what has run
+    down. No one of these acts is anybody's job on its own: asked what they do, a worker names the
+    responsibility — "I keep the stores", "I supervise the helpers" — and the acts are how it is
+    discharged. KEEPING ONE SET OF RECORDS is the case this bullet most often decides: entering what
+    happened, reviewing what is outstanding, and reconciling or reporting the totals are its chores,
+    however many kinds of record the set contains and however far apart the entry and the review fall.
+    TEST: write the act alone as an entry. If it reads as a duty someone could hold apart from the
+    responsibility, it divides; if it reads as a chore of the responsibility, it stays inside.
+    THIS DOES NOT REACH A DELIVERABLE AND ITS AFTERLIFE: producing a thing others use and maintaining it
+    later are still two entries.
+
+A TRIGGER IS NOT A STAGE. A trigger is the event that makes work start — a fault reported, a request
+received, a date arriving; a stage is a position in a sequence the work runs through. A different trigger
+often means a different act; a different stage almost never does.
+
+OCCUPATIONAL HETEROGENEITY SETS THE LEVEL OF CLOSE CALLS. An occupation spans workplaces and specialisms,
+and two alike-looking entries are often one act refracted through that heterogeneity. Where the difference
+between them tracks the occupation's DIVISION OF LABOR — different settings each doing their variant — they
+are ONE entry at the covering abstraction, the variants its examples; splitting there publishes specialisms,
+not tasks. Corpus worker sets, where known, measure this: disjoint
+workers say the settings divide the act and it merges up.
+
+WHEN DIMENSIONS DISAGREE
+  · THE ACT WINS over names, artifacts, and stages: a difference in what the worker does is decisive; a
+    difference in what the product is called, or where it sits in a process, is not.
+  · THE SIDE OF AN EXCHANGE WINS over a shared plan or phase, and over the CHORES bullet: an exchange with
+    an opposing party divides even where one worker handles it end to end.
+  · THE CHORES OF ONE RESPONSIBILITY WIN over the act test taken alone: acts that are all the upkeep of
+    one responsibility stay one entry however cleanly each can be articulated.

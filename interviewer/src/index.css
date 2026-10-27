@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* iOS Safari zooms the page in whenever a focused input has a font-size below
+   16px (our fields use text-sm / 14px). That zoom also shoves the inline send
+   button out of the viewport. Forcing 16px on form controls at phone widths
+   stops the zoom-on-focus entirely and keeps the send button on screen. */
+@media (max-width: 640px) {
+  input:not([type="range"]),
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+
+/* Full-viewport height for the fixed (non-scrolling shell) phases. The 100dvh
+   line wins in browsers that support it, so the layout tracks the *visible*
+   viewport on mobile — the footer/CTA isn't hidden behind the URL bar. Older
+   browsers fall back to the 100vh line above. */
+.app-screen {
+  height: 100vh;
+  height: 100dvh;
+}
+
+/* Always-visible scrollbar for the occupation selector's lists. macOS and iOS use
+   OVERLAY scrollbars that stay invisible until you actually scroll, so a participant
+   whose occupation sits below the fold gets no cue that there is more to see — and
+   on the screener path that pick IS the gate, so taking the closest visible card is
+   what ends their session. Styling ::-webkit-scrollbar opts the element out of
+   overlay behaviour, so the bar is drawn permanently.
+   `scrollbar-gutter: stable` reserves the track's width in the padding box, which
+   both keeps the bar off the cards (and their hover state) and stops the list
+   shifting sideways when it becomes scrollable. */
+.scroll-visible {
+  scrollbar-gutter: stable;
+}
+/* The STANDARD scrollbar-width/-color properties must be Firefox-only: when Chrome
+   sees them it ignores every ::-webkit-scrollbar rule below and reverts to the OS
+   overlay bar — which is exactly the invisible bar we're trying to replace. This
+   query is the discriminator, since Firefox doesn't support the pseudo-element. */
+@supports not selector(::-webkit-scrollbar) {
+  .scroll-visible {
+    scrollbar-width: thin;
+    scrollbar-color: #c7d2fe #f1f5f9; /* indigo-200 thumb, slate-100 track */
+  }
+}
+.scroll-visible::-webkit-scrollbar {
+  width: 10px;
+}
+.scroll-visible::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 9999px;
+}
+.scroll-visible::-webkit-scrollbar-thumb {
+  background: #c7d2fe;
+  border-radius: 9999px;
+  /* Inset the thumb inside the track so it reads as a pill, not a filled channel. */
+  border: 2px solid #f1f5f9;
+}
+.scroll-visible::-webkit-scrollbar-thumb:hover {
+  background: #a5b4fc;
+}

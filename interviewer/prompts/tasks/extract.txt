@@ -1,0 +1,57 @@
+Extract the distinct recurring work tasks this person performs in their paid job.
+
+Rules:
+- Paid work only: skip anything the background explicitly labels as personal, hobby, or side project.
+- Faithful to the text: extract tasks at the granularity they appear. Don't collapse or invent
+  hierarchy — if the background lists sub-items under an activity, emit them as separate tasks
+  rather than rolling them up into one broad parent.
+- ONE THING PER TASK — SPLIT BUNDLED OBJECTS. When a single stated activity bundles multiple
+  distinct objects, outputs, or audiences via "and" or commas, emit ONE task per item rather than
+  one merged task. The bundling is usually just how it was said in one breath, not evidence the
+  items are one activity. KEEP THE STATED VERB on every split-out task — don't invent a new
+  activity for one item (if they said "advise on references", it is "Advise students on references",
+  NOT "Write student reference letters").
+  "advise students on research projects, references, and job applications"
+    → "Advise students on research projects" + "Advise students on references" + "Advise students on job applications"
+  "teach lectures and grade exams" → "Teach course lectures" + "Grade student exams"
+  BUT DON'T OVER-SPLIT THE SAME ACTIVITY. If the items are the SAME verb performed with the same
+  tools/procedure and only the input or sub-type differs, they are ONE task — merge them under a
+  generic object, do NOT emit one task per input. The split rule above is for distinct ACTIVITIES
+  that happened to be said together, not for sub-types of a single activity.
+  "run vision and hearing screenings" → "Run student health screenings" (ONE task, not two)
+  "fix bugs in the frontend and backend" → "Fix software bugs" (ONE task, not two)
+  "review unit, integration, and end-to-end tests" → "Review automated tests" (ONE task, not three)
+  Named technical sub-types of one output — test layers (unit/integration/e2e), environments
+  (staging/prod), document versions — are the SAME activity: merge under a generic object.
+  Litmus test: would the split-out items read like the SAME line repeated with one word swapped?
+  Then keep them merged.
+  CONTRAST — these DO split, because each names a genuinely different output FORMAT or AUDIENCE,
+  not a sub-type of one output: "write blog posts and API documentation" → TWO tasks (a blog post
+  and API docs are different artifacts for different readers); "advise students and parents" → TWO
+  (different audiences). Only split when the items differ in output format, audience, or cadence —
+  NOT when they're interchangeable inputs/sub-types of a single output.
+- RESCUE, DON'T DROP: aim to turn EVERY work-related mention into a task — do not silently discard
+  one for being awkwardly phrased or low-quality. If something is stated as a goal/outcome ("reduce
+  coding time"), a role/headcount description ("lead a team of 8"), or a vague label ("handle
+  operations", "deal with clients"), reformulate it into the concrete recurring activity behind it,
+  using the surrounding context to infer what they actually DO (e.g. "lead a team of 8" → "Assign
+  and review the team's work"; "deal with clients" → "Respond to client requests and questions").
+  When you reformulate, do your best to write a CLEAR task statement that fits THIS profession and
+  represents the participant's intention — use the job/role context and their other answers to
+  express what the vague phrasing was reaching for, in the words a practitioner would use.
+  Dropping IS allowed, but only as a last resort: if a mention is genuinely meaningless — no
+  recoverable work activity at all, e.g. bare schedule/logistics ("work from home", "start at 9 AM")
+  or content-free filler ("work hard", "be more productive") — leave it out rather than inventing a
+  task from nothing. Rescue whenever a real activity is recoverable; drop only when it truly isn't.
+- For AI usage: extract the specific named activity, not the AI scaffolding, and mark it by
+  appending " using AI" so downstream can tell AI-performed tasks apart.
+  "use AI to write proposals" → "Write job proposals using AI"
+  "use AI to debug failing tests" → "Debug failing tests using AI"
+  If the activity already names AI as part of the object, leave it and don't double-mark:
+  "reviewing AI-generated code" → "Review AI-generated code"
+  Only include if it's a distinct bounded activity mentioned in the text; skip generic
+  statements like "use AI to work faster" or "automate tasks with AI".
+- Form: Action → Object → to <Purpose/Result>. Present-plural verb, no first person, no invented
+  detail; add the purpose/result clause only when it distinguishes the task.
+
+Return ONLY a JSON object: {"tasks": ["task 1", "task 2", ...]}.

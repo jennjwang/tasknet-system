@@ -1,0 +1,16 @@
+{
+  "name": "tasknet",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "workspaces": [
+    "interviewer",
+    "validation"
+  ],
+  "scripts": {
+    "build": "npm run build -w interviewer",
+    "test": "npm test -w interviewer",
+    "dev": "npm run dev -w interviewer",
+    "start": "npm start -w interviewer"
+  }
+}

@@ -1,0 +1,53 @@
+You are performing a HIERARCHICAL TASK ANALYSIS for a worker in the occupation: $occupation.
+
+Below are the specific tasks observed for this occupation. Group them into the TASK CLUSTERS that make up the job — the mid-level functional groups an occupational task list (like O*NET) uses as headings. You are naming the PARENTS; the specific tasks are the leaves filed under them. Make each cluster as SPECIFIC as its shared plan allows.
+
+{{include:task_dimensions}}
+
+A task CLUSTER is a GOAL accomplished by a SHARED PLAN over its tasks — the tasks are STEPS toward one outcome. Whether tasks belong to ONE cluster is decided by that shared plan, NOT by surface similarity. The guards against grab-bag clusters:
+1. SAME THEME / TOOL / PHASE / SETTING / AUDIENCE ≠ SHARED PLAN. Tasks that merely sound similar, use the same tool, happen in the same phase, or serve the same people but are DIFFERENT ACTIONS on DIFFERENT objects belong to DIFFERENT clusters.
+     · mechanic: "inspect brakes" + "order parts" — both in the shop, but inspecting ≠ purchasing → DIFFERENT clusters.
+     · electrician: "pull new wiring" + "inspect the panel for code violations" — both electrical, but installing ≠ auditing → DIFFERENT clusters.
+     · letting agent: "show a flat to applicants" + "chase a late rent payment" — both serve the same tenants, but showing ≠ collecting → DIFFERENT clusters. A shared AUDIENCE or POPULATION served (tenants, customers, members) is NOT a shared plan; name the specific ACTION, not the population it is aimed at. That cuts one way only: a SHARED audience never JOINS two different acts, but a DIFFERENT audience can still SPLIT one act, where the reader changes what the worker actually produces. A shared OVERSIGHT or LEADERSHIP domain across the leaves — one program, function, or area the worker leads — is likewise a THEME, not a shared plan: under a single umbrella verb, leaves that each carry out a DIFFERENT action are DIFFERENT clusters; split by the distinct action, not by the shared domain.
+     · maintaining the machinery that DOES a kind of work is not the same plan as USING that machinery to do it — building/maintaining a tool, pipeline, or system ≠ operating it for a specific instance of output. Likewise authoring reusable instructions, scripts, or materials ≠ executing them on a specific occasion.
+2. COMPOUND-VERB RULE: a cluster heading may join at most TWO verbs, and ONLY when they are two VERY CLOSELY RELATED steps of ONE activity toward a single result — a tightly-linked pair (a do-then-confirm, a review-then-comment). THREE OR MORE verbs, or two LOOSELY-related actions, means the heading is lumping distinct goals: name the ONE specific action each cluster shares.
+     THE TEST FOR "CLOSELY RELATED", and it is the same test the fusion judge downstream applies, so a heading that fails it will be taken apart later: WOULD THE SECOND STEP HAPPEN AT ALL IF THE FIRST HAD NOT BEEN DONE? If it would not — the thing produced must then be checked, submitted, or handed on — the two are one activity finished, and the pair is allowed. If each could be done on its own occasion, for its own reason, in either order, they are TWO clusters however natural the phrase sounds. Two acts that merely BOTH concern the same field fail this: one prompted by a request and one done to a schedule are two clusters, not a pair.
+3. THE PLAN-OR TEST: write the cluster's one-line plan in your head. If it needs an "OR" across unrelated triggers/contexts ("...when a machine breaks OR when planning the week's schedule"), the tasks are DIFFERENT clusters.
+4. NEVER a vague catch-all ("Provide services", "Coordinate work", "Manage operations", "Ensure quality", "Handle issues").
+5. A CLUSTER IS A KIND OF WORK, NEVER A SUBJECT MATTER OR SPECIALTY. Do not make a cluster out of the case type, product line, programme, client segment, OR KIND OF DOCUMENT the work is applied TO. Workers who specialise in different subjects still perform the SAME activities on them.
+   THE DOCUMENT TYPE IS THE COMMONEST FORM OF THIS AND THE EASIEST TO MISS, because each type has its own name and its own body of knowledge, so a per-type cluster looks specific rather than fragmentary. One act of authoring, applied to a dozen kinds of paper, is ONE cluster with the kinds as examples — not a cluster per kind. The same holds for reviewing them, filing them, and preparing them. If two candidate clusters share their verb and differ only in which artifact it produces or acts on, they are one cluster: name the act, and let the artifacts be the examples underneath it.
+   TEST BEFORE YOU SPLIT ON AN ARTIFACT: ask what the worker does differently, step by step, for the two kinds. If the steps are the same and only the subject matter of the paper changes, it is one cluster however differently the two documents are named and however separate the two specialisms feel.
+     · repair shop: "handle motorcycle jobs" + "handle van jobs" are NOT two clusters — diagnosing, quoting, ordering parts and road-testing are the clusters, and the vehicle type is merely WHICH INSTANCE of each one a given mechanic happens to see.
+     · training provider: "run the forklift programme" + "run the first-aid programme" are NOT two clusters — writing course material, scheduling sessions, assessing candidates and issuing certificates are.
+   A SUBJECT-MATTER CLUSTER ALSO HIDES THE WORK EVERYONE SHARES, which is worse than merely being untidy. Every specialist's version of one common activity gets filed under their own subject, so a task that all of them perform appears once in each subject cluster and never looks shared — the most widespread activity in the occupation can end up looking like nobody's. If two workers with different specialties would describe an activity in nearly the same words, that activity is a cluster and their specialties are not.
+
+
+ADEQUACY (least upper bound): each cluster must be general enough to be its tasks' shared goal but NO BROADER — performing all of its tasks should FULLY accomplish it, with nothing left over. Every word of the heading must trace to a grouped task.
+
+MUTUAL EXCLUSIVITY: no task should plausibly belong to two clusters. NEVER emit two clusters that name the same kind of work at slightly different angles ("Coordinate the team" vs "Manage team workflow") — merge them into one.
+
+ON GENUINE DOUBT, KEEP CLUSTERS SEPARATE RATHER THAN MERGING — but a false split is NOT free. One act divided by which moment it happened at and who read the result yields headings that collide in the published list, and nothing downstream repairs them: merging is refused because the activities under each heading genuinely differ, splitting cannot help because they are already split, and rewording cannot separate two headings that name the same act. So the asymmetry below is the right default and a reason to look hard at a close call — not a licence to treat splitting as costless. A false merge is not symmetric: once two distinct activities are folded into one heading, the distinction is gone and nothing downstream can recover it. If naming ONE shared plan for two candidate clusters would mean dropping a verb or object either one names, they are not one cluster — keep both, and sharpen the wording so neither reads as a duplicate of the other. Never resolve a close call by writing a heading BROADER than either candidate — that is averaging, not judgment, and it fails guard 1 and guard 4 at once.
+
+Use as many clusters as the work genuinely has — no fixed number — but each must be specific, distinct from the others, and cover at least two of the tasks below.
+
+FILE THE TASKS YOURSELF, AND LEAVE OUT THE ONES THAT DO NOT FIT. You name the clusters AND say which numbered
+tasks belong to each, because you are the only step that sees the whole list at once. Two rules about what you
+file:
+  · A TASK GOES UNDER AT MOST ONE CLUSTER. If it plausibly fits two, your clusters are not exclusive — fix the
+    clusters, do not file it twice.
+  · A TASK THAT FITS NO CLUSTER IS OMITTED, NOT FORCED. Leaving it out is the correct answer and costs nothing:
+    a later step looks specifically at what you left behind and can name a task for it there. Stretching a
+    cluster to swallow an activity it does not describe is the expensive mistake, because the cluster's statement
+    then has to widen to cover it and the distinct work disappears for good. Omit freely.
+
+Return ONE cluster per line, in this exact form — the heading, then "::", then the numbers of its tasks:
+
+  <Verb> <specific work> :: 3, 7, 12, 41
+
+Nothing else: no prose, no bullets, no explanation, no line for the omitted tasks.
+
+Each task may show "(reported by N)" — how many workers reported it. Let the COMMON activities anchor the
+clusters; rarer ones attach to the cluster whose work they share.
+
+Tasks:
+$items

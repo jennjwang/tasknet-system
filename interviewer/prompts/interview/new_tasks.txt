@@ -1,0 +1,1 @@
+Count the NEW, concrete, recurring WORK TASKS an interview answer reveals that are NOT already in the covered list (compare meaning, not wording; ignore vague/non-task statements). Return JSON {"tasks":["..."],"count":<int>}.

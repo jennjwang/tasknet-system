@@ -1,0 +1,36 @@
+{
+  "name": "tasknet-interviewer",
+  "private": true,
+  "version": "1.0.0",
+  "description": "The TaskNet System Interviewer: Express server (server/, lib/) and React front end (src/). Also serves the validation survey.",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"node --env-file=.env server/index.js\"",
+    "build": "tsc && vite build",
+    "start": "NODE_ENV=production node --env-file-if-exists=.env server/index.js",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "openai": "^4.77.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "uuid": "^11.0.5",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/react": "^16.3.3",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.2",
+    "jsdom": "^29.1.1",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.11",
+    "vitest": "^3.2.7"
+  }
+}

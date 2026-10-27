@@ -1,0 +1,191 @@
+You are resolving a CLUSTER of label collisions in one occupation's published task list, for: $occupation.
+
+The tasks below are numbered. Every pair listed in $clash reads as one duty by its LABELS — cosine-close,
+non-disjoint, and confirmed by a second reader. Under each task's label are its example members, the CONCRETE
+WORK the label is meant to describe.
+
+A task that sits in more than one pair is a HUB, and its fate must be decided ONCE against every neighbour
+together — not pair by pair in separate calls, where a fix against one neighbour is free to walk straight into
+a second, and a hub that has already absorbed one neighbour becomes an EASIER target for absorbing a third,
+since merging only ever adds shared vocabulary. That is the failure this call exists to close: decide the
+whole component's shape in one pass, so no incumbent grows by more than the evidence in front of you supports.
+
+ASSIGN EVERY NUMBERED TASK TO EXACTLY ONE OUTCOME GROUP. For each task, or each small set of tasks that are the
+SAME duty, decide:
+
+  KEEP     — nothing about this task needs to change; none of its flagged pairs actually require this side to
+             move (the other side is the one that should separate or merge instead).
+  SEPARATE — the label needs new wording to stop reading as one duty with a neighbour, but the underlying work
+             is genuinely distinct. Write ONE new label for this task. A hub with three neighbours gets ONE
+             rewrite that separates it from all three at once, never three sequential ones.
+  MERGE    — two or more of these numbered tasks describe substantially the SAME concrete work. Group them and
+             write ONE statement covering the union of their activities. Say which kind of sameness:
+               EQUIVALENT  — neither side has work the other lacks. The group is one duty named several times.
+               CONTAINMENT — one member's activities are ALL inside another member's, which has more besides.
+             PARTIAL — each side has activities the other lacks — is NEVER a MERGE. If the only true relation
+             between two tasks is PARTIAL, put them in separate SEPARATE (or KEEP) groups instead. Merging on
+             PARTIAL evidence is exactly the failure mode this call exists to stop: it is how one incumbent
+             ends up doing three jobs, each absorbed on its own turn while looking duplicated in isolation.
+
+{{include:task_dimensions}}
+
+THAT TAXONOMY DECIDES WHICH DIFFERENCES MAY HOLD TWO TASKS APART HERE, and it is the same one the pair judges
+upstream are held to, so a partition grounded outside it puts this call at odds with the evidence that reached
+it. A difference listed under THESE DO NOT DIVIDE is not a reason to refuse a MERGE, however unlike the two
+labels look — subject matter, job type, customer segment, the kind of artifact where its function is the same,
+and the counterpart's identity are all differences that belong INSIDE one entry as its examples.
+
+JUDGE THE ACTIVITIES, NOT THE SENTENCES. Two statements can share most of their vocabulary and still be separate
+duties. Check, concretely, for every pair inside a candidate MERGE group:
+  - WHAT ACT is performed — the steps, the judgement, the skill it takes.
+  - WHETHER either side's activities would still be owed if the other were done. If yes, they are separate —
+    do not fold them into the same group merely because a THIRD task in the component also collides with both.
+
+WHEN YOU SEPARATE, lead the new statement with the ONE thing that divides it from its neighbours — the act, the
+object, the stage, the counterpart, or the output — taken from its own members, never from an industry,
+employer, sector, or product qualifier. THE TEST: read the rewritten label against a NEIGHBOUR's example
+members. If it would still be a fair description of that neighbour's work, it has not separated anything.
+
+WHEN YOU MERGE, the single statement must cover what every member of the group describes. Do not climb to a
+category wide enough to hold them by saying nothing, and do not simply concatenate the labels with "and".
+
+LABEL SIMILARITY IS NOT MERGE EVIDENCE, AND WITHOUT A CONFIRMED PAIR THE DEFAULT IS SEPARATE. Every pair below
+reached you because two LABELS read alike — that is why they were flagged, so it cannot also be the reason to
+fuse them. Where no pair is listed as confirmed-duplicated work above, treat TWO ENTRIES as the answer and make
+MERGE carry the burden: name the activities on each side that are the same work, or do not merge.
+THE ONE EXCEPTION IS CONTAINMENT, WHICH NO CONFIRMED PAIR CAN EVER VOUCH FOR: the work judge answers "is
+this the same work described twice", and a small task sitting entirely inside a larger one is not the same
+work twice — it is a subset, so its edge arrives unconfirmed by construction. Where EVERY member of one
+task is an instance of work the other task's statement and members already describe — the same act, merely
+fewer instances — and the other task has more besides, MERGE them as
+CONTAINMENT: fold the smaller into the larger and keep the larger's scope.
+TEST each member of the smaller against the larger, one at a time. A single member that is a different act
+makes the relation PARTIAL, and PARTIAL is never a merge. This exception
+folds a subset into its whole; it never joins two peers, and it is never satisfied by the labels reading
+alike — it is satisfied member by member or not at all.
+CONTAINMENT IS ALSO ANSWERABLE TO THE WORKER EVIDENCE BELOW. Folding is for STRAYS — a few atoms that
+landed under their own label by filing accident. Where the SMALLER side itself rests on many workers —
+a constituency approaching the larger's — the corpus is showing a duty the occupation holds at
+publishable scale, and "describable by the larger's statement" is only the umbrella's breadth talking:
+an act a practitioner performs as its own errand, on its own occasions, for a constituency of its own,
+stays its OWN entry even though a broad enough sentence could cover it. Fold strays; never fold
+constituencies.
+EVERY MERGE MUST RECORD ITS CASE in the group's "basis" field: for CONTAINMENT, why every member of the
+smaller side is an instance of the larger's work AND why the worker evidence reads as a stray rather than
+a constituency; for EQUIVALENT, the activities on each side that are the same work. A merge whose basis
+cannot say these things is not one this call may make.
+
+SEPARATE CARRIES A BURDEN OF ITS OWN: NAME THE DIVIDER. For every pair you hold apart, name the dimension
+that separates them — a DIFFERENT ACT, the SIDE OF AN EXCHANGE, or a TRIGGER THAT CHANGES THE ACT. Record
+it in the group's "divider" field.
+WHAT THE PRODUCT DOES IS NOT A DIVIDER — the taxonomy does not carry it as one, and neither does this
+call: any two artifacts can be told apart by their function after the fact, which made "product
+function" a rubber stamp on every separation. Where the members show the same act — the same steps, the
+same judgement, the same skill — the tasks are one duty however differently their products function, and
+the products belong inside the merged statement as its examples. Only a difference in what the WORKER DOES
+holds two colliding tasks apart.
+AND THE ACT IS THE MOVES, NOT THE CONTEXT. Bargaining is one act: negotiating the terms of a deal and
+negotiating the resolution of a dispute exchange positions, trade concessions, and converge on agreed
+terms by the same steps, the same judgement, the same skill — the deal or the dispute is the subject the
+act is applied to, and a subject never divides. The same reading applies to any verb tempted to split by
+its object's situation: advising on a plan and advising on a problem, inspecting on intake and inspecting
+on complaint are one act each unless the STEPS themselves change. Name an act difference only where you
+can say what the worker DOES differently, move by move. A pair for which you cannot
+name a divider is one duty by the taxonomy's own test, and the answer for it is MERGE, not a cautious
+SEPARATE: caution that cannot say what it is protecting is not caution, it is an overlap shipped to the
+published list. Label similarity still counts for nothing in either direction — the divider must hold
+between the MEMBERS, not the sentences.
+
+DO NOT LOOK FOR THE SAME ACTIVITY ON BOTH SIDES. Every activity is filed under exactly ONE task, so the member
+lists below are disjoint BY CONSTRUCTION and no activity can appear twice. The question is never "does this
+activity appear on both sides", it is whether the two SETS are one duty split or two duties.
+
+THE COUNTERPART'S IDENTITY DOES NOT DIVIDE, AND IT DOES NOT UNITE EITHER. Advising a client, a supervising
+attorney and a regulator is one act with three recipients — a different name on the recipient is not a second
+duty. But neither is a shared recipient a reason to merge: two things done FOR the same people can still be two
+acts. What divides is what the worker DOES and what the product DOES.
+
+BUILDING SOMETHING AND REVISING IT LATER ARE TWO ACTS. Creating a plan, document or system is not the same act
+as adjusting it once in use — SEPARATE, even where one worker owns both. THIS IS THE TAXONOMY'S
+DELIVERABLE-AND-ITS-AFTERLIFE CASE AND IT STOPS AT THE CHORES BULLET: acts that are the upkeep of one ongoing
+responsibility — the entries and the review of one set of books, the directing and the appraising of one
+supervisory charge — are ONE duty however far apart their occasions fall, and this rule is not a reason to
+hold them apart.
+
+TEACHING AND AUTHORISING ARE TWO ACTS. Explaining, coaching or mentoring over time is not the same act as
+approving, signing off or overruling a decision in the moment, even with the same counterpart and the same
+subject. If one side's activities are ongoing formation and the other's are point-in-time decisions, SEPARATE.
+
+A DIFFERENT LIST OF SPECIFICS IS ENOUGH ONLY WHERE THE SPECIFICS THEMSELVES DO DIFFERENT THINGS. Where both
+sides' named artifacts are instances of ONE kind doing ONE job, the two lists are not a difference — and A
+DIFFERENT BODY OF RULES, SPECIALTY, OR CLIENT SITUATION IS NEVER THE DIFFERENCE: that is the subject
+matter the same act is applied to, and specialists in different subjects perform the same task on them.
+ARTIFACTS THAT DO ONE JOB ARE ONE KIND: where every artifact both sides name exists to do the same job —
+each one records, establishes, or directs an arrangement its parties are bound by — composing them is ONE
+duty however far apart their subjects sit and however different their names.
+
+{{include:onet_statement}}
+
+$redundant
+
+THE HETEROGENEITY RULE: FIND THE LEVEL THE OCCUPATION SHARES. An occupation spans practices, and a
+colliding pair is often ONE act refracted through that heterogeneity — the same work appearing as one
+practice's version and another practice's version. The published level is the one the whole occupation
+can stand behind:
+  · Where the collision tracks the occupation's DIVISION OF LABOR — different practices each doing their
+    variant of the act — the right entry is ONE task at the covering abstraction, with each practice's
+    subjects as its examples. Splitting there publishes specialties, not tasks.
+PRECEDENCE WHEN THE RULES COLLIDE: THE WORKER EVIDENCE OUTRANKS A NAMEABLE ACT DIVIDER. A divider can be
+articulated for almost any pair — that is why SEPARATE carries a burden at all — so a difference in how
+the act can be described does not defeat the division-of-labor evidence. Where the evidence line says
+DIFFERENT people, the pair is one act refracted through practices and the answer is MERGE to the covering
+abstraction, unless the divider is one of the hard structural ones: the SIDE OF AN EXCHANGE with an
+opposing party, or a DELIVERABLE AND ITS AFTERLIFE. Weigh the evidence first; reach for a divider only when it
+survives it.
+A SEPARATE VERDICT ON A DIFFERENT-PEOPLE PAIR MUST SHOW ITS WORK IN THE DIVIDER FIELD: name the hard
+structural divider (the side of an exchange with an opposing party, a deliverable and its afterlife) that
+lets it survive the precedence rule, or say concretely what the worker DOES differently move by move. A
+DIFFERENT-ACT divider that is really the same moves applied to a different SUBJECT — a deal against a
+dispute, one practice's documents against another's — does not survive, and neither does one that is
+really a different KIND OF ARTIFACT — a formal written instrument against an outline for live use, one
+filing form against another — where composing them takes the same judgement: either way the pair is one
+act refracted through the occupation's division of labor, and the verdict for it is MERGE to the
+covering abstraction.
+THE CORPUS WORKER SETS BELOW MEASURE THAT DIVISION OF LABOR. Disjoint workers: practice-split
+variants of one act — merge up. This is not literally about who
+contributed which atom; it is the occupation's structure showing through the sample. One shared worker of
+many is coincidence; weigh the proportion of the SMALLER task's workers.
+WHERE THE EVIDENCE SAYS SAME PEOPLE, the shared workers are testimony that the two bodies of work
+COEXIST in one job — each held at its own scale — which supports SEPARATE for peers and warns against a
+containment fold; the same people doing both is how an occupation carries two duties, not proof they are
+one.
+
+REPEATED REWORDING FAILURE IS MERGE EVIDENCE — WEIGHED, NOT DECISIVE. Where a pair's evidence line
+records STRAIN — reworded to separate and still reading as one duty — the collision is unlikely to be a
+wording accident: each failed rewrite strengthens the evidence that the occupation's vocabulary has SO
+FAR refused to state the difference in one sentence each, and a published level made of single sentences
+cannot carry a distinction its labels cannot state. Weigh strain beside the worker evidence as support
+for ONE entry, in proportion to the count. Two cautions bound it: a CROSS-CLAIM line means one label
+borrows vocabulary that is core to the OTHER side's members — that is a REPAIR case, not merge evidence,
+and the borrowing label should be fixed before the collision is read as fusion; and a pair whose labels
+were materially rewritten since the last failure has earned a fresh test, which the count already
+reflects. Only a hard structural divider (the side of an exchange with an opposing party, a deliverable
+and its afterlife) overrides strain outright.
+
+WORKER EVIDENCE FOR EACH FLAGGED PAIR:
+$workers
+
+These id-pairs are the flagged collisions you must resolve, together: $clash
+
+TASKS (id — current label — example members):
+$tasks
+
+Every id above must appear in EXACTLY ONE group below, KEEP included. Reply with ONLY JSON:
+{"groups": [
+  {"ids": ["<id>", ...], "decision": "KEEP"|"SEPARATE"|"MERGE",
+   "relation": "EQUIVALENT"|"CONTAINMENT" (MERGE only, omit otherwise),
+   "basis": "<MERGE only, REQUIRED: the member-level sameness — and for CONTAINMENT, why the smaller side is a stray, not a constituency>",
+   "divider": "<SEPARATE and KEEP only: the dimension holding this group apart from its neighbours>",
+   "statement": "<the label for this group — omit for KEEP>"}
+]}
+No markdown, no explanation outside the JSON.

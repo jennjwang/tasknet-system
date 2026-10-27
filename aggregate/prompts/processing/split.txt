@@ -1,0 +1,76 @@
+A worker typed each entry below into a free-text box at the end of an interview about their job. Some
+entries are one task. Others are a short PARAGRAPH that mentions several tasks, or commentary with a task
+or two inside it. Your ONE job: return the list of distinct WORK TASKS each entry contains, one statement
+per task, in the worker's own words.
+
+## What counts as a separate task
+A DIFFERENT ACTIVITY — a different verb doing separate work that a coworker would recognize as its own
+piece of the job. Each task you return must have its OWN action verb and its own object.
+  "Monitor the waiting room. Order x-rays before a patient is seen. Ask the triage nurse to repeat vitals."
+    → ["Monitor the waiting room", "Order x-rays before a patient is seen",
+       "Ask the triage nurse to repeat vitals"]
+  "Other things that fill my week include team meetings, sprint planning, code reviews, documentation,
+   and responding to staff questions."
+    → ["Attend team meetings", "Take part in sprint planning", "Review code", "Write documentation",
+       "Respond to staff questions"]
+A noun in a list like that names a task only when the worker plainly means an activity they do; supply
+the minimal verb it implies and nothing more.
+
+## What is NOT a separate task — keep together
+- One verb over several OBJECTS, topics, or settings is ONE task. Keep the whole list on it; never emit
+  one task per listed item and never drop items from the list:
+    "Update tracking systems with grant, budget, and expense information" → one task, unchanged
+  This holds however the entry is punctuated. If you would return two tasks that begin with the SAME VERB,
+  they are one task over two objects — join the objects and return ONE:
+    "Log the delivery weights. Also log the pallet counts and the seal numbers."
+      → ["Log the delivery weights, the pallet counts and the seal numbers"]
+- Linked steps of one workflow over a shared object ("Review and approve invoices",
+  "Sand, prime and paint the trim") stay together.
+- Aims inside a purpose clause ("to prioritize payments and avoid late fees") stay with their verb.
+- After "and" or a comma, a phrase that NAMES A THING is another object of the earlier verb, not a new
+  action, even if its first word could be a verb ("... and experiment code").
+
+## WHAT AN ACT COVERS IS NOT A SECOND TASK
+When one sentence names an act and the next says WHAT was told, shown, handed over or gone through, that
+detail is the CONTENT of the act, not another task. Return one task and let it carry the detail:
+  "Hand the shift log to the incoming supervisor. Tell them which orders are still open, which trucks are
+   late, and what the yard still has to load."
+    → ["Hand the shift log to the incoming supervisor, covering open orders, late trucks and what the yard
+        still has to load"]
+The same goes for the MECHANICS of doing it — sitting down together, opening the file, pulling up the
+screen, walking over — and for a TECHNIQUE or rule of thumb for performing the act ("take the strong side
+off first"). None of those is a task on its own; they belong to the act they serve, or they are dropped.
+
+## A THING THE WORKER MUST KNOW IS NOT A TASK
+Knowledge, awareness, judgement and being available are states, not activities: "know when to call the
+supervisor", "be familiar with the delivery windows", "be aware of which machines are down". Return a task
+only for what the worker DOES about it, and only if the entry actually says so.
+
+## EVERY TASK BEGINS WITH A VERB
+Never return a bare noun phrase or an "-ing" fragment. An entry that names activities as nouns still gets
+proper action statements, with the minimal verb the worker's own words imply:
+  "The rest of my week is status meetings, safety walkthroughs, and the parts inventory."
+    → ["Hold status meetings", "Walk the site for safety", "Count the parts inventory"]
+
+## Carry shared context into each task
+If a subject, system, project, or setting scopes the whole entry, attach it to EACH task so none becomes a
+stranded fragment ("confirm they are resolved" — resolved on WHAT?):
+  "Escalate the pump-replacement defects and confirm they are resolved"
+    → ["Escalate the pump-replacement defects", "Confirm the pump-replacement defects are resolved"]
+
+## Drop what is not a task at all
+Commentary about the interview or the list ("I forgot to mention", "Nothing else to add", "this covers
+everything I do"), explanations of why, and background sentences with no activity in them contribute no
+task. If an entry contains NO task, return an empty list for it.
+
+## Phrasing
+Keep the worker's words, vocabulary, and specifics. Do not invent detail, do not generalize, do not fix
+grammar beyond what the split requires. Write each task as a plain action statement without "I", "my",
+"we" or "our" — "Prepare and send discovery materials to defense counsel", not "I prepare ...".
+An entry that is already a single task comes back as a one-item list with its text UNCHANGED.
+
+Input (JSON array of {"id": int, "text": str}):
+$tasks_json
+
+Return ONLY a JSON array — no markdown:
+[{"id": 0, "tasks": ["...", ...]}, ...]

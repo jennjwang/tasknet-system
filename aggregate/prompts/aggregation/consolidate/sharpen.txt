@@ -1,0 +1,102 @@
+You are relabeling tasks for a worker in the occupation: $occupation.
+
+The tasks below are DISTINCT work (their example members differ) but their current labels read as OVERLAPPING. Rewrite EACH label so that NO TWO overlap — lead each with the ONE thing that separates it from the others. Do NOT merge or drop any task; distinguish them by the ACTIVITY itself, NEVER by an industry, employer, sector, or product-specific qualifier ("for hotel chains", "in freight disputes").
+
+{{include:task_dimensions}}
+
+NOT EVERY DIFFERENCE CAN SEPARATE TWO TASKS, AND REACHING FOR ONE THAT CANNOT IS THE COMMONEST WAY THIS GOES WRONG. The taxonomy above is the same one the judge that checks your work is held to, so a separator drawn from its THESE DO NOT DIVIDE list will be rejected however plainly it distinguishes the two sentences. Measured: a rewrite separated "escort visitors to site meetings" from "shuttle visitors to site meetings" by writing ON FOOT into one and BY VEHICLE into the other — a real, readable difference, and the MEDIUM, which does not divide. The pair was refused and the call was wasted. Before you write, name the dimension you are separating on and check it appears under THESE DIVIDE: the act, what the receiver must be told, or the trigger where it changes the act. If the only difference you can find between two tasks is a counterpart's identity, a subject matter or job type, an artifact kind, a stage before the same counterpart, or a tool, system, setting or medium, then you have NOT found a separator — leave both labels alone and say so by omitting them.
+
+THE TWO SEPARATORS THAT USUALLY WORK, BOTH READ OFF THE MEMBERS.
+
+  1. WHO THE WORK IS FOR, WITH, OR AGAINST. Naming the counterpart is part of the activity, not a barred qualifier —
+     "advise the executive team" is allowed, "advise haulage clients" is not. Measured on this frontier, seven of
+     thirty-four label collisions are pairs whose members differ only in audience: advising a CUSTOMER against
+     consulting a SUPERVISING COLLEAGUE, writing to a CUSTOMER against writing to the COUNTERPARTY, reporting
+     to a FUNDER against reporting to a REGULATOR. In each case one label named its counterpart and the other did not. If
+     one side's members name no counterpart at all — analysing a file, pricing a job — that absence IS its
+     distinction; say what it acts on instead, and do not invent a recipient.
+
+  2. THE EXACT ACT, WHERE ONE LABEL HAS SETTLED FOR A VAGUE ONE. "Review", "evaluate", "assess", "handle" and
+     "manage" are real verbs, so the specific-verb rule below does not catch them, and they are where distinct
+     duties collapse: eleven of the colliding labels here open with "Review", and one reading "Evaluate submissions to
+     gauge suitability" is confusable with six other tasks. Screening applications, triaging a queue to assign
+     work, organising records, verifying details on a form, supervising staff and pricing a job are six duties
+     and all six can be written as "review". Take the word the members actually use.
+     DO NOT MAKE THE PAIR WORSE: if both labels would end up leading with the SAME sharpened verb, you have not
+     separated them — keep one on the verb its members lead with and separate on the OBJECT and the OUTCOME
+     instead. Analysing a JOB to price it is not researching the STANDARDS that govern the work.
+
+PREFER ADDING, BUT DELETE A CLAUSE THAT ANNEXES THE OTHER TASK'S WORK. There are two different things a label can share with its neighbour, and they need opposite treatments.
+
+  1. ITS OWN ENUMERATED OBJECTS — the kinds of thing it acts on, its "such as A, B, or C" list, its scope or purpose clause. NEVER trim these to remove an overlap. They are the label being specific about work its own members support, and a label that sheds detail its members support is WRONG even if it removes the overlap. Separate instead by NAMING WHAT EACH ONE COVERS THAT THE OTHER DOES NOT, taken from its example members, and writing that in.
+
+  2. A CLAUSE NAMING AN ACT THAT IS THE OTHER TASK'S WHOLE SUBJECT — you MAY delete it, and rewording it to a synonym is the wrong move, since that changes the words and leaves the claim standing. Run the test before cutting: delete the clause and read what remains against THIS task's example members. If they are still all covered, the clause was annexation — cut it. If any member falls out, the clause was carrying this task's own work, so keep it and separate on something else. That test is the whole rule: the members decide, not how similar the clause looks to the neighbour's label.
+
+  3. THE LEAD VERB IS THIS TASK'S OWN ACT, NOT AN ACT IT SHARES WITH THE NEIGHBOUR. The front of the
+     sentence is where a reader decides which task is which, so a shared act may survive in the label
+     (rule 2 says when it must) but it must not LEAD it: put the act this task alone owns in front —
+     a dispatcher who also does minor repairs, beside a task that IS repair work, leads with
+     dispatching and routing, and the repair work rides later as a clause. THE TEST: cover the lead
+     verb and read what remains — if the remainder still tells this task apart from the neighbour,
+     the lead was carrying its own weight; if it collapses into the neighbour, the lead verb was
+     doing the neighbour's work and the task's own act belongs in front.
+
+  "Monitor shipment schedules, carrier bookings, and delivery dates"  beside
+  "Track late deliveries and follow up on delayed shipments"
+      → do NOT cut "delivery dates" from the first — that is case 1, its own object list. Say what the second
+        does that the first does not:
+        "Trace delayed shipments with carriers and arrange recovery to bring deliveries back on schedule."
+
+WHAT YOU MAY NOT DO IS SHED WORK NOTHING ELSE COVERS. Every activity in a task's example members must still fall under its label after your rewrite. Deleting an annexed clause is safe precisely because another task owns that work; deleting anything else loses it from the list entirely.
+
+PRESERVE each label's existing specificity: keep its enumerated object kinds and its scope/purpose/method clause, subject to case 2 above. Do NOT trim a "such as A, B, or C" list, drop enumerated kinds, generalize a specific object to a bare umbrella, or abbreviate a spelled-out term. Spell out every acronym in full (write the full term, never its initialism).
+
+A DIFFERENT SENTENCE IS NOT A DISTINCTION. Swapping a verb for its synonym, reordering the objects, or changing
+"for X" to "to identify X" makes the strings differ and leaves the two tasks exactly as confusable as before —
+and it is what you will reach for first, because it is easy and it looks like compliance. Before rewriting a
+pair, say in a few words WHAT ACTUALLY SEPARATES THEM, reading their members: a different purpose the work
+serves, a different counterpart it is done with or against, a different point in the matter it happens at, a
+different kind of thing it produces. Then write that separator into the labels. If you cannot state the
+separator in plain words, you have not found one, and no rewrite you make will be worth keeping.
+
+THE TEST EVERY REWRITE MUST PASS: read your rewritten label against the OTHER task's example members. If it
+would still be a fair description of that work, it has not separated anything — try again or leave both alone.
+A label that stays true of its neighbour's members has changed its wording and nothing else.
+
+If NO added detail can tell two labels apart — they describe the same duty at different moments, or the same duty by different names — leave BOTH unchanged. Saying so by leaving them alone is correct; the pipeline merges what you cannot separate. Never force a distinction that is not there.
+
+Write each rewritten label as an O*NET task statement, following:
+{{include:onet_statement}}
+
+EVERY STATEMENT YOU WRITE HERE IS PUBLISHED AS WRITTEN — it is not
+passed to a later writer. It has to satisfy these as fully as the statements it sits beside.
+
+{{include:writing_principles}}
+
+$frozen
+These id-pairs MUST end up clearly different from each other: $clash
+
+TASKS (id — current label — example members):
+$tasks
+
+Return ONLY JSON, with the separators first so you commit to them before writing:
+{"sep": {"<id>-<id>": "<in a few words, what separates this pair>", ...},
+ "h":   {"<id>": ["<candidate rewrite 1>", "<candidate rewrite 2>", "<candidate rewrite 3>"], ...}}
+For each label you move, give THREE candidate rewrites IN ORDER OF PREFERENCE, your best first: vary the
+lead verb across them, make the separator unmistakable from the words alone, and put first the one you
+would publish — most faithful to the members, a duty a practitioner would list. HOLD EVERY CANDIDATE TO
+FOUR CHECKS, each a measured defect:
+  · NO BORROWED HEAD NOUNS: never reuse the partner label's lead verb or its head noun anywhere — least of
+    all as the candidate's final word, where it reads as the same duty restated.
+  · NO CIRCULARITY: the purpose clause must add something the object does not already contain — "review
+    completed jobs to identify outcomes" says nothing, because outcomes are what completed jobs contain; name what the work
+    yields (a practice changed, a gap found, a lesson applied).
+  · CONCRETE OVER ABSTRACT: prefer the members' own concrete nouns and occasions to management abstractions;
+    a reader should be able to picture the work from the words.
+  · SPECIFIC PURPOSE: the purpose clause must name what this work concretely changes or produces, drawn from
+    the members — a generic betterment ("to improve future work", "to support quality") restates why anyone
+    does anything and is not a purpose. If the members show what the findings feed, say that; if they do not,
+    end the sentence at the object rather than invent an aspiration. THE STRONGEST PURPOSES CARRY TWO
+    YIELDS — the finding and what it feeds ("to identify X and refine Y") — use that shape wherever the
+    members support both halves.
+Omit from "h" any label you are leaving unchanged. No markdown, no explanation outside the JSON.

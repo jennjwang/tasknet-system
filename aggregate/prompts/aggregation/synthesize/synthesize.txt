@@ -1,0 +1,206 @@
+You are writing ONE task statement for the occupation: $occupation.
+
+YOU ARE DESCRIBING AN OCCUPATION, NOT A PERSON, and every rule below follows from that. The activities were
+reported by SEVERAL different workers doing this job in different places, with different caseloads and different
+employers. The statement has to be true of the occupation as they collectively practise it — not a portrait of
+any one of them. So the objects it names are alternatives across the workforce rather than a bundle one person
+handles, the vocabulary it uses has to be recognisable to a practitioner who has never seen the others' work,
+and a detail that belongs to a single account is a detail about that workplace, not about the occupation.
+
+The specific activities below were grouped as ONE task cluster by an earlier step. That step's heading is
+deliberately NOT shown to you: it was written to name a shelf, and every statement written from it inherited its
+verb and its omissions. The activities are the evidence. Write a single O*NET-style task statement for the work
+they describe.
+
+{{include:onet_statement}}
+
+THE STATEMENT ALONE MUST TEACH WHAT THE ACTIVITIES TEACH. Almost everyone who reads it will never see the
+activities below it, so the statement is not a label for them — it stands in for them, permanently. Whatever a
+reader would picture from your sentence alone, these activities should show.
+
+WHAT YOU ARE OPTIMISING. The statement has to READ NATURALLY and REPRESENT THE OCCUPATION WELL — a practitioner
+should recognise it as a description of their work and be able to say "yes, I do that". That is the test, and it
+has to pass TWICE: a second practitioner, in a different workplace with a different caseload, has to be able to
+say it too. A sentence only the first one would claim describes a job, not an occupation.
+
+COVER THE CORE OF WHAT THESE ACTIVITIES DO, IN THEIR WORDS. Read them as a group and name the work most of them
+are doing, as concretely as they describe it. The statement's job is to be RECOGNISABLE to most of the workers
+under it, not defensible against all of them; a member or two doing something else does not get a vote on the
+wording. The core is what the statement owes; the edges are not:
+  - WHEN BREADTH AND CONCRETENESS CONFLICT, CONCRETENESS WINS. For an appraiser, sixteen activities spanning
+    residential valuation, dispute reviews, mortgage write-ups and portfolio work written as "Assess property
+    viability, risks, and likely outcomes to decide and recommend valuation or review strategy" lose every
+    concrete noun the members carry — condition, comparable sales, repair cost, site access — because those
+    words are not true of all sixteen. What survives is true of all of them precisely because it is empty.
+    Written for the majority it becomes "Evaluate condition, comparable sales, and repair cost to value a
+    property" — narrower, and worth reading. Do not climb to a word that spans a minority strand.
+  - A minority strand that will not fit a readable sentence is better left out than crammed in. Covering
+    everything is what produces noun piles.
+  - BUT COUNT BEFORE YOU CALL SOMETHING A MINORITY STRAND, AND COUNT TAGS, NOT ACTIVITIES. The line above is
+    about OUTLIERS: one activity, or several from a single worker, or work that plainly belongs to another task.
+    It is not licence to drop a distinct act that several activities name and MORE THAN ONE worker reports. A
+    third of the group going unnamed is not an edge left out, it is a statement describing less work than it was
+    given — and every activity you leave uncovered comes back later as its own thin task, so the list ends up
+    carrying the work twice: once implicitly, in a statement that never mentions it, and once as a two-line
+    afterthought.
+    WHEN YOU FIND ONE, GIVE IT A VERB rather than dropping it. A second verb costs three words and 3.2 permits
+    verbs joined by "and" where they are successive steps over the SAME object — a set-up, tidy and upkeep cycle
+    on one space is one duty described completely, not two crammed together.
+    TEST: list the activities your draft does not cover, and count the DISTINCT TAGS behind them. One activity,
+    or one tag, is an edge — leave it. Several activities under several tags is a strand, and a strand that will
+    not fit means your sentence needs another verb, not a shorter object list.
+  - The activities are a SAMPLE, not an inventory — what a few interviewed workers happened to mention. You may
+    name something none of them states when it plainly belongs to this same work as this occupation does it, and
+    you need not confine the task to the one setting they described.
+  - What you may NOT do is name a DIFFERENT KIND OF WORK: a second activity carried by one stray member, or
+    something belonging to another task or another occupation. Over-reach means wrong work, not unmentioned
+    detail.
+
+EXPECT OUTLIERS, AND IGNORE THEM. The activities were grouped by an earlier automated step, and that step is
+not perfect: a list of six often contains one or two that do not belong — a different kind of work filed here by
+mistake, or one worker's specialism that shares only a loose relationship with the rest. You are not obliged to
+describe them, and you should not let them shape the sentence.
+  HOW TO SPOT ONE. Read the activities and ask what kind of work MOST of them are. An outlier is the one whose
+  object, counterpart, or setting is of a different kind from that answer — not merely a variation of it. For a
+  facilities engineer, three activities servicing chillers in offices, plants and hospitals are one kind
+  (maintaining building systems); advising inspectors on fire-code certification beside them is a different kind,
+  even if all four are "handling building systems".
+  WHAT TO DO. Write the statement as if the outlier were not in the list. Do not name it, do not add a fourth
+  list item for it, and above all do not widen the head or the object so that it fits — a word broad enough to
+  cover the outlier is a word too broad to describe the rest. There is no invented superordinate: if a strand
+  will not fit the sentence the core deserves, it is not this task's strand. Nothing is lost by leaving it out:
+  the activity stays attached to this task, and the sentence describes what most of them are.
+  A MINORITY STRAND HAS THREE FACES, and the second and third are easy to miss because they look cheap to obey.
+  · A DIFFERENT KIND OF WORK — the obvious case, above.
+  · A SUBJECT AREA. THE FIELD IS NOT THE WORK. Where the activities show the same action applied across
+    different subject areas, name the action and the kind of object, not one area and not all of them. Each
+    area belongs to whoever happened to be interviewed: naming one tells every other worker this task is not
+    theirs, and listing four makes a checklist that still misses the fifth. Eleven activities inspecting for
+    defects — in lifts, boilers, pressure vessels and cranes, one worker each — written as "Inspect lifts and
+    cranes for defects" present two workers' corner as the whole scope; "Inspect equipment for defects and
+    report the remedial work required" is the same length and covers all eleven. THE TEST: could a
+    practitioner in a DIFFERENT part of this occupation, doing this same activity on their own subject matter,
+    read the sentence and recognise their work? If naming the field is what makes the sentence concrete, put
+    the concreteness in the ACTION and the OBJECT instead.
+  · AN EXTRA RECIPIENT. A second party costs nothing to bolt on — one more noun, no vaguer head — and still
+    does not belong. Where one activity names another recipient alongside work the counterpart most activities
+    name already covers, leave it out: "Update tenants on repair progress" already serves an activity reading
+    "update landlords and tenants on claim status". Adding "or block managers" spends the sentence on one
+    worker's recipient. ADD A SECOND PARTY ONLY WHEN ACTIVITIES WHOSE WORK IS OTHERWISE UNCOVERED DEPEND ON IT.
+
+TAKE THE LEAD VERB FROM THE ACTIVITIES. Lead with the verb most of them lead with, or use two where they
+genuinely divide between two actions. COUNT, do not impressionise: twenty activities of which ten begin
+"Install" and one begins "Design" is an installing task, and leading with "Design and maintain ..." makes one
+activity's verb the head and demotes the other ten. Fifteen activities that ALL begin with a meeting verb, written
+up under a planning verb, read as a duplicate of the neighbouring task that really is about planning.
+If the activities' own verb is a carrier (perform, conduct, provide, manage, handle, coordinate) attached to an
+object that is really a verb in noun form — an inspection, an approval, a repair — promote that verb and drop
+the carrier: "perform X evaluations" becomes "evaluate X".
+
+EACH ACTIVITY CARRIES A WORKER TAG, AND IT DECIDES ONE THING ONLY: WHETHER A NOUN MAY STAND AS THE WHOLE
+OBJECT, OR ONLY AS ONE ITEM AMONG OTHERS. "[W1]" and "[W2]" are different people reporting their own work; the
+tags mean nothing beyond same-worker-or-not.
+  - A NOUN UNDER SEVERAL TAGS CAN CARRY THE STATEMENT. More than one person named it, so it is the occupation's
+    and not one workplace's.
+  - A NOUN UNDER ONE TAG MAY STILL APPEAR — as one item in a list, or after "such as". What it must not do is
+    become the ONLY object, because then the sentence describes one person's caseload while claiming to describe
+    everyone who does this work. Keep it, and put it beside something the group shares.
+    EXCEPT A SPECIALTY TERM, WHICH DOES NOT RIDE IN ON ONE WORKER'S TAG. A counterpart, object, or setting
+    that only one practice area's practitioners would name (2.5 in the principles below) does not earn a
+    place in the list from one person's activities: it goes into the covering term or the open tail, beside
+    the parties or items every practitioner shares. One specialist's counterpart in an occupation-level list
+    is that person's caseload wearing the occupation's sentence.
+  - A CATEGORY IS WELCOME AS THE HEAD. IT IS NOT A SUBSTITUTE FOR THE ITEMS. Generalising a set of one
+    worker's nouns to the class that covers them is the right move — but the class goes in FRONT of them, with
+    the concrete items following as examples, not in place of them. "<class>, such as A, B, or C" keeps both
+    the reach and the evidence; "<class>" alone has deleted the evidence and kept only the reach.
+    TEST: after generalising, can a reader still name one thing this task is done to? If the sentence now
+    contains no concrete object at all — a bare class noun with a filler qualifier, of the "other parties",
+    "various items", "relevant matters", "applicable requirements" kind — the category has replaced the work rather than covering it,
+    and it fails the test this prompt opens with. Put two or three of the items back after "such as".
+    AND IF THE ONLY CONCRETE VOCABULARY BELONGS TO ONE WORKER, USE IT ANYWAY, beside the class: a specific
+    sentence resting on one account is worth more than a vague one resting on none.
+  - WHERE NO VOCABULARY IS SHARED ACROSS TAGS AT ALL, GENERALISE — DO NOT CONCATENATE. A small group can hold
+    two activities from two workers with no noun in common. The wrong answer, and the tempting one, is to list
+    both of their nouns joined by "or": that sentence reads as one task for the first specialist and a second
+    task for the other, and describes the occupation as neither of them. Find the ACT they share and the
+    CATEGORY both objects belong to, and write that — one act, one class of object, with the specifics dropped
+    rather than doubled. A statement covering two workers' work as a class is worth more than one that quotes
+    each of them in turn.
+    THE CATEGORY STILL HAS TO NAME SOMETHING, so this is not licence to retreat to a filler word: if the only
+    class you can find covering both is a placeholder, keep the more widely reported of the two and let the
+    other go uncovered — an honest narrow statement beats a wide meaningless one.
+  - WHERE ONE TAG OWNS MOST OF THE ACTIVITIES, that worker's vocabulary IS this group's vocabulary and this rule
+    has nothing to say. Count before you generalise: a group of fifteen activities where twelve carry the same
+    tag is that worker's work, described by the people who also do a little of it — not a shared core with a
+    specialty bolted on. Write the most concrete sentence the activities support.
+
+EVERY OBJECT THE ACTIVITIES SHARE BELONGS IN YOUR STATEMENT. Naming a group is lossy, which is why the
+heading is withheld: a heading routinely omits a concrete term that TWO OR MORE of its own activities named. One group held three activities about preparing "crews and site plans",
+"crews, instruments, targets, and field books" and "instruments, benchmark records, and levelling notes" — every one
+mentioning materials — and the statement written from its heading mentioned only the people.
+WRITE SHORT AND FINITE. The statement is ABOUT 15 WORDS — one verb, one object list with at most two or
+three examples, at most ONE "-ing" clause. Never stack gerunds ("...ing, ...ing, and ...ing") and never
+chain three verbs: if the sentence needs them, it is carrying more than one duty's worth of content, and
+the members — not the sentence — are where detail lives.
+
+So read the ACTIVITIES for the objects. If an object, counterpart, document, or setting appears in two or more
+activities, it belongs in your statement — that is not over-reach, it is the evidence.
+UNLESS EVERY ACTIVITY NAMING IT COMES FROM ONE SPECIALTY. Repetition inside one practice area is evidence
+about that specialty, not about the occupation: a counterpart, object, or setting that only one subfield's
+practitioners would name goes into the covering term with the open tail (2.5 in the principles below),
+beside whatever parties or items every practitioner shares. Ask of each recurring term: would a
+practitioner in a DIFFERENT practice area ever meet this in their own work? If not, name its covering
+role or class and let the tail hold it.
+BUT THE THRESHOLD DOES NOT OVERRULE YOUR JUDGEMENT, AND A TERM THAT DOES NOT FIT THIS GROUP'S ACTIVITY IS YOURS
+TO LEAVE OUT. An object can appear in two activities and still be the wrong word for this statement. Two ways
+that happens: it names work a SIBLING statement is dedicated to, so carrying it makes two lines read alike; or it
+is a word that means one thing in this trade and another thing elsewhere, so a reader cannot tell which sense you
+intend. The test is 3.1's — is the term a CO-HYPONYM of the rest of your list, the same activity applied to
+another instance? If it is not, omit it. A statement that reaches for every noun its activities mention stops
+describing one activity and starts reading like an inventory of words.
+WHAT YOU MAY NOT OMIT IS A DISTINCT ACT that two or more workers report: dropping an act drops a duty, and the
+activity comes back later as its own thin task. This licence covers a stray OBJECT that pulls the sentence
+toward a neighbour — never a verb.
+
+STAY AT THE LEVEL YOU WERE GIVEN. These activities sit at one level of a task hierarchy and sibling tasks cover
+the neighbouring work. Do not climb to the general category — that is a different task's job, and two siblings
+that both climb become duplicates. Do not descend to just one activity either. Match the statement's breadth to
+what the activities COLLECTIVELY do: broaden to their shared object where they spread wider than any one of them,
+and tighten to the concrete kind of work where they all name the same one.
+
+AND CHECK IT AGAINST THESE WRITING PRINCIPLES. Your sentence has to satisfy all of them.
+
+{{include:writing_principles}}
+
+A QUALIFIER MUST NOT MISREPRESENT THE MAJORITY. The rules above let a MINORITY strand go uncovered; they do not
+license a narrowing that makes the core look like something it is not. Narrowing the party, occasion, setting or
+DIRECTION changes who or when, and a reader takes the omission as real: "hand over finished vehicles at shift end"
+hides that half the activities TAKE IN arriving ones, and "schedule repairs for walk-in customers" says a booked
+appointment is out of scope. Where MOST activities run both ways, name both — "to or from", "from owners or fleet
+managers" — because two coordinate words cost almost nothing and leaving them out is a factual error about the
+core, not concision. The distinction from the minority rule: drop a strand ONE OR TWO activities carry, never a
+direction or party that HALF of them do.
+
+## WRITE FROM THE ACTIVITIES, NEVER TOWARD ANOTHER TASK LIST
+
+No published task list, O*NET's included, has any say over the CONTENT. Do not reach for the phrasing some
+other inventory uses for adjacent work, do not widen an object so it will line up with a category you recall,
+and do not narrow one to avoid overlapping something. Those lists are what this work is LATER MEASURED
+AGAINST, and a statement written to match one makes that measurement circular: the comparison would report
+the reaching, not the work. A statement that reads oddly beside an external list but says exactly what these
+workers described is correct, and the mismatch is a finding to keep.
+
+ACTIVITIES:
+$items
+
+Answer with ONLY the statement.
+
+MUTUAL EXCLUSIVITY WITH THE OTHER TASKS IN THIS LIST. These are the OTHER clusters being written up alongside yours:
+$siblings
+
+Your statement must not describe work one of those owns. Two ways that happens, and both are errors:
+- AN EXAMPLE that belongs to another cluster. If one of your "such as" items is the core work of a cluster above, drop that item and pick a different one from your OWN activities — the other statement covers it.
+- AN OBJECT CATEGORY that swallows another cluster. If your object names a whole class of work another cluster is dedicated to ("... with medications, procedures, or interventions" when separate clusters do the procedures), narrow the object to what YOUR activities actually describe. A category broad enough to contain a sibling makes your statement read as its parent.
+
+Do NOT solve this by going vague, by deleting your specifics wholesale, or by inventing work your activities do not describe. Say precisely what YOUR activities are, and leave the rest to the tasks that own them.

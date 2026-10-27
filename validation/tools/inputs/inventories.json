@@ -1,0 +1,565 @@
+{
+ "_source": {
+  "built_from": "simulated interview sessions (generator since removed)",
+  "note": "a synthetic example so the app runs; build real lists with build_inputs.py",
+  "sample_n": 0,
+  "sample_rule": "no subsample — every task is shown"
+ },
+ "occupations": {
+  "13-2011.00": {
+   "soc": "13-2011.00",
+   "title": "Accountants and Auditors",
+   "slug": "accountants-and-auditors",
+   "source": "simulated sessions: accountants-and-auditors (20 tasks)",
+   "statements": [
+    "Address financial questions or concerns from program managers.",
+    "Align reporting processes with finance teams to enhance data accuracy and consistency.",
+    "Allocate expenses across various grants and programs as per funding restrictions.",
+    "Analyze client portfolios to identify additional tax-saving opportunities.",
+    "Analyze expenses related to each grant to assess financial performance.",
+    "Analyze payment trends and vendor performance to inform future procurement decisions.",
+    "Analyze spending trends and historical data to provide actionable insights on cost optimization.",
+    "Analyze transaction testing results to evaluate internal controls and formulate conclusions.",
+    "Analyze variances in financial reports to identify trends and discrepancies.",
+    "Apply appropriate allocation methods to distribute expenses accurately.",
+    "Assist clients during IRS audits and inquiries.",
+    "Assist in preparing budgets for new grant proposals.",
+    "Assist in the annual audit by preparing necessary documentation and records.",
+    "Assist in the preparation of budgets and forecasts for financial planning.",
+    "Assist in the preparation of monthly financial forecasting.",
+    "Assist with audits by providing necessary financial documentation.",
+    "Benchmark financial performance against industry standards to inform strategic decisions.",
+    "Build and finalize budgets for approval, incorporating input from department heads.",
+    "Calculate and handle estimated tax payments for clients.",
+    "Collaborate with department heads for accurate reporting and financial insights."
+   ],
+   "nodes": [
+    {
+     "statement": "Address financial questions or concerns from program managers.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Align reporting processes with finance teams to enhance data accuracy and consistency.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Allocate expenses across various grants and programs as per funding restrictions.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Analyze client portfolios to identify additional tax-saving opportunities.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Analyze expenses related to each grant to assess financial performance.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Analyze payment trends and vendor performance to inform future procurement decisions.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Analyze spending trends and historical data to provide actionable insights on cost optimization.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Analyze transaction testing results to evaluate internal controls and formulate conclusions.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Analyze variances in financial reports to identify trends and discrepancies.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Apply appropriate allocation methods to distribute expenses accurately.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Assist clients during IRS audits and inquiries.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Assist in preparing budgets for new grant proposals.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Assist in the annual audit by preparing necessary documentation and records.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Assist in the preparation of budgets and forecasts for financial planning.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Assist in the preparation of monthly financial forecasting.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Assist with audits by providing necessary financial documentation.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Benchmark financial performance against industry standards to inform strategic decisions.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Build and finalize budgets for approval, incorporating input from department heads.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Calculate and handle estimated tax payments for clients.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Collaborate with department heads for accurate reporting and financial insights.",
+     "prevalence": 1
+    }
+   ]
+  },
+  "13-1031.00": {
+   "soc": "13-1031.00",
+   "title": "Claims Adjusters, Examiners, and Investigators",
+   "slug": "claims-adjusters-examiners-and-investigators",
+   "source": "simulated sessions: claims-adjusters-examiners-and-investigators (20 tasks)",
+   "statements": [
+    "Adjust offers based on feedback from claimants and body shops.",
+    "Analyze trends in claims data to identify areas for process improvement.",
+    "Analyze trends in claims data to inform strategic decisions.",
+    "Attend meetings with the claims team to discuss ongoing cases.",
+    "Calculate and process payments for medical and indemnity benefits.",
+    "Calculate benefits and indemnity based on state guidelines.",
+    "Calculate costs for parts and labor using industry repair guides.",
+    "Check in with body shops for questions or updates on repairs.",
+    "Check in with claimants for questions or updates on their claims.",
+    "Collaborate with legal teams to address disputes or litigation related to claims.",
+    "Communicate with body shops to coordinate repair processes and updates.",
+    "Communicate with claimants regarding claim status and updates.",
+    "Communicate with contractors to obtain quotes and discuss repairs.",
+    "Communicate with medical providers to ensure treatment authorization.",
+    "Communicate with policyholders to discuss claims, repair options, and next steps.",
+    "Conduct follow-up inspections to verify completed repairs.",
+    "Coordinate with treating physicians to discuss treatment plans and clarify their medical opinions.",
+    "Determine liability for accidents based on available information.",
+    "Develop and implement process improvements for claims handling efficiency.",
+    "Develop and maintain relationships with key contractors for efficient repairs."
+   ],
+   "nodes": [
+    {
+     "statement": "Adjust offers based on feedback from claimants and body shops.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Analyze trends in claims data to identify areas for process improvement.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Analyze trends in claims data to inform strategic decisions.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Attend meetings with the claims team to discuss ongoing cases.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Calculate and process payments for medical and indemnity benefits.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Calculate benefits and indemnity based on state guidelines.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Calculate costs for parts and labor using industry repair guides.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Check in with body shops for questions or updates on repairs.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Check in with claimants for questions or updates on their claims.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Collaborate with legal teams to address disputes or litigation related to claims.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Communicate with body shops to coordinate repair processes and updates.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Communicate with claimants regarding claim status and updates.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Communicate with contractors to obtain quotes and discuss repairs.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Communicate with medical providers to ensure treatment authorization.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Communicate with policyholders to discuss claims, repair options, and next steps.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Conduct follow-up inspections to verify completed repairs.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Coordinate with treating physicians to discuss treatment plans and clarify their medical opinions.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Determine liability for accidents based on available information.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Develop and implement process improvements for claims handling efficiency.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Develop and maintain relationships with key contractors for efficient repairs.",
+     "prevalence": 1
+    }
+   ]
+  },
+  "29-1215.00": {
+   "soc": "29-1215.00",
+   "title": "Family Medicine Physicians",
+   "slug": "family-medicine-physicians",
+   "source": "simulated sessions: family-medicine-physicians (20 tasks)",
+   "statements": [
+    "Address social determinants of health and patient social needs.",
+    "Advocate for patient access to healthcare resources and services within the community.",
+    "Advocate for patient needs and resources within the healthcare system.",
+    "Analyze health data to identify trends in patient outcomes and care effectiveness.",
+    "Assess patient health status and adjust medications as needed.",
+    "Check vital signs and conduct physical exams for patients.",
+    "Collaborate and engage with care managers through meetings.",
+    "Collaborate with nurses to coordinate patient care.",
+    "Collaborate with public health officials on community health assessments.",
+    "Conduct community health outreach programs to promote preventive care.",
+    "Conduct patient education sessions on chronic disease management.",
+    "Conduct quality improvement initiatives to enhance patient care and outcomes.",
+    "Conduct quality improvement initiatives to enhance patient care processes.",
+    "Conduct routine check-ups to monitor patient health.",
+    "Coordinate care with other providers and communicate with specialists.",
+    "Coordinate care with specialists and share medical history.",
+    "Coordinate referrals to specialists for patient treatment.",
+    "Deliver comprehensive care plans and treatment recommendations.",
+    "Determine further treatment or referrals based on patient needs.",
+    "Develop patient follow-up protocols for managing chronic conditions."
+   ],
+   "nodes": [
+    {
+     "statement": "Address social determinants of health and patient social needs.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Advocate for patient access to healthcare resources and services within the community.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Advocate for patient needs and resources within the healthcare system.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Analyze health data to identify trends in patient outcomes and care effectiveness.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Assess patient health status and adjust medications as needed.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Check vital signs and conduct physical exams for patients.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Collaborate and engage with care managers through meetings.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Collaborate with nurses to coordinate patient care.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Collaborate with public health officials on community health assessments.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Conduct community health outreach programs to promote preventive care.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Conduct patient education sessions on chronic disease management.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Conduct quality improvement initiatives to enhance patient care and outcomes.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Conduct quality improvement initiatives to enhance patient care processes.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Conduct routine check-ups to monitor patient health.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Coordinate care with other providers and communicate with specialists.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Coordinate care with specialists and share medical history.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Coordinate referrals to specialists for patient treatment.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Deliver comprehensive care plans and treatment recommendations.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Determine further treatment or referrals based on patient needs.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Develop patient follow-up protocols for managing chronic conditions.",
+     "prevalence": 1
+    }
+   ]
+  },
+  "53-3032.00": {
+   "soc": "53-3032.00",
+   "title": "Heavy and Tractor-Trailer Truck Drivers",
+   "slug": "heavy-and-tractor-trailer-truck-drivers",
+   "source": "simulated sessions: heavy-and-tractor-trailer-truck-drivers (20 tasks)",
+   "statements": [
+    "Assist in securing loads properly before transit.",
+    "Back into docks at delivery locations for unloading.",
+    "Back into the dock and drop the trailer at delivery sites.",
+    "Check and secure the load to prevent shifting during transport.",
+    "Check brakes, lights, tires, and fluids during pre-trip inspections.",
+    "Check seals and paperwork at the gate for integrity.",
+    "Communicate with dispatch about delays and other issues.",
+    "Communicate with dispatch to receive updates on routes and schedules.",
+    "Communicate with dispatchers over the phone and through ELD messaging.",
+    "Conduct pre-trip inspections of the truck and chassis for safety compliance.",
+    "Conduct safety checks on equipment like lights and brakes before trips.",
+    "Coordinate with drivers for chassis availability.",
+    "Coordinate with port authorities regarding container availability and scheduling.",
+    "Coordinate with warehouse staff to ensure efficient loading of merchandise.",
+    "Couple and uncouple trailers as needed.",
+    "Deliver containers to warehouses and confirm the delivery process.",
+    "Deliver freight to distribution centers according to schedule.",
+    "Drive between the warehouse and stores along the designated route.",
+    "Drive long shifts on interstate routes while adhering to regulations.",
+    "Ensure compliance with local traffic laws and regulations during deliveries."
+   ],
+   "nodes": [
+    {
+     "statement": "Assist in securing loads properly before transit.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Back into docks at delivery locations for unloading.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Back into the dock and drop the trailer at delivery sites.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Check and secure the load to prevent shifting during transport.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Check brakes, lights, tires, and fluids during pre-trip inspections.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Check seals and paperwork at the gate for integrity.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Communicate with dispatch about delays and other issues.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Communicate with dispatch to receive updates on routes and schedules.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Communicate with dispatchers over the phone and through ELD messaging.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Conduct pre-trip inspections of the truck and chassis for safety compliance.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Conduct safety checks on equipment like lights and brakes before trips.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Coordinate with drivers for chassis availability.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Coordinate with port authorities regarding container availability and scheduling.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Coordinate with warehouse staff to ensure efficient loading of merchandise.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Couple and uncouple trailers as needed.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Deliver containers to warehouses and confirm the delivery process.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Deliver freight to distribution centers according to schedule.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Drive between the warehouse and stores along the designated route.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Drive long shifts on interstate routes while adhering to regulations.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Ensure compliance with local traffic laws and regulations during deliveries.",
+     "prevalence": 1
+    }
+   ]
+  },
+  "15-1299.09": {
+   "soc": "15-1299.09",
+   "title": "Information Technology Project Managers",
+   "slug": "information-technology-project-managers",
+   "source": "simulated sessions: information-technology-project-managers (20 tasks)",
+   "statements": [
+    "Adjust project plans based on progress and feedback from teams.",
+    "Analyze and report on project performance metrics to identify areas for improvement.",
+    "Analyze team performance metrics to drive process improvements and efficiency.",
+    "Assess current infrastructure and evaluate systems and applications for migration readiness.",
+    "Build migration roadmaps and cutover plans to guide the migration process.",
+    "Collaborate with the infrastructure team to align on technical requirements and resource allocation.",
+    "Collaborate with the team to resolve blockers and maintain workflow.",
+    "Conduct daily standups to assess progress and address blockers.",
+    "Conduct post-implementation reviews to assess project outcomes and lessons learned.",
+    "Conduct post-migration reviews and troubleshoot migration issues.",
+    "Conduct risk assessments and assess change requests against budget.",
+    "Conduct risk assessments to identify and mitigate potential project risks.",
+    "Conduct stakeholder presentations to communicate project updates and gather feedback.",
+    "Coordinate data migration activities and oversee execution.",
+    "Coordinate downtime windows with technical teams for migration cutovers.",
+    "Coordinate go-live activities and ensure alignment on next steps.",
+    "Coordinate project teams to ensure alignment on goals and timelines.",
+    "Coordinate testing phases and validate testing outcomes.",
+    "Coordinate user training and create training materials.",
+    "Coordinate with external vendors or teams for integration and support."
+   ],
+   "nodes": [
+    {
+     "statement": "Adjust project plans based on progress and feedback from teams.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Analyze and report on project performance metrics to identify areas for improvement.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Analyze team performance metrics to drive process improvements and efficiency.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Assess current infrastructure and evaluate systems and applications for migration readiness.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Build migration roadmaps and cutover plans to guide the migration process.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Collaborate with the infrastructure team to align on technical requirements and resource allocation.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Collaborate with the team to resolve blockers and maintain workflow.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Conduct daily standups to assess progress and address blockers.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Conduct post-implementation reviews to assess project outcomes and lessons learned.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Conduct post-migration reviews and troubleshoot migration issues.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Conduct risk assessments and assess change requests against budget.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Conduct risk assessments to identify and mitigate potential project risks.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Conduct stakeholder presentations to communicate project updates and gather feedback.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Coordinate data migration activities and oversee execution.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Coordinate downtime windows with technical teams for migration cutovers.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Coordinate go-live activities and ensure alignment on next steps.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Coordinate project teams to ensure alignment on goals and timelines.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Coordinate testing phases and validate testing outcomes.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Coordinate user training and create training materials.",
+     "prevalence": 1
+    },
+    {
+     "statement": "Coordinate with external vendors or teams for integration and support.",
+     "prevalence": 1
+    }
+   ]
+  }
+ },
+ "attentionChecks": [
+  "Trim and shape trees near power lines using climbing gear and a chainsaw.",
+  "Inspect and repair aircraft landing gear to meet airworthiness standards.",
+  "Sterilize surgical instruments and prepare the operating room between procedures."
+ ]
+}

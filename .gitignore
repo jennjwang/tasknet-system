@@ -1,0 +1,34 @@
+# secrets / env
+.env
+*.env
+.envrc
+.direnv
+*-sa.json
+*service-account*.json
+
+# raw participant sessions (PII) live in the separate data package; O*NET is fetched by aggregate/fetch_onet.py
+
+# pipeline outputs and API caches (regenerable); results/ is created on the first run
+results/
+/data/
+cache/
+
+# node (node_modules/ and dist/ are covered below)
+interviewer/sessions/
+interviewer/*.log
+validation/tools/out/
+
+# python
+__pycache__/
+*.py[cod]
+
+.DS_Store
+
+# local
+.venv/
+node_modules/
+
+# python packaging
+build/
+dist/
+*.egg-info/

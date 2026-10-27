@@ -1,0 +1,21 @@
+You are adding a FEW inferred "you might also do this" tasks to a participant's task list. They have already described their job; the list of tasks they explicitly named is below. Your job: add ONLY the additional recurring tasks they very likely do but did NOT mention, AND that you can tie to something specific they said.
+
+{{count}} IS A HARD CAP, NOT A QUOTA. Most participants warrant only a FEW such tasks, and often ZERO. Do NOT pad the list to approach {{count}} — a short, well-anchored list is the goal, and returning nothing is a valid and common answer. It is far better to return 1–2 tasks you are sure of than to reach {{count}} by adding generic role-typical filler.
+
+THE HARD RULE — INFER FROM THIS SPECIFIC PERSON, NOT FROM A GENERIC JOB TITLE. Anchor every task you add in something THIS participant actually told you — and use BOTH:
+  (a) their described WORK — the responsibilities, weekly tasks, and activities they named; and
+  (b) their stated BACKGROUND — their seniority and level, the years and roles of experience they mention, the specific industries / domains / clients / institutions they name, and the full portfolio of practices they say they operate (e.g. someone who advises boards, spans consulting + teaching + coaching, or has 25 years in senior leadership).
+Use that background RICHLY: surface the tasks that a person with THAT background, operating at THAT level, doing THIS described work, very likely also does. A good addition is a likely NEIGHBOR, NEXT-STEP, or LEVEL-APPROPRIATE counterpart of what they described or who they are — e.g. a senior leader who names board members and investors among their stakeholders very likely does board-level / governance advisory, even if they didn't list it as a task.
+PITCH AT THEIR LEVEL. Match the seniority and framing of their actual work: for a senior, strategic, or advisory professional the inferred tasks should be senior and strategic (shaping strategy, advising leadership/boards, governance), NOT junior execution.
+What to DROP: generic filler whose ONLY justification is "people with this title usually do this", with no anchor in who THIS person is or what they described. The test is specificity to THEM (their work AND their background), not avoidance of inference.
+- ✓ Runs experiments and writes papers → "Respond to peer-review feedback and revise papers for resubmission." (next-step of submitting papers)
+- ✓ Background: 25 years senior leadership, names board members/investors among stakeholders → "Provide board-level and governance advisory on strategic decisions to senior leadership." (implied by their seniority + stated board interactions)
+- ✗ Generic filler with no anchor in their work OR background: "Keep records up to date", "Attend company meetings", "Respond to email" — DROP unless they specifically pointed at it.
+
+CONSTRAINTS:
+- MUTUALLY EXCLUSIVE — each addition must be a genuinely DISTINCT activity: not a duplicate, restatement, kind/case, or subset of (a) any task already in their list, OR (b) any other task you add here. Tasks serving the SAME underlying activity or objective count as overlapping even when the channel, medium, or occasion differs (e.g. emailing parents vs. meeting parents is ONE task; routine coaching vs. competition-day prep is ONE task). When candidates overlap, keep only the single most important and drop the rest.{{have_block}}
+- SPECIFIC and same shape as the rest: O*NET style, verb-led, 8–18 words, sentence case, terminal period, plain language. Name the actual artifact / audience / output — match the specificity of their other tasks, do NOT go vague.
+- MOST IMPORTANT ONLY — QUALITY OVER QUANTITY. {{count}} is a CEILING, not a target. Rank candidates by how central they are to THIS person's role and return only the most important, well-anchored, mutually exclusive ones; if only two qualify, return two. Zero is fine. Before adding EACH task, ask yourself: can I point to the exact thing this participant said that makes this task likely? If not, DROP it — never include a task just to reach {{count}}. The moment you find yourself reaching for generic, role-typical tasks to lengthen the list, STOP and return only what you have.
+
+OUTPUT: one JSON object per line (JSONL), no array, no commentary:
+{"name": "..."}

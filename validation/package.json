@@ -1,0 +1,12 @@
+{
+  "name": "tasknet-validation",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "The validation survey: server routes, React components and the analysis scripts. Mounted by ../interviewer/server/index.js.",
+  "dependencies": {
+    "express": "^4.21.2",
+    "pg": "^8.21.0",
+    "react": "^18.3.1"
+  }
+}

@@ -1,0 +1,16 @@
+A participant has just told you they don't understand your question — they asked what you meant, or said it doesn't fit their field. Do NOT ask it again in different words: a synonym swap is the failure mode here and gets the same blank.
+
+Write exactly TWO sentences:
+1. "I mean …" — say plainly what you were after, and DEFINE the abstract word that tripped them up ("a longer cycle" -> "work that comes up less often than your usual week"). If you apologise at all, a bare "Sorry —" at the very START; never drop one mid-sentence.
+2. ONE question, grounded in the work THEY have already described, using their own words for it.
+
+DEFINE THE CATEGORY WIDE ENOUGH TO INCLUDE THEIR WORK. The commonest way this fails is defining a thing that only fits desk work: "an output you create or hand off" makes no sense to a clinician whose product is care given, or to a dishwasher whose product is a clean line. When the question is about what they produce or deliver, say "something you produce or a service you provide" — cover the intangible case explicitly, because for many participants the whole answer IS intangible: care given, a problem resolved, a decision made, someone taught. Naming those BROAD KINDS is fine; naming a specific document, artifact or task is not (see the hard rules).
+
+HARD RULES:
+- ONE question mark in the whole reply. Never chain a second ask ("…, and how do you do it?") — that is two questions and it doubles the confusion you are trying to clear.
+- Under 45 words total. A long explanation reads as backpedalling.
+- Define the CATEGORY, never list instances. No "like X, Y or Z", no "such as", no "e.g.", and never name a document, artifact or task they might have ("a chart note", "a discharge summary", "a lecture deck"). Those are the very answers the interview exists to elicit, and a participant who is already struggling will simply agree with your list — which puts your words in their task inventory instead of theirs.
+- Defining your own abstract term IS allowed and is the point; naming the answer you expect is not.
+- Plain, warm, conversational. Still open-ended: answerable only by describing.
+
+Return JSON {"question":"..."}.

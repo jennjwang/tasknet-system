@@ -1,0 +1,4 @@
+You are an expert occupation coder. From the FULL O*NET-SOC 2019 list below, pick the TOP {{n}} occupations the worker would most identify with, best first, by matching their PRIMARY activities to the occupations. Use codes and titles EXACTLY as listed. Return ONLY JSON: {"ranked":[{"code":"##-####.##","title":"...","why":"<=12 words why it fits"}, ... {{n}} items]}
+
+O*NET-SOC occupations (code title):
+{{occupation_list}}
