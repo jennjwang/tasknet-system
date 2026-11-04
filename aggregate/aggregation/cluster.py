@@ -31,6 +31,7 @@ MODEL = os.environ.get("CLUSTER_MODEL", "gpt-5.4")
 EFFORT = os.environ.get("CLUSTER_EFFORT", "medium")
 TIMEOUT = int(os.environ.get("CLUSTER_TIMEOUT", "300"))       # read timeout per call, in seconds
 MIN_WORKERS = int(os.environ.get("MIN_WORKERS", "2"))         # the publishing floor, used by every stage
+MAX_CAP = int(os.environ.get("CLUSTER_MAX_CAP", "128000"))    # the model's completion-token limit (gpt-5.4: 128k)
 
 # The artifact keys that together hold the pool; every stage copies them into its output (carry). Each holds
 # a list of reports, and verify checks that filed reports + these == meta.n_atoms.
@@ -64,8 +65,9 @@ def chat_until_complete(prompt, max_out, tag, model=None, effort=None, cache_pre
     prompt) is sent as a separately cacheable block, which only changes the bill."""
     model, effort = model or MODEL, effort or EFFORT
     content = engine.user_content(prompt, model, cache_prefix)
-    rungs = ([(max_out, effort), (max_out * 3, effort), (max_out * 3, "low")] if effort != "low"
-             else [(max_out, "low"), (max_out * 3, "low")])
+    big = min(max_out * 3, max(MAX_CAP, max_out))             # never ask for more than the model can return
+    rungs = ([(max_out, effort), (big, effort), (big, "low")] if effort != "low"
+             else [(max_out, "low"), (big, "low")])
     for i, (cap, eff) in enumerate(rungs):
         kw = {**engine.chat_kwargs(model, cap, effort=eff), "timeout": TIMEOUT}
         r = engine.with_retries(lambda: engine.client(model).chat.completions.create(
@@ -130,7 +132,7 @@ def draw(task_labels):
     labels = sorted(task_labels)
     # the numbered list the prompt expects ("1. ...", "2. ..."); part of the cache key, so keep its format
     items = "\n".join(f"{i}. {lab}" for i, lab in enumerate(labels, 1))
-    cap = max(32000, int(os.environ.get("CLUSTER_MAX_OUT", "0")) or 120 * len(labels))
+    cap = min(MAX_CAP, max(32000, int(os.environ.get("CLUSTER_MAX_OUT", "0")) or 120 * len(labels)))
     key = engine.sha256(SEP.join(["DECOMPOSEG", MODEL, EFFORT, str(cap), engine.sha256(template), items]))
 
     def compute():

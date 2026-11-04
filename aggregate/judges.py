@@ -189,6 +189,12 @@ def covers_prefill(pairs):
 
 ONEDUTY_MODEL = os.environ.get("ONEDUTY_MODEL", "gpt-5.4-mini")
 ONEDUTY_EFFORT = os.environ.get("ONEDUTY_EFFORT", "low")
+
+
+def _one_duty_cap(members):
+    """Output tokens for one verdict. A FUSED reply copies every member under its part (~20 tokens each), so a
+    fixed 2000 truncated the verdict on large clusters, which failed open as KEEP. -> int"""
+    return 2000 + 30 * len(members)
 # the cache tag: "OD1" (frozen) plus a hash of the prompt with placeholders, so editing the prompt starts afresh
 ONEDUTY_TAG = "OD1␟" + engine.sha256(
     engine.load_prompt("one_duty", occupation="$OCC", statement="$S", members="$M"))[:12]
@@ -235,7 +241,7 @@ def one_duty(statement, members, draw=1):
 
     def compute():
         try:
-            d = _one_duty_parse(engine.chat(prompt, ONEDUTY_MODEL, json_mode=True, max_out=2000,
+            d = _one_duty_parse(engine.chat(prompt, ONEDUTY_MODEL, json_mode=True, max_out=_one_duty_cap(members),
                                             effort=ONEDUTY_EFFORT, cache_prefix=instr))
             if d is None:
                 raise ValueError("no one_duty bool in the reply")
@@ -252,7 +258,8 @@ def one_duty_prefill(rows):
     if not rows:
         return 0
     return batch.fill("one_duty", [_one_duty_req(s, m) for s, m in rows], ONEDUTY_MODEL, _one_duty_parse,
-                      max_out=2000, json_mode=True, effort=ONEDUTY_EFFORT, tag="one_duty")
+                      max_out=max(_one_duty_cap(m) for _, m in rows), json_mode=True, effort=ONEDUTY_EFFORT,
+                      tag="one_duty")
 
 
 # ── writing: the statement's main writing defect, if any (synthesis step) ──────────────────────────────

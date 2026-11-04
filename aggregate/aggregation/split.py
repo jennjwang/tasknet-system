@@ -228,7 +228,8 @@ def main():
     def run(c):                                     # judge one cluster
         v = judges.one_duty(c["statement"], c.get("members") or [])
         return {**_verdict_row(c), "fused": v["one_duty"] is False, "outcomes": v["outcomes"], "reason": v["reason"],
-                "form_flag": c.get("form_flag"), "reopened": engine.sha256(c["statement"]) in past}
+                "form_flag": c.get("form_flag"), "reopened": engine.sha256(c["statement"]) in past,
+                "failed": v.get("error")}         # the judge failed open: kept this round, never saved below
 
     judges.one_duty_prefill(                        # Batch API pre-fill, when BATCH is on
         [(c["statement"], c.get("members") or []) for c in fresh])
@@ -249,11 +250,13 @@ def main():
     for r in rows:
         if r["verdict"] == "split":
             print(f"  SPLIT [{r['basis']}] {r['statement'][:90]}")
+        elif r.get("failed"):
+            print(f"  FAILED (kept, not saved; judged again next round): {r['statement'][:70]}  [{r['failed']}]")
 
     for r in rows:
         for part in r["parts"]:
             part.pop("_workers", None)                  # a set (not JSON), only needed inside decide_split()
-        if not r.get("standing"):
+        if not r.get("standing") and not r.get("failed"):
             # save new verdicts, with their statement and members, for later rounds and builds
             rec = past[engine.sha256(r["statement"])] = {
                 k: r.get(k) for k in ("fused", "outcomes", "reason", "verdict", "parts", "basis",

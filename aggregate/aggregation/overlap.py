@@ -43,6 +43,10 @@ MERGE_CAP = int(os.environ.get("OVERLAP_MERGE_CAP", "4"))
 SHARPEN_MODEL = os.environ.get("SHARPEN_MODEL", "claude-sonnet-4-6")
 SHARPEN_EFFORT = os.environ.get("SHARPEN_EFFORT", "medium")
 PARALLEL_CALLS = int(os.environ.get("PARALLEL_CALLS", 12))        # model calls run at once (threads)
+# The most statements one resolver call decides. A bigger colliding group is cut down (capped_groups): one call
+# over 49 statements (a job-postings build, chained through one umbrella statement) listed a statement twice and
+# proposed SEPARATE for 45 of them.
+GROUP_CAP = int(os.environ.get("OVERLAP_GROUP_CAP", "10"))
 
 SEP = "\u241f"                                                   # separates cache-key fields
 
@@ -56,23 +60,33 @@ def near_pairs(stmts):
     return [(i, j, float(C[i, j])) for i, j in itertools.combinations(range(len(stmts)), 2) if C[i, j] >= TAU]
 
 
-def groups(pairs):
-    """Group the items in `pairs` [(a, b), ...] into connected components. -> [[item, ...], ...]"""
-    parent = {}
+def capped_groups(pairs):
+    """Group the items in `pairs` [(a, b, cos), ...] into connected components of at most GROUP_CAP items.
+    Pairs join in order of closeness (highest cosine first); a pair that would make a group too big is left out.
+    -> ([[item, ...], ...], the number of pairs left out). Below the cap these are the plain connected components."""
+    parent, size, dropped = {}, {}, 0
 
     def find(x):
         parent.setdefault(x, x)
+        size.setdefault(x, 1)
         while parent[x] != x:
             parent[x] = parent[parent[x]]
             x = parent[x]
         return x
 
-    for a, b in pairs:
-        parent[find(a)] = find(b)
+    for a, b, _ in sorted(pairs, key=lambda t: -t[2]):
+        ra, rb = find(a), find(b)
+        if ra == rb:
+            continue
+        if size[ra] + size[rb] > GROUP_CAP:
+            dropped += 1
+            continue
+        parent[ra] = rb
+        size[rb] += size[ra]
     out = collections.defaultdict(list)
     for x in list(parent):
         out[find(x)].append(x)
-    return [sorted(v) for v in out.values()]
+    return [sorted(v) for v in out.values() if len(v) > 1], dropped
 
 
 def judge_pairs(core):
@@ -166,7 +180,8 @@ def reword_evidence(edges, members_of, idx):
 def resolve_group(nodes, edges, members_of):
     """Decide one group of colliding statements in a single resolver call (prompts/.../resolve_group.txt).
     -> [{"members", "decision", "relation", "proposed", "divider", "basis", ...}] covering each statement in
-    `nodes` exactly once, or None if the reply can't be parsed or doesn't cover them cleanly.
+    `nodes` exactly once, or None if the reply can't be parsed or names a statement it shouldn't. A statement the
+    reply leaves out is KEPT; one it lists twice keeps its first decision.
 
     `edges` are the colliding pairs and `members_of` maps each statement to its reports. The resolver also sees,
     for each pair, how many workers the two share, and how often it was reworded apart. MERGE needs two or more statements and a
@@ -221,8 +236,13 @@ def resolve_group(nodes, edges, members_of):
         if not isinstance(ids, list) or not ids:
             return None
         mem = [rev.get(str(i)) for i in ids]
-        if any(m is None for m in mem) or any(m in seen for m in mem):
-            return None                             # an unknown number, or one statement in two groups
+        if any(m is None for m in mem):
+            return None                             # an unknown number
+        # a statement listed twice keeps its first decision (rejecting the whole reply over one repeat left a
+        # whole group undecided)
+        mem = list(dict.fromkeys(m for m in mem if m not in seen))
+        if not mem:
+            continue
         seen.update(mem)
         dec = str(g.get("decision") or "").upper()
         rel = str(g.get("relation") or "").upper()
@@ -237,8 +257,10 @@ def resolve_group(nodes, edges, members_of):
         out.append({"members": mem, "decision": dec, "relation": rel, "proposed": prop,
                     "divider": str(g.get("divider") or "")[:200],
                     "basis": str(g.get("basis") or "")[:400]})
-    if seen != set(nodes):
-        return None                                 # some statement was left out
+    # a statement the reply left out is kept as it is (rejecting the whole reply over one omission left a whole
+    # group, duplicates included, undecided)
+    out += [{"members": [t], "decision": "KEEP", "relation": "", "proposed": "", "divider": "",
+             "basis": "left out of the resolver's reply"} for t in nodes if t not in seen]
     merges = [g for g in out if g["decision"] == "MERGE"]
     if CONCURRENCE and merges:
         # a merge applies only if an independent second draw (its own cache entry) merges the same statements
@@ -322,15 +344,20 @@ def decide_groups(rows, by_mem):
     `by_mem` maps statement -> reports."""
     colliding = []
     why = collections.defaultdict(dict)           # statement -> {colliding statement: the judge's reason}
+    close = []
     for r in rows:
         if r["labels_collide"]:
             colliding.append((r["a"], r["b"]))
+            close.append((r["a"], r["b"], r["cos"]))
             why[r["a"]][r["b"]] = r["why"]
             why[r["b"]][r["a"]] = r["why"]
 
     mg, mixed, parts_log = [], [], []
     specs = []                                    # (statements to rewrite, statements to stay clear of)
-    for c in groups(colliding):
+    comps, dropped = capped_groups(close)
+    if dropped:
+        print(f"  {dropped} colliding pair(s) left out to keep each group to {GROUP_CAP} statements", file=sys.stderr)
+    for c in comps:
         inner = [(a, b) for (a, b) in colliding if a in c and b in c]
         part = resolve_group(c, inner, {n: by_mem.get(n, []) for n in c})
         if not part:

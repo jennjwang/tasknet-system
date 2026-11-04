@@ -178,6 +178,11 @@ def record_usage(model, resp):
             e["in"] += int(getattr(u, "prompt_tokens", 0) or 0)
             e["out"] += int(getattr(u, "completion_tokens", 0) or 0)
             e["cached"] += cached
+            if os.environ.get("USAGE_LOG"):              # one JSON line per call, so a killed run keeps its cost
+                with open(os.environ["USAGE_LOG"], "a") as f:
+                    f.write(json.dumps({"t": time.time(), "stage": _STAGE[0], "model": _bare(model),
+                                        "in": int(getattr(u, "prompt_tokens", 0) or 0),
+                                        "out": int(getattr(u, "completion_tokens", 0) or 0), "cached": cached}) + "\n")
     except Exception:                                        # noqa: BLE001 - accounting is never load-bearing
         pass
 

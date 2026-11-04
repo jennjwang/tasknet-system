@@ -100,7 +100,8 @@ def _call(prompt: str, model: str, effort: str, tasks: list[dict], client, *, re
     else:
         kw = {"temperature": 0, "max_tokens": plain_max}
     msgs = [{"role": "user", "content": load_prompt(prompt, tasks_json=json.dumps(payload, ensure_ascii=False))}]
-    resp = client.chat.completions.create(model=model, messages=msgs, **kw)
+    resp = engine.with_retries(lambda: client.chat.completions.create(model=model, messages=msgs, **kw), prompt)
+    engine.record_usage(model, resp)
     return json.loads(strip_json(resp.choices[0].message.content))
 
 

@@ -4,7 +4,8 @@ floor (round 1 always runs; at most MAX_ROUNDS).
 
     1 cluster      group the pool into new clusters
     2 synthesize   write a statement per cluster; split any that holds two duties (split); write the parts
-    3 overlap      merge statements that describe the same work, reword partial overlaps apart
+    3 overlap      merge statements that describe the same work, reword partial overlaps apart; the split
+                   check again on the merged statements
     4 coverage     check each statement still covers its reports; refile what it can, the rest stays in the pool
 
     python -m tasknet.aggregation.chain <occupation>        (or: tasknet build <occupation>)
@@ -116,6 +117,12 @@ def run_chain(occ: str) -> Path:
         # 3 overlap resolution: merges, then rewordings
         _run("overlap", "--in", "build.json", "--out", f"verdicts/round{c}_overlap.json",
              "--apply", f"handoffs/round{c}_merged.json", "--sharpen", "build.json", *std, log=log("overlap"))
+        # the one-duty check again: overlap's merges wrote statements (synthesize.write_statement) that step 2's
+        # check never saw. A cluster already judged replays its verdict (by member set), so only merges are asked.
+        _run("split", "--in", "build.json", "--out", f"verdicts/round{c}_split_merged.json",
+             "--apply", f"handoffs/round{c}_split_merged.json", log=log("split_merged"))
+        _run("synthesize", "--in", f"handoffs/round{c}_split_merged.json", "--out", "build.json", *std,
+             log=log("synthesize_merged"))
         snap("overlap")
         # 4 coverage checking: refile, and release what nothing covers
         out = _run("coverage", "--in", "build.json", "--out", f"verdicts/round{c}_coverage.json",
