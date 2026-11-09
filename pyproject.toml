@@ -22,5 +22,8 @@ tasknet = "tasknet.cli:main"
 [tool.setuptools.packages.find]
 include = ["tasknet*"]
 
+[tool.setuptools.package-data]
+tasknet = ["prompts/*.txt"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]

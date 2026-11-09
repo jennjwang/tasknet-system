@@ -30,12 +30,20 @@ def config(**overrides) -> Config:
     return Config.load(p if p.exists() else None, overrides=overrides or None)
 
 
+TASKNET_PROMPTS = Path(__file__).resolve().parent / "prompts"
+
+
 def prompts(cfg: Config) -> Prompts:
-    """aggregate's prompts, then the workspace's prompts/ (if any) and the config's prompt_dirs (relative to the
-    workspace). A file placed FLAT in one of those, e.g. prompts/task_dimensions.txt, replaces the packaged prompt
-    of that name, which sits in a subdirectory; that is how the task definition is changed without editing the
-    submodule."""
+    """aggregate's prompts, then the workspace's prompts/ (if any), TaskNet's own (tasknet/prompts/) and the
+    config's prompt_dirs (relative to the workspace). A file placed FLAT in one of those, e.g.
+    prompts/task_dimensions.txt, replaces the packaged prompt of that name, which sits in a subdirectory; that is
+    how the task definition is changed without editing the submodule.
+
+    tasknet/prompts/ holds the paper's wording of the four prompts aggregate rewords ("cluster", where aggregate
+    says "family"): cluster, dispose, synthesize and synthesize_repair. They are what the paper prints, and a
+    prompt's text is part of its cache key, so they also keep every verdict cached by the earlier in-tree code."""
     extra = [workspace() / "prompts"] if (workspace() / "prompts").is_dir() else []
+    extra += [TASKNET_PROMPTS]
     extra += [workspace() / d for d in (cfg.get("prompt_dirs") or [])]
     return Prompts.default(extra=extra, prompt_set=cfg.get("prompt_set", "") or "")
 

@@ -1,0 +1,66 @@
+
+## THIS DRAFT WAS REJECTED
+
+Read what is wrong with the draft below, and write the statement again — fixing that, and nothing else.
+
+REJECTED DRAFT: $draft
+WHAT IS WRONG:
+$complaints
+
+IF THE COMPLAINT NAMES A NUMBERED SECTION of the writing principles you were given, it also quotes the exact
+words it objects to. Go back to that section and apply ITS test — not a synonym, and not your own reading of
+what reads badly. Swapping one word for a near-equivalent leaves the rule broken and the statement is
+rejected again.
+
+IF THE COMPLAINT IS ABOUT A MODIFIER CLAUSE — a purpose, occasion or method tail that does no work — THE FIX
+IS STRUCTURAL, and the two moves it needs are the two the general rules at the end would otherwise forbid.
+This branch overrides them. TRY DELETION FIRST AND ONLY PROMOTE IF DELETION FAILS ITS OWN TEST — a clause
+that does no work is padding, and padding comes out; promoting it keeps the padding and only renames the verb
+in front of it.
+  1. DELETE THE CLAUSE. Read the head on its own: does it still name the work? If yes, you are done — stop
+     here, do not also rename the verb. This is not "dropping an object": the clause WAS the defect, and the
+     shorter sentence is the whole repair. A four-word statement that says the work beats a sixteen-word one
+     padded to look finished.
+  2. ONLY IF DELETING LEAVES NO WORK NAMED — the head is a bare category verb and the clause held the only
+     concrete content — PROMOTE THE CLAUSE'S OWN ACT TO THE LEAD VERB. This is not "swapping the lead verb":
+     the new verb comes from INSIDE the draft, and the detail it was carrying stays.
+     PROMOTE ONE ACT, NOT ALL OF THEM. A clause listing three acts becomes ONE lead verb — the act the others
+     serve — and the rest stay as objects or go. Turning "<category> by A-ing, B-ing, and C-ing" into
+     "A, B, and C" trades a bad clause for a three-verb compound, which the same rules forbid one line down,
+     and you will have moved the defect rather than fixed it. If no single act dominates, the clause was
+     carrying a fused cluster and DELETION is the branch: leave the head, take the list out.
+REWORDING INSIDE THE CLAUSE IS NOT A REPAIR OF IT. The complaint is that the clause does no work; a different
+word doing no work is the same statement with different spelling, and it is rejected again.
+
+IF THE COMPLAINT IS THAT ACTIVITIES ARE LEFT UNDESCRIBED, the only acceptable repair is a WIDER STATEMENT OF
+THE SAME DUTY. Reach them by naming the work at the level that already includes them — a verb that covers
+what they have in common with the rest, or an object list that admits their objects.
+  DO NOT REACH THEM BY ADDING A SECOND DUTY. Each of these is a worse answer than the draft, however much of
+  the list it covers:
+    · appending a coordinate clause — "..., and submit regulatory changes to the committee"
+    · adding a lead verb for work the draft did not name — "Audit court finances, prepare annual budgets, ..."
+    · smuggling a second act into a purpose clause — "... to update records and queue next steps"
+    · bolting on a "by ..." or "through ..." tail that names activities of its own
+  A reader must still be able to answer one yes-or-no about the whole sentence. If they would have to answer
+  separately for each half, you have written two tasks on one line.
+  IF THE UNDESCRIBED ACTIVITIES ARE A DIFFERENT DUTY, RETURN THE DRAFT UNCHANGED. The activities were grouped
+  upstream and the grouping is sometimes wrong. Reply with the draft exactly as given: a statement vague
+  enough to span two duties describes neither.
+  LEAVING ACTIVITIES BEHIND IS THE RECOVERABLE MISTAKE; FUSING IS NOT. An activity this statement does not
+  describe is picked up by a later step. A fused statement has no such repair. When the two pull against each
+  other, keep the duty whole and let the activity go.
+
+FIX WHAT WAS NAMED AND CHANGE NOTHING ELSE. The draft was written from these same activities, and everything
+not named above was accepted — so a rewrite that moves the level, swaps the lead verb, drops an object or
+re-scopes the work is a worse answer than the draft, not a better one. Touch the named defect; leave the rest
+of the sentence alone.
+
+DO NOT ESCAPE THE OBJECTION BY GOING VAGUER. The problem is the specific thing named above — a word, or the
+shape of a clause — never the fact that the statement is concrete. Reaching for a broader verb or a category
+noun to get clear of it replaces a named defect with an unnamed one, and it will read as a retreat. Stay as
+concrete as the draft was, or more so.
+
+KEEP DESCRIBING THE SAME WORK. Every activity the draft covered has to stay covered, and the statement has to
+stay at least as specific: a rewrite that reads better while describing less, or while trading a concrete term
+for a category, is discarded and the draft is published instead.
+

@@ -1,0 +1,46 @@
+You are completing a task list for a worker in the occupation: $occupation.
+
+THE PUBLISHED TASKS BELOW ARE FIXED. You are judging ONE activity: decide its fate under these rules.
+
+WHERE IT SITS NOW, AND WHY THAT MATTERS. $home
+$home_members
+READ THOSE SIBLINGS BEFORE YOU DECIDE. They are the concrete work the home task already holds. An activity
+that a worker would file alongside them belongs there, even where the statement's wording does not reach it —
+and an activity that would look foreign next to every one of them does not, however close the words sit.
+An activity already filed reaches you because a coverage judge doubted its statement describes it. That judge
+is measured, and on this queue MOST OF WHAT IT DOUBTS BELONGS EXACTLY WHERE IT IS — being asked is not
+evidence that anything is wrong. So when the activity is already filed, FILE IT BACK under that same task
+unless another published task plainly describes it better, or no task describes it at all. Moving it costs a
+cluster a member and can drop it below the publishing floor; leaving it costs nothing when the fit is fair.
+
+  FILE      the activity belongs under one published task because the task's statement AS WRITTEN
+            already describes this work: a reader holding the statement would recognize the activity as
+            an instance of it. File under exactly ONE task — the one whose duty it serves, not merely
+            the one sharing its words. A variant, an instance, or a specialty's version of the
+            statement's own act files normally.
+            A "SUCH AS ..." OR "INCLUDING ..." LIST NAMES A CATEGORY, NOT A CLOSED CHECKLIST. An
+            activity of the same kind files even when it is not one of the listed examples, and an
+            activity naming the listed example itself certainly files. A statement joining several acts
+            with "and", "or" or a comma list is satisfied by ANY ONE of them.
+            NARROWER IS FINE, AND SO IS DIFFERENT WORDING. An activity that names the object, the
+            setting, the tool or the specialty more narrowly than the statement is an INSTANCE of it.
+            Terse worker notes leave the purpose implicit where a statement spells it out; that
+            difference is not evidence of different work.
+            THE STATEMENT MUST CLAIM THE ACT ITSELF, NOT JUST THE SUBJECT: an activity that DECIDES what
+            the statement only assesses, DELIVERS what it only prepares, or OBTAINS what it only
+            maintains or uses, is not filable anywhere on subject match — it is UNFILED. The chores of
+            the statement's own responsibility, and an activity naming only its meeting or call, still
+            file normally.
+  UNFILED   real occupation work no published task's statement claims. Do not force it under a
+            nearer-sounding task — but do not reach for UNFILED merely because the fit is imperfect:
+            it is for work the list is MISSING, not for work the list words differently.
+  LEAVE     a fragment, a state of affairs, or one worker's private arrangement.
+
+{{include:task_dimensions}}
+
+PUBLISHED TASKS:
+$tasks
+
+ACTIVITY: $atom
+
+Reply ONLY with JSON: {"fate": "FILE" | "UNFILED" | "LEAVE", "task": <number or null>, "why": "<eight words>"}
