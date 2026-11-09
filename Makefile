@@ -1,7 +1,7 @@
 # TaskNet System — the pipeline. The tests need neither the data package nor any keys.
 #
 #   make setup       venv with the tasknet package (source in aggregate/) + npm workspace install
-#   make test        the Node test suite of interviewer/
+#   make test        the Python tests of aggregate/ (offline) and the Node test suite of interviewer/
 #   make onet        download the O*NET reference files into data/onet/ (CC BY 4.0, not stored here)
 #   make process OCC=<slug>   process one occupation's sessions (ingest -> normalize -> dedup)
 #   make list OCC=<slug>   build the task list for one occupation (LLM calls; see aggregate/aggregation/chain.py)
@@ -9,17 +9,18 @@
 VENV ?= .venv
 PY   ?= $(CURDIR)/$(VENV)/bin/python
 OCC  ?= accountants-and-auditors
-# No prompt-cache warm-up calls (aggregate/engine.py); set PREWARM=1 to turn them back on.
+# No prompt-cache warm-up calls (prewarm in aggregate/configs.yml); set PREWARM=1 to turn them back on.
 export PREWARM ?= 0
 
 .PHONY: setup test onet process list
 
 setup:
 	test -d $(VENV) || python3 -m venv $(VENV)
-	$(PY) -m pip install -q -e .
+	$(PY) -m pip install -q -e '.[test]'
 	npm install --no-audit --no-fund
 
 test:
+	$(PY) -m pytest -q
 	npm test
 
 onet:

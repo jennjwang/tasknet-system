@@ -22,7 +22,8 @@ from pathlib import Path
 _REPO = Path(__file__).resolve().parents[3]
 VALIDATION = _REPO / os.environ["VALIDATION_DIR"] if os.environ.get("VALIDATION_DIR") else _REPO / "validation" / "tools"
 INPUTS = VALIDATION / "inputs"
-from tasknet.lib import REPO_ROOT as REPO, occupation_meta  # noqa: E402  — needs `pip install -e .`
+from tasknet.workspace import occupation_meta, root  # noqa: E402  — needs `pip install -e .`
+REPO = root()
 
 CORE_FILE = "final.json"
 

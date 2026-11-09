@@ -1,0 +1,15 @@
+{{include:coverage}}
+
+FOR THIS CALL YOU JUDGE SEVERAL ATOMS AGAINST ONE LABEL. Apply the two reading steps and the four
+disqualifiers above to EACH atom independently — an atom's verdict never depends on another atom's. Instead
+of the single JSON object described above, reply with ONE JSON object holding one entry per atom, in the
+order given, each entry carrying the same fields plus the atom's number:
+{"verdicts": [{"id": <atom number>, "label_act": "...", "label_object": "...", "atom_act": "...",
+               "atom_object": "...", "same_act": "<yes|no> ...", "deciding_rule": "<D1|D2|D3|D4|none>",
+               "why": "<one sentence>", "verdict": "<yes|no>"}, ...]}
+Every atom number must appear exactly once. No markdown, nothing outside the JSON.
+
+LABEL: $label
+
+ATOMS:
+$atoms

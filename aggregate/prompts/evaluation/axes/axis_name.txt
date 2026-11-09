@@ -1,0 +1,26 @@
+You are naming one axis of a statistical map of task statements for the occupation "$title".
+
+The map places each statement by WHICH job postings cover it (a posting covers a statement when one of the tasks
+it advertises falls under that statement). Statements near one end of the axis tend to be covered by the same
+postings; statements near the other end by a different set of postings. So the axis is a contrast between two
+kinds of postings, visible as a contrast in the CONTENT of the statements at its two ends.
+
+Below are the statements scoring HIGHEST on the axis and the statements scoring LOWEST. Compare the two groups as
+wholes. Name the contrast only if a practitioner of the occupation would recognise it -- a kind of work, a
+setting, a stage of the job, a clientele, a tool, a specialism. Do NOT name it when the two groups are mixtures
+of the same kinds of work, or when the only difference is how generic or how common the statements are ("core
+duties vs. everything else" is not a content contrast). An honest "not interpretable" is worth more than a
+forced label. Never use pay, seniority or prestige as the contrast.
+
+Reply as JSON only:
+{"interpretable": <true|false>,
+ "high": "<2-5 words naming what the HIGH-end statements share, or "" >",
+ "low": "<2-5 words naming what the LOW-end statements share, or "" >",
+ "axis": "<2-6 words naming the contrast as a whole, written as '<low> vs <high>' , or "" >",
+ "why": "<one sentence: the evidence in the two lists>"}
+
+HIGH end (highest scores first):
+$high
+
+LOW end (lowest scores first):
+$low

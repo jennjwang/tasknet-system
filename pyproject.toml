@@ -11,7 +11,11 @@ license = {text = "CC0-1.0"}
 dependencies = [
     "openai>=1.0",
     "numpy>=1.26",
+    "pyyaml>=6",
 ]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
 
 [project.scripts]
 tasknet = "tasknet.cli:main"
@@ -20,7 +24,10 @@ tasknet = "tasknet.cli:main"
 # `pip install .` for a copy; either way modules import each other as tasknet.<module>.
 [tool.setuptools]
 package-dir = {"tasknet" = "aggregate"}
-packages = ["tasknet", "tasknet.aggregation", "tasknet.processing"]
+packages = ["tasknet", "tasknet.aggregation", "tasknet.processing", "tasknet.evaluate"]
 
 [tool.setuptools.package-data]
-tasknet = ["prompts/**/*.txt"]
+tasknet = ["prompts/**/*.txt", "configs.yml"]
+
+[tool.pytest.ini_options]
+testpaths = ["aggregate/tests"]

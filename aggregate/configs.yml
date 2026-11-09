@@ -1,0 +1,83 @@
+# aggregate — every knob, with its default. Config.load("your.yml") overlays a file on this one by key;
+# Config.load(models={"cluster": {"model": "gpt-5.5"}}) overlays a dict. API keys and base URLs are the one thing
+# that stays in the environment (.env.example): OPENAI_API_KEY (+ OPENAI_BASE_URL) for gpt-* models and
+# embeddings, CLAUDE_API_KEY + CLAUDE_BASE_URL for claude-* models through an OpenAI-compatible gateway, or
+# LLM_API_KEY + LLM_BASE_URL for one endpoint that serves both. Changing a MODEL or a PROMPT changes every cache key of that judge: a cold re-spend.
+
+seed: 0                      # best-effort reproducibility on a cache miss
+min_sources: 2               # the publishing floor: a family needs this many distinct sources (workers, employers)
+cache_dir: cache/aggregation # verdict cache (one JSON per section) and the embedding store; relative to the workdir
+prompt_set: ""               # "fja": <name>_fja.txt is tried before <name>.txt for every prompt
+prompt_dirs: []              # extra prompt trees searched after the package's own (a source's prompts)
+prewarm: {on: true, wait_s: 45, max_out: 64}
+retries: {attempts: 4, backoff_s: 30}
+workers: {judges: 96, cluster: 6, synthesize: 96, fusion: 8, overlap: 12, refile: 12, normalize: 8, evaluate: 24}
+
+models:
+  cluster:        {model: gpt-5.4, effort: medium, max_out_per_atom: 120, max_out_min: 32000, timeout_s: 300,
+                   max_out_cap: 128000}   # the model's completion-token limit; no rung asks for more
+  write:          {model: claude-sonnet-4-6, effort: medium, max_out: 12000}
+  duties:         {model: gpt-5.4-mini, effort: low, tag: OD1}
+  overlaps:       {model: gpt-5.4}
+  merge:          {model: gpt-5.4}
+  sharpen:        {model: claude-sonnet-4-6, effort: medium}
+  covers:         {model: gpt-5.4-mini}
+  dispose:        {model: gpt-5.4-mini}
+  writing:        {model: gpt-5.4-mini, effort: low, tag: WO4}
+  normalize:      {model: gpt-5.4-mini, effort: low}
+  filter:         {model: gpt-5.4, effort: ""}
+  embed:          text-embedding-3-large
+  relation:       {model: gpt-4.1-mini}             # the pair-relation judge (crosswalk, exclusivity)
+  exposure:       {model: gpt-5.4, effort: ""}
+  occupational:   {model: gpt-5.4, effort: "", tiers: primary}
+  coder:          {model: gpt-5.4-mini}             # discovery codes
+  axis:           {model: gpt-5.4-mini}             # axis names of the incidence map
+  placement:      {model: gpt-5.4-mini, batch: 20}  # silhouette placement (the paper's r10 judge)
+  pooled:         {model: gpt-5.4-nano, group: 40}  # the incidence matrix's coverage judge
+
+chain:
+  max_cycles: 3
+  concurrence: {split: false, merge: true}
+  gate_conf: 0.75            # the writing judge's bar for a repair; also fusion's re-open bar
+  coverage_min: 0.6          # own-member coverage floor for a fresh draft
+  cover_topk: 0              # 0 = len(list)/6, min 3
+  overlap_tau: 0.44          # statement-cosine prefilter before the overlap judge
+  merge_cap: 4               # bigger merge groups are withheld
+  overlap_group_cap: 10      # the most statements one merge_or_separate call decides (0 = no cap)
+  recheck_merged: true       # the one-duty check again after overlap, on the statements merges wrote
+
+batch:                       # the OpenAI Batch API prefill (half price, blocking) and multi-item live calls
+  api: false
+  min: 40
+  chunk: 50000
+  poll_s: 30
+  wait_max_s: 1800
+  items: false               # several items per judge call, one cache entry per item
+  covers: 40
+  overlap: 25
+  dispose: 20
+
+blocks:                      # the postings-scale knobs; all off = an interview build, byte-identical
+  by: ""                     # "function": compare only within one FJA worker function
+  member_cap: 0              # members shown to the writer and judges (0 = all)
+  cluster_chunk: 0           # k-means chunks for a large pile (0 = one draw)
+  refile_scope: ""           # "publishable": the disposer hears pile atoms with >= 2 sources only
+
+evaluate:
+  coverage: {topk: 5, tau: 0.30, B: 10000}
+  silhouette: {null_draws: 60, B: 10000}
+  equal_length: {draws: 30, null_draws: 10}
+  exclusivity: {tau: 0.30}
+  B_statements: 4000
+  permutations: 2000
+
+prices:                      # USD per million tokens, [input, output]; estimates, for the usage report only
+  gpt-4o-mini: [0.15, 0.60]
+  gpt-5.4-mini: [0.75, 4.50]
+  gpt-5.4-nano: [0.10, 0.625]
+  gpt-5.4: [2.50, 10.00]
+  gpt-4.1-mini: [0.40, 1.60]
+  gpt-4.1: [2.00, 8.00]
+  gpt-5.5: [3.00, 12.00]
+  claude-sonnet-4-6: [3.00, 15.00]
+  claude-opus-4-7: [5.00, 25.00]

@@ -1,111 +1,89 @@
-"""verify — check a list artifact's invariants, so a silent defect is caught before it reaches the list.
+"""verify — the between-stage checks, so a silent defect stops the rebuild instead of reaching the list.
 
-    python -m tasknet.aggregation.verify build.json [final.json ...]
+    problems = verify.invariants(ctx, build)      # [] when clean; no model calls, milliseconds
 
-No model calls. Prints "ok" per artifact, or a FAIL line per problem and exits 1. The chain runs it after the
-seed and after every round. Each check has caught a real defect that looked like plausible output:
-
-  reports       filed + pool == meta.n_atoms, and no report filed twice.
-  sid         every statement has an id, and no two share one.
-  duplicates  no statement text twice (a half-applied merge leaves both copies).
-  corpus      every member is a real report (one that is not counts as zero workers).
-  prevalence  each cluster's `prevalence` equals the distinct workers behind its members.
-  floor       each cluster rests on at least MIN_WORKERS workers.
+  atoms       filed + pile == n_atoms, and no member filed under two families
+  ids         every family carries a unique sid
+  duplicates  no statement text twice
+  corpus      every filed member is a real atom; prevalence equals the distinct sources behind the members;
+              every family clears the floor
+  fusion      (report-only) every published statement has a duties verdict for its CURRENT members
 """
-import json
-import os
-import sys
-from pathlib import Path
+from __future__ import annotations
 
-from tasknet import engine
-from tasknet.aggregation import cluster
+from .. import families
 
-MIN_WORKERS = cluster.MIN_WORKERS
-POOL_KEYS = cluster.POOL_KEYS
+
+def _core(art):
+    return art.get("core") or []
 
 
 def _stmt(f):
-    """A cluster's statement, or its head if it has none yet."""
     return f.get("statement") or f.get("head") or ""
 
 
-def check_invariants(art, workers=None):
-    """Run every check on one artifact. -> [failure strings]
-    `workers` maps report -> worker ids; None (no corpus available) skips the corpus, prevalence and floor
-    checks."""
-    bad, core = [], art.get("core") or []
+def check(art, sources=None, min_sources=2):
+    """-> [failure strings]. `sources` is the atom -> sessions map; None skips the corpus check."""
+    bad, core = [], _core(art)
     filed = [m for f in core for m in (f.get("members") or [])]
-    pool = [a for k in POOL_KEYS for a in (art.get(k) or ())]
+    pile = [a for k in families.LEFTOVERS for a in (art.get(k) or ())]
     n = (art.get("meta") or {}).get("n_atoms")
-
-    if n is not None and len(set(filed)) + len(set(pool)) != n:
-        bad.append(f"reports: filed {len(set(filed))} + pool {len(set(pool))} = "
-                   f"{len(set(filed)) + len(set(pool))}, expected n_atoms {n}")
+    if n is not None and len(set(filed)) + len(set(pile)) != n:
+        bad.append(f"atoms: filed {len(set(filed))} + pile {len(set(pile))} = {len(set(filed)) + len(set(pile))}, expected n_atoms {n}")
     if len(filed) != len(set(filed)):
-        dupes = len(filed) - len(set(filed))
-        bad.append(f"reports: {dupes} member(s) filed under more than one cluster")
-
+        bad.append(f"atoms: {len(filed) - len(set(filed))} member(s) filed under more than one family")
     sids = [f.get("sid") for f in core]
     if any(not x for x in sids):
         bad.append(f"sid: {sum(1 for x in sids if not x)} statement(s) carry no id")
     dup = len(sids) - len(set(x for x in sids if x))
     if dup > 0 and all(sids):
-        bad.append(f"sid: {dup} duplicate id(s) — two clusters share one identity")
-
+        bad.append(f"sid: {dup} duplicate id(s) — two families share one identity")
     seen = set()
     for f in core:
         s = _stmt(f)
         if s in seen:
             bad.append(f"duplicates: {s[:70]!r} appears twice")
         seen.add(s)
-
-    if workers is not None:
+    if sources is not None:
         for f in core:
             mem = f.get("members") or []
-            unknown = [m for m in mem if m not in workers]
+            unknown = [m for m in mem if m not in sources]
             if unknown:
-                bad.append(f"corpus: {len(unknown)} member(s) of {_stmt(f)[:50]!r} are not reports")
+                bad.append(f"corpus: {len(unknown)} member(s) of {_stmt(f)[:50]!r} are not atoms")
                 break
-            real = len({w for m in mem for w in workers.get(m, ())})
+            real = len({w for m in mem for w in sources.get(m, ())})
             if f.get("prevalence") is not None and f["prevalence"] != real:
                 bad.append(f"prevalence: {_stmt(f)[:50]!r} says {f['prevalence']}, members give {real}")
-            if real < MIN_WORKERS:
-                bad.append(f"floor: {_stmt(f)[:50]!r} rests on {real} worker(s), floor is {MIN_WORKERS}")
+            if real < min_sources:
+                bad.append(f"floor: {_stmt(f)[:50]!r} rests on {real} source(s), floor is {min_sources}")
     return bad
 
 
-def main():
-    """Check each artifact named on the command line. -> exit code (0 ok, 1 failures, 2 no arguments)"""
-    paths = [Path(p) for p in sys.argv[1:]]
-    if not paths:
-        print(__doc__.split("\n")[2].strip())
-        return 2
-    arts, fails = [], []
-    for p in paths:
-        f = p if p.exists() else engine.results_dir("aggregation") / p.name
-        art = json.loads(Path(f).read_text())
-        arts.append((p.name, art))
-    # take the occupation from the artifact's folder (results/aggregation/<occ>/), so the corpus checks can
-    # find its reports; meta.occupation holds the O*NET title, not the folder name
-    first = paths[0].resolve()
-    if first.parent.parent.name == "aggregation":
-        os.environ.setdefault("OCCUPATION", first.parent.name)
-    try:
-        W = cluster.report_workers()
-    except (Exception, SystemExit):                     # noqa: BLE001 - no corpus: skip the corpus checks
-        W = None                                        # (load_reports exits when 3_deduped.csv is missing)
-    for name, art in arts:
-        fails += [f"{name}: {msg}" for msg in check_invariants(art, W)]
-    for f in fails:
-        print(f"  FAIL  {f}")
-    if not fails:
-        for name, art in arts:
-            core = art.get("core") or []
-            filed = len({m for f in core for m in (f.get("members") or [])})
-            pool = len({a for k in POOL_KEYS for a in (art.get(k) or ())})
-            print(f"  ok  {name:20} {len(core):3} clusters   {filed} filed + {pool} pool = {filed + pool}")
-    return 1 if fails else 0
+def fusion_verdicts(ctx, art):
+    """Published statements with no duties verdict for their CURRENT members -> [strings]. Cache only."""
+    bad = []
+    for f in _core(art):
+        stmt, mem = _stmt(f), (f.get("members") or [])
+        if ctx.cache.get("one_duty", ctx.judges.duties_key(stmt, mem)) is None:
+            bad.append(f"fusion: {stmt[:60]!r} ({len(mem)} atoms) has no duties verdict for its members")
+    return bad
 
 
-if __name__ == "__main__":
-    sys.exit(main())
+def siblings(arts):
+    """Artifacts from ONE stage invocation must cover the same families -> [failure strings]."""
+    if len(arts) < 2:
+        return []
+    sizes = {name: len(_core(a)) for name, a in arts}
+    return [f"siblings: family counts disagree — {sizes}"] if len(set(sizes.values())) > 1 else []
+
+
+def invariants(ctx, build):
+    """Every structural check against the context's atoms -> [failure strings] ([] = ok)."""
+    return check(build, ctx.atoms.sources if ctx.atoms is not None else None, ctx.min_sources)
+
+
+def summary(build) -> str:
+    core = _core(build)
+    filed = len({m for f in core for m in (f.get("members") or [])})
+    pile = len(set(families.pile(build)))
+    return f"{len(core)} families   {filed} filed + {pile} pile = {filed + pile}"

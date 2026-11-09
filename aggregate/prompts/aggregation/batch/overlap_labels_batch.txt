@@ -1,0 +1,9 @@
+{{include:overlap_labels}}
+
+FOR THIS CALL YOU ROUTE SEVERAL PAIRS, EACH ON ITS OWN. Apply the steps above to every numbered pair
+independently — the other pairs are not context for it. Instead of one word, reply with ONE JSON object:
+{"verdicts": [{"id": <pair number>, "answer": "yes" | "no"}, ...]}
+Every pair number must appear exactly once. No markdown, nothing outside the JSON.
+
+PAIRS:
+$pairs

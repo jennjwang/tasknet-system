@@ -1,0 +1,51 @@
+# Metric: rl — Reinforcement Learning Feasibility Index (Moreira Tomei & Klein Teeselink, "What Jobs Can AI Learn?
+# Measuring Exposure by Reinforcement Learning", arXiv:2605.02598). The text below is the paper's full scoring
+# prompt (v4.2, Appendix B) verbatim: physical feasibility gate, structured task reasoning, dimensions D1-D8 (1-10).
+# Two changes only: the closing "Occupation: {{OCCUPATION}} / Task: {{TASK}}" lines are left out because the
+# pipeline sends them as the user message, and a "JSON keys" paragraph is appended so the reply can be parsed.
+# The index is computed outside the model as in the paper's Equation 1: RL = (mean(D1..D8) - 1) / 9 * 100, and 0
+# for tasks that fail the gate.
+
+Context
+You are an expert in reinforcement learning (RL), labour economics, and occupational task analysis. You are helping construct a Reinforcement Learning Feasibility Index — a measure of how feasible it is to create an RL environment for a given occupational task, and therefore how exposed that task is to automation through advances in RL-based training (including RL post-training of large language models).
+This index is analogous to Eloundou et al.'s (2024, Science) AI Exposure Index, but focused specifically on reinforcement learning. For each task, we ask: How easy would it be to define a well-specified RL environment — with a reward signal, simulable environment, and verifiable outcomes — in which an agent could learn to perform this task?
+The more feasible it is to build such an environment, the more "RL-exposed" the task is, because:
+ • RL post-training (RLHF, RLAIF, RLVR) is a primary driver of LLM capability gains
+ • Tasks with verifiable outcomes and simulable environments are precisely those where RL training is most effective
+ • Advances in RL will disproportionately improve AI performance on tasks that score highly on this index
+This version incorporates advances in Rubric-Based RL (e.g., Rubric-ARM, RLVR, OpenRubrics) and Process Reward Models, which demonstrate that subjective tasks are feasible for RL if they can be decomposed into verifiable criteria.
+Crucial Assumption (The Agent's Starting Point): Assume the RL agent is not learning from scratch (tabula rasa). Instead, assume we are fine-tuning a highly capable pre-trained foundation model (e.g., via RLHF, RLAIF, or RLVR). The agent already possesses a broad baseline understanding of language, code, and general world knowledge. Your evaluation should focus on the feasibility of the RL loop required to align, specialize, and verify the model for this specific occupational task.
+
+Temporal Frame
+Score based on feasibility using methods that are currently available or plausibly achievable within a 5-year horizon. Include the trajectory of AI-as-Judge, Process Reward Models, and Synthetic Data Generation. Do not assume speculative breakthroughs with no current research basis. When a score depends on projected rather than current capabilities, note this in the justification.
+
+Input
+You will be given an occupation title and a task description. You must score the RL feasibility of performing that specific task in the context of that specific occupation.
+This is critical: the same task text can have very different RL feasibility depending on the occupation.
+
+Step 1: Physical Feasibility Gate
+Before scoring any dimensions, first determine whether the task requires substantial physical interaction with the material world.
+Decision rule: Pass: The task can be performed primarily through digital means. Proceed to Step 2. Fail: The task irreducibly requires physical embodiment. Do not proceed further.
+
+Step 2: Structured Task Reasoning
+Before scoring any dimensions, reason about the task holistically: (1) Task type (generative, analytical, interactive, procedural, or hybrid). (2) Core output. (3) Verification bottleneck. (4) Tool requirements. (5) Binding constraint (predicted lowest-scoring dimension).
+
+Step 3: Score the 8 Dimensions
+Score it on each of the 8 dimensions below. Each dimension must be scored as a strict integer on a 10-point scale (1–10).
+Avoid central tendency bias: Confidently use the extreme ends of the scale (1–3 and 8–10) when the task characteristics warrant it.
+For each dimension, provide:
+ 1. A 2–3 sentence justification explaining the score. Write the justification first, then assign the score.
+ 2. An integer score (1–10)
+D1: Verification Method Spectrum. Where does this task fall on the spectrum from deterministic verification to contested professional judgment? Scores: 1 (requires rare experts who disagree; no inspectable artifact) to 10 (fully deterministic programmatic check).
+D2: Environment Simulability. How faithfully and cheaply can the task environment be simulated digitally? Scores: 1 (requires live markets, real humans with genuine stakes) to 10 (natively digital, trivially cheap to replicate).
+D3: State Observability & Context. To what extent is all relevant information available in a structured, digital format? Scores: 1 (critical information is tacit or embodied) to 10 (perfect digital observability).
+D4: Task Variability & Knowledge Breadth. How varied are the inputs across task instances, and how broad is the required expertise? Scores: 1 (extreme variability, every instance unique) to 10 (zero variability, structurally identical instances).
+D5: Sequential Decision Depth. How many counterfactual-sensitive decisions must be made in sequence? Scores: 1 (extreme depth, dozens of contingent decisions) to 10 (single-step, one input, one output).
+D6: Feedback Density & Decomposability. How frequently and specifically does the agent receive performance signals, and how decomposable are they? Scores: 1 (rare, delayed, holistic, non-decomposable) to 10 (continuous, immediate, per-step diagnostic).
+D7: Tool & Interface Accessibility. Can the task be performed through CLI/API/MCP, or does it require GUI interaction? Scores: 1 (complex proprietary GUIs, no scripting) to 10 (natively machine-interfaced or pure text/code generation).
+D8: Output Tangibility & Gradeability. Does the task produce a concrete, inspectable artifact that can be evaluated independently of the process? Scores: 1 (no tangible output, quality in ongoing process/relationship) to 10 (perfectly tangible, self-contained artifact).
+
+Output Format
+Return a JSON object with: occupation, task, physical_feasibility (justification and pass boolean), task_reasoning (task type, core output, verification bottleneck, tool requirements, binding constraint), and dimensions (each with justification and integer score 1–10, or null if the task failed the gate). Do not compute or include the RL Feasibility Index.
+
+JSON keys: "occupation", "task", "physical_feasibility": {"justification", "pass"}, "task_reasoning": {"task_type", "core_output", "verification_bottleneck", "tool_requirements", "binding_constraint"} (null if the task failed the gate), "dimensions": {"D1": {"justification", "score"}, ..., "D8": {"justification", "score"}} (null if the task failed the gate).

@@ -1,99 +1,82 @@
-"""cluster — group the unfiled reports into new task clusters (step 1 of each chain round).
+"""cluster — draw the occupation's task FAMILIES over a pile of atoms, and apply the source floor.
 
-    python -m tasknet.aggregation.cluster --seed build.json          # fresh: empty list, every report in the pool
-    python -m tasknet.aggregation.cluster --over-pool build.json     # group the pool, append the new clusters
+    build = cluster.seed(ctx)                 # fresh: empty core, every atom in the pile
+    build = cluster.propose(ctx, build)       # draw over the pile, append the new families (head-only)
+    n_new = len(build["draw_pile_log"]["founded"])
 
-Terms used across tasknet.aggregation (the paper's):
-  report    one distinct task text from processing, with the workers (interview sessions) who reported it
-  cluster   a group of reports (its `members`) published as one task statement
-  pool      reports in no cluster, kept under the POOL_KEYS keys of the artifact
-  round     one pass of the four steps; the chain repeats rounds while clustering finds new clusters
-  floor     a cluster publishes only if its reports come from at least MIN_WORKERS different workers
-
-Input:  results/processing/<occ>/3_deduped.csv, and (--over-pool) the build artifact's pool.
-Output: the artifact with new clusters appended; each has a head and members but no statement yet
-        (synthesize writes it). Reports the model leaves ungrouped stay in the pool for the next round.
+One call sees every atom in the pile at once (prompts/aggregation/cluster/cluster.txt) and returns
+`[{"head", "members"}]`; the same partitioner serves the first round of a fresh build (the whole corpus) and
+every later round (what refile left). It may leave atoms UNFILED by design — that pile is what the next round
+reads. A family publishes only on min_sources distinct sessions; survivors are appended head-only for
+synthesize to write and the hearings to judge. Draw variance is real (~15-20% per draw), which is why an
+adopted list is amended rather than redrawn.
 """
-import argparse
-import csv
-import functools
-import os
+from __future__ import annotations
+
 import re
 import sys
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
 
-from tasknet import engine
-from tasknet.aggregation import identity
+from .. import families
+from ..cache import NoCache
+from ..engine import bare_model
+from ..lib import sha256
+from . import blocks
 
-SEP = "␟"      # separates the fields of a cache key
-
-MODEL = os.environ.get("CLUSTER_MODEL", "gpt-5.4")
-EFFORT = os.environ.get("CLUSTER_EFFORT", "medium")
-TIMEOUT = int(os.environ.get("CLUSTER_TIMEOUT", "300"))       # read timeout per call, in seconds
-MIN_WORKERS = int(os.environ.get("MIN_WORKERS", "2"))         # the publishing floor, used by every stage
-MAX_CAP = int(os.environ.get("CLUSTER_MAX_CAP", "128000"))    # the model's completion-token limit (gpt-5.4: 128k)
-
-# The artifact keys that together hold the pool; every stage copies them into its output (carry). Each holds
-# a list of reports, and verify checks that filed reports + these == meta.n_atoms.
-POOL_KEYS = ("released", "declined", "dropped_atoms", "thin_members")
+SEP = "␟"
 
 
-def load_reports():
-    """Read the processed corpus as reports: one per distinct task_name, with the sessions that reported it.
-    -> [{"task", "workers", "prevalence"}], where `workers` are session ids and `prevalence` their count."""
-    deduped = engine.results_dir("processing") / "3_deduped.csv"
-    if not deduped.exists():
-        raise SystemExit(f"{deduped} not found — run the processing pipeline first.")
-    sessions = defaultdict(set)
-    for r in csv.DictReader(deduped.open()):
-        if (t := (r["task_name"] or "").strip()):
-            sessions[t].add(r["session_id"])
-    return [{"task": t, "workers": sorted(s), "prevalence": len(s)} for t, s in sessions.items()]
+def _ladder(max_out, effort, ceiling=None):
+    """The truncation rungs: raise the cap at the configured effort FIRST, degrade effort only last. The raised
+    rung never asks for more than `ceiling` (the model's completion-token limit) unless max_out already does."""
+    big = max_out * 3 if not ceiling else min(max_out * 3, max(ceiling, max_out))
+    return ([(max_out, effort), (big, effort), (big, "low")] if effort != "low"
+            else [(max_out, "low"), (big, "low")])
 
 
-def occupation_soc():
-    """The occupation's (O*NET code, O*NET title), read from the corpus's first row."""
-    with (engine.results_dir("processing") / "3_deduped.csv").open() as fh:
-        r = next(csv.DictReader(fh))
-    return r["onet_code"], r["onet_title"]
+def _ceiling(ctx):
+    """models.cluster.max_out_cap: the completion-token limit of the cluster/writer models (gpt-5.4: 128k)."""
+    return int(ctx.config.get("models.cluster.max_out_cap", 128000) or 0) or None
 
 
-def chat_until_complete(prompt, max_out, tag, model=None, effort=None, cache_prefix=None):
-    """Make one model call; if the reply is cut off, retry with a larger output cap, and only as a last resort
-    at a lower effort (which can change the answer). -> (reply text, the effort that produced it).
-    synthesize uses this for its writer too. With a Claude model, `cache_prefix` (the fixed start of the
-    prompt) is sent as a separately cacheable block, which only changes the bill."""
-    model, effort = model or MODEL, effort or EFFORT
-    content = engine.user_content(prompt, model, cache_prefix)
-    big = min(max_out * 3, max(MAX_CAP, max_out))             # never ask for more than the model can return
-    rungs = ([(max_out, effort), (big, effort), (big, "low")] if effort != "low"
-             else [(max_out, "low"), (big, "low")])
+def chat(ctx, prompt, max_out, tag, model=None, effort=None, cache_prefix=None):
+    """One call, retried up the ladder on truncation. -> (content, the effort that produced it). Shared with
+    the writer — the package's only call path that escalates on `finish_reason == "length"`."""
+    model = model or ctx.model("cluster")
+    effort = effort or ctx.effort("cluster")
+    timeout = int(ctx.config.get("models.cluster.timeout_s", 300))
+    if cache_prefix and bare_model(model).startswith("claude") and prompt.startswith(cache_prefix):
+        content = [{"type": "text", "text": cache_prefix, "cache_control": {"type": "ephemeral"}},
+                   {"type": "text", "text": prompt[len(cache_prefix):]}]
+    else:
+        content = prompt
+    rungs = _ladder(max_out, effort, _ceiling(ctx))
     for i, (cap, eff) in enumerate(rungs):
-        kw = {**engine.chat_kwargs(model, cap, effort=eff), "timeout": TIMEOUT}
-        r = engine.with_retries(lambda: engine.client(model).chat.completions.create(
-            model=model, messages=[{"role": "user", "content": content}], **kw), label=model)
-        engine.record_usage(model, r)          # this bypasses engine.chat, so record the cost here
+        kw = {**ctx.engine.chat_kwargs(model, cap, effort=eff), "timeout": timeout}
+        r = ctx.engine.create(model, [{"role": "user", "content": content}], **kw)
         if r.choices[0].finish_reason != "length":
             return r.choices[0].message.content or "", eff
         nxt = rungs[i + 1] if i + 1 < len(rungs) else None
-        print(f"  chat_until_complete[{tag}]: truncated at cap={cap:,} effort={eff}"
-              + (f" — retrying at cap={nxt[0]:,} effort={nxt[1]}" if nxt else " — no retry left"),
-              file=sys.stderr)
+        print(f"  chat[{tag}]: truncated at cap={cap:,} effort={eff}"
+              + (f" — retrying at cap={nxt[0]:,} effort={nxt[1]}" if nxt else " — no retry left"), file=sys.stderr)
     raise RuntimeError(f"{model} hit the output cap ({max_out}) at every effort")
 
 
-def _parse_clusters(content, labels):
-    """Parse the reply's "<heading> :: 3, 7, 12" lines into [{"head", "members"}]. Numbers index `labels`
-    (1-based) and "12-15" ranges are expanded. A report claimed twice stays with its first cluster, a repeated
-    heading is skipped, and unparseable member tokens are reported and dropped."""
+def _items(labels):
+    return "\n".join(f"{i}. {lab}" for i, lab in enumerate(labels, 1))
+
+
+def _parse_groups(content, labels):
+    """"<heading> :: 3, 7, 12" lines -> [{"head", "members"}]; one atom, one family."""
     out, seen_heads, claimed, junk = [], set(), set(), []
     for line in (content or "").splitlines():
         line = line.strip().lstrip("-•*").strip()
-        if "::" not in line:                  # prose, or a heading with no members
+        if "::" not in line:
             continue
         parts = line.split("::")
         head = parts[0].strip().rstrip(".")
-        pos = parts[-1]                       # the member numbers are always after the LAST "::"
+        pos = parts[-1]
         if not head or head in seen_heads:
             continue
         members = []
@@ -104,7 +87,7 @@ def _parse_clusters(content, labels):
             nums = []
             if tok.isdigit():
                 nums = [int(tok)]
-            elif (m := re.fullmatch(r"(\d+)\s*[-–—]\s*(\d+)", tok)):     # "12-15" is four reports, not junk
+            elif (m := re.fullmatch(r"(\d+)\s*[-–—]\s*(\d+)", tok)):
                 a, b = int(m.group(1)), int(m.group(2))
                 nums = list(range(a, b + 1)) if a <= b <= a + 200 else []
             if not nums:
@@ -119,148 +102,140 @@ def _parse_clusters(content, labels):
         claimed.update(members)
         out.append({"head": head, "members": sorted(members)})
     if junk:
-        print(f"  _parse_clusters: {len(junk)} unparsed member token(s) discarded: "
-              f"{', '.join(sorted(set(junk))[:8])}", file=sys.stderr)
+        print(f"  _parse_groups: {len(junk)} unparsed member token(s) discarded: {', '.join(sorted(set(junk))[:8])}",
+              file=sys.stderr)
     return out
 
 
-def draw(task_labels):
-    """Group `task_labels` into clusters with one model call (cached). -> [{"head", "members"}].
-    The cache section and key prefix ("rollup_decompose_groups", "DECOMPOSEG") are old names; renaming them
-    would orphan every cached draw."""
-    template = engine.load_prompt("cluster", occupation=engine.occupation())
+def group(ctx, task_labels):
+    """ONE clustering draw: families AND their members from a single call -> [{"head", "members"}].
+    The memo section and key prefix are historical ("rollup_decompose_groups", "DECOMPOSEG") and must stay."""
+    model, effort = ctx.model("cluster"), ctx.effort("cluster")
+    template = ctx.prompt("cluster", occupation=ctx.occupation)
     labels = sorted(task_labels)
-    # the numbered list the prompt expects ("1. ...", "2. ..."); part of the cache key, so keep its format
-    items = "\n".join(f"{i}. {lab}" for i, lab in enumerate(labels, 1))
-    cap = min(MAX_CAP, max(32000, int(os.environ.get("CLUSTER_MAX_OUT", "0")) or 120 * len(labels)))
-    key = engine.sha256(SEP.join(["DECOMPOSEG", MODEL, EFFORT, str(cap), engine.sha256(template), items]))
+    items = _items(labels)
+    cap = max(int(ctx.config.get("models.cluster.max_out_min", 32000)),
+              int(ctx.config.get("models.cluster.max_out_per_atom", 120)) * len(labels))
+    if _ceiling(ctx):
+        cap = min(cap, _ceiling(ctx))   # changes the key only past ~1,070 atoms, where the call could not succeed
+    key = sha256(SEP.join(["DECOMPOSEG", model, effort, str(cap), sha256(template), items]))
 
     def compute():
-        content, eff = chat_until_complete(template.replace("$items", items), cap, "draw")
-        got = _parse_clusters(content, labels)
-        if eff != EFFORT:
-            # a reply that only came back at a lower effort is used but not cached, so the next run
-            # gets another chance at the configured effort
-            print(f"  draw: DEGRADED to effort={eff}; using it but NOT caching it", file=sys.stderr)
-            return engine.NoCache(got)
+        content, eff = chat(ctx, template.replace("$items", items), cap, "draw")
+        got = _parse_groups(content, labels)
+        if eff != effort:
+            print(f"  group: DEGRADED to effort={eff}; using it but NOT caching it", file=sys.stderr)
+            return NoCache(got)
         return got
-
-    return engine.memo("rollup_decompose_groups", key, compute)
-
-
-def carry(build):
-    """The POOL_KEYS keys present in `build`, for a stage to splat into the artifact it writes. -> dict.
-    A stage that forgets this silently drops the pool."""
-    return {k: build[k] for k in POOL_KEYS if build.get(k)}
+    return ctx.cache.memo("rollup_decompose_groups", key, compute)
 
 
-def report_workers():
-    """{report: frozenset of worker ids} for the current occupation ($OCCUPATION), read once and cached."""
-    return _report_workers(engine.occupation())
+def group_chunked(ctx, pile):
+    """The draw over a pile too large for one call (blocks.cluster_chunk). Chunks are k-means over the atoms'
+    embeddings, inside one source-function block when blocking is on; the chunk HEADS are then drawn once more
+    and heads grouped together union their members. With the knob unset this is exactly `group`."""
+    chunk = blocks.cluster_chunk(ctx)
+    if not chunk or len(pile) <= chunk:
+        return group(ctx, pile) or []
+    meta = ctx.atoms.meta
+    by_fn = defaultdict(list)
+    for a in pile:
+        by_fn[meta.get(a, {}).get("function", "") if blocks.block_by(ctx) == "function" else ""].append(a)
+    chunks = [ch for fn in sorted(by_fn) for ch in blocks.kmeans_chunks(ctx, by_fn[fn], chunk)]
+    print(f"  group_chunked: {len(pile)} atoms in {len(chunks)} chunk(s) of {min(map(len, chunks))}-{max(map(len, chunks))} "
+          "atoms; drawing in parallel", file=sys.stderr, flush=True)
+    done = [0]
+
+    def one(ch):
+        g = group(ctx, ch) or []
+        done[0] += 1
+        print(f"  group_chunked: chunk {done[0]}/{len(chunks)} ({len(ch)} atoms) -> {len(g)} group(s)", file=sys.stderr, flush=True)
+        return g
+    with ThreadPoolExecutor(max_workers=min(len(chunks), ctx.workers_for("cluster"))) as ex:
+        first = [g for gs in ex.map(one, chunks) for g in gs]
+    if len(first) < 2:
+        return first
+    by_head = defaultdict(list)
+    for g in first:
+        by_head[g["head"]].append(g)
+    second = group(ctx, sorted(by_head)) or []
+    merged, used = [], set()
+    for g2 in second:
+        parts = [g for h in g2["members"] for g in by_head.get(h, [])]
+        if not parts:
+            continue
+        members = sorted({m for p in parts for m in p["members"]})
+        head = g2["head"] if len(parts) > 1 else parts[0]["head"]
+        merged.append({"head": head, "members": members})
+        used.update(id(p) for p in parts)
+    merged += [g for g in first if id(g) not in used]
+    print(f"  group_chunked: heads draw unioned {len(first)} -> {len(merged)} group(s)", file=sys.stderr)
+    return merged
 
 
-@functools.cache
-def _report_workers(occ):     # noqa: ARG001 - `occ` only keys the cache; load_reports() reads $OCCUPATION itself
-    return {a["task"]: frozenset(a["workers"]) for a in load_reports()}
+def admit(groups, sources, min_sources):
+    """Apply the source floor -> (kept, thin). THE ONE DEFINITION of the floor."""
+    kept, thin = [], []
+    for g in groups:
+        w = sorted(set().union(*(set(sources[m]) for m in g["members"])))
+        rec = {"sid": families.new_sid(), "head": g["head"], "members": g["members"], "sources": w, "prevalence": len(w)}
+        (kept if len(w) >= min_sources else thin).append(rec)
+    return kept, thin
 
 
-def recount_workers(fams):
-    """Recompute each cluster's `workers` and `prevalence` from its members, in place. -> fams.
-    Every stage that changes members calls this, so the counts never go stale."""
-    workers = report_workers()
-    unmatched = sorted({m for f in fams for m in (f.get("members") or []) if m not in workers})
-    if unmatched:
-        print(f"  recount_workers: {len(unmatched)} member(s) not found in the report corpus -- prevalence for their "
-              f"clusters is UNDERSTATED: {unmatched[0][:70]}", file=sys.stderr)
-    for f in fams:
-        w = sorted({x for m in (f.get("members") or []) for x in workers.get(m, ())})
-        f["workers"], f["prevalence"] = w, len(w)
-    return fams
+def seed(ctx) -> dict:
+    """A FRESH seed artifact: empty core, every corpus atom in the pile."""
+    atoms = ctx.atoms
+    return {"meta": {"occupation": ctx.occupation, "code": atoms.code, "title": atoms.title,
+                     "model": ctx.model("cluster"), "effort": ctx.effort("cluster"), "min_sources": ctx.min_sources,
+                     "n_atoms": len(atoms), "prompt": sha256(ctx.prompt("cluster", occupation="$OCC"))[:12]},
+            "core": [], "released": sorted(atoms.tasks)}
 
 
-def draw_pool(art):
-    """Group the artifact's pool into new clusters and append those that clear the floor (head and members
-    only). Reports that join a cluster leave the pool. Mutates `art`. -> a summary {pool, founded, corpus_new,
-    corpus_gone}
-
-    First reconciles the artifact with the current corpus: an AMEND build starts from the adopted list, so
-    reports ingested since then are added to the pool, and members the corpus no longer has are removed from
-    their clusters (the coverage step's floor then demotes any cluster left too thin)."""
-    core = art["core"]
-    AW = report_workers()
-    corpus = set(AW)
-    known = {m for f in core for m in f["members"]} | {a for k in POOL_KEYS for a in art.get(k) or []}
+def propose(ctx, build) -> dict:
+    """Draw families over the build's PILE and append the survivors as head-only families. Consumed atoms leave
+    the pile; the rest stay; nothing is written for the new families here. Reconciles with the corpus first:
+    atoms ingested since the seed enter the pile, members the corpus no longer has leave their family.
+    Mutates and returns build, with `draw_pile_log` for this round and `draw_log` appended."""
+    core = build["core"]
+    W = ctx.atoms.sources
+    corpus = set(W)
+    known = {m for f in core for m in f["members"]} | {a for k in families.LEFTOVERS for a in build.get(k) or []}
     new = sorted(corpus - known)
     gone = sorted(known - corpus)
     if gone:
         gs = set(gone)
         for f in core:
             f["members"] = [m for m in f["members"] if m not in gs]
-        for k in POOL_KEYS:
-            if art.get(k):
-                art[k] = sorted(set(art[k]) - gs)
+        for k in families.LEFTOVERS:
+            if build.get(k):
+                build[k] = sorted(set(build[k]) - gs)
         core[:] = [f for f in core if f["members"]]
     if new:
-        art["released"] = sorted(set(art.get("released") or []) | set(new))
-    art.setdefault("meta", {})["n_atoms"] = len(corpus)
-    pool = sorted({a for k in POOL_KEYS for a in art.get(k) or []})
+        build["released"] = sorted(set(build.get("released") or []) | set(new))
+    build.setdefault("meta", {})["n_atoms"] = len(corpus)
     filed = {m for f in core for m in f["members"]}
-    pool = [a for a in pool if a not in filed]
+    pile = [a for a in families.pile(build) if a not in filed]
     founded = []
-    if len(pool) >= 2:                               # a cluster needs at least two reports
+    if len(pile) >= 2:
+        groups = group_chunked(ctx, pile)
+        fams, _thin = admit(groups, {m: set(W.get(m) or ()) for m in pile}, ctx.min_sources)
         consumed = set()
-        for g in draw(pool):
-            w = sorted(set().union(*(AW.get(m) or () for m in g["members"])))
-            if len(w) < MIN_WORKERS:                # the floor: reports from at least MIN_WORKERS workers
-                continue
-            ms = sorted(set(g["members"]) - consumed - filed)
+        for f in fams:
+            ms = sorted(set(f["members"]) - consumed - filed)
             if len(ms) < 2:
                 continue
-            core.append({"sid": identity.new_cluster_id(), "head": g["head"], "members": ms,
-                         "workers": w, "prevalence": len(w), "founded_by": "cluster --over-pool"})
+            core.append({"sid": families.new_sid(), "head": f["head"], "members": ms, "sources": f["sources"],
+                         "prevalence": f["prevalence"], "founded_by": "cluster --over-pile",
+                         **({"function": blocks.function_of(ctx, ms), "duty": blocks.duty_of(ctx, ms)}
+                            if blocks.block_by(ctx) else {})})
             consumed.update(ms)
-            founded.append(g["head"])
-        for k in POOL_KEYS:
-            if art.get(k):
-                art[k] = sorted(set(art[k]) - consumed)
-    recount_workers(core)
-    return {"pool": len(pool), "founded": founded, "corpus_new": len(new), "corpus_gone": gone}
-
-
-def main():
-    engine.set_stage("cluster")                      # use this stage's own API key, if one is set
-    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    ap.add_argument("--seed", metavar="OUT", default=None,
-                    help="write a FRESH seed artifact: empty core, every corpus report in the pool; the chain's "
-                         "first cluster step is then --over-pool on it, same as every later round")
-    ap.add_argument("--over-pool", metavar="ART", default=None,
-                    help="draw over the POOL of an existing artifact and append the new clusters to it")
-    ap.add_argument("--out", default=None, help="output filename (default: the --over-pool artifact itself)")
-    args = ap.parse_args()
-    if args.seed:
-        reports = load_reports()
-        soc, title = occupation_soc()
-        art = {"meta": {"occupation": engine.occupation(), "soc": soc, "onet_title": title, "model": MODEL,
-                        "effort": EFFORT, "min_workers": MIN_WORKERS, "n_atoms": len(reports),
-                        "prompt": engine.sha256(engine.load_prompt("cluster", occupation="$OCC"))[:12]},
-               "core": [], "released": sorted(a["task"] for a in reports)}
-        identity.write_artifact(args.seed, art, indent=1)
-        print(f"{engine.occupation()}: seeded {args.seed} with {len(reports)} reports in the pool and no clusters")
-        return
-    if not args.over_pool:
-        raise SystemExit("cluster.py: pass --seed OUT (fresh) or --over-pool ART")
-    art = identity.read_artifact(args.over_pool)
-    log = draw_pool(art)
-    if log["corpus_new"] or log["corpus_gone"]:
-        print(f"  reconcile: {log['corpus_new']} corpus report(s) new since the seed -> pool; "
-              f"{len(log['corpus_gone'])} member(s) no longer in the corpus -> dropped"
-              + (f" (e.g. {log['corpus_gone'][0][:60]!r})" if log["corpus_gone"] else ""))
-    print(f"{engine.occupation()}: pool {log['pool']} -> {len(log['founded'])} new cluster"
-          f"{'' if len(log['founded']) == 1 else 's'}")
-    for h in log["founded"]:
-        print(f"  NEW [{h[:90]}]  (statement from synthesize; verdicts from split and overlap)")
-    print(f"→ {identity.write_artifact(args.out or args.over_pool, art, indent=1)}")
-
-
-if __name__ == "__main__":
-    main()
+            founded.append(f["head"])
+        for k in families.LEFTOVERS:
+            if build.get(k):
+                build[k] = sorted(set(build[k]) - consumed)
+    families.recount(ctx, core)
+    entry = {"pile": len(pile), "founded": founded, "corpus_new": len(new), "corpus_gone": gone}
+    build["draw_pile_log"] = entry
+    build.setdefault("draw_log", []).append({"round": len(build.get("draw_log") or []) + 1, **entry})
+    return build
