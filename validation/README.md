@@ -52,7 +52,7 @@ code listed in `VALIDATION_VIEWERS`; with none set it answers 503.
 `tools/inputs/inventories.json` holds one task list per occupation, keyed by O*NET-SOC code, plus the
 attention-check statements. The shipped file is a synthetic example so the app runs. For real lists, `tools/adapters/build_inputs.py` reads `results/aggregation/<occupation>/final.json` (the
 adopted output of the aggregate pipeline) and writes the same file. It needs the `tasknet` package
-(`pip install -e .` at the root). Without `--occ` it includes every occupation that has a `final.json`.
+(`make setup`, or `pip install -e ./aggregate -e .` at the root). Without `--occ` it includes every occupation that has a `final.json`.
 Attention checks are carried over from the existing file, not generated.
 
 ```bash
