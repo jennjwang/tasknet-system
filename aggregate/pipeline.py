@@ -27,7 +27,8 @@ def _stale(out: Path, inp: Path | None, force: bool) -> bool:
     return force or inp is None or not out.exists() or (inp.exists() and out.stat().st_mtime < inp.stat().st_mtime)
 
 
-def process(occupation: str, data_dir=None, *, force: bool = False, start: str = "ingest", end: str = "dedup") -> Path:
+def process(occupation: str, data_dir=None, *, force: bool = False, start: str = "ingest", end: str = "dedup",
+            budget: float | None = None) -> Path:
     """Interview sessions -> one row per reported task. -> results/processing/<occ>/3_deduped.csv
 
     `data_dir` holds one <session>.json per interview; default $DATA_DIR/interviews/<occupation>. Ingest always
@@ -51,10 +52,12 @@ def process(occupation: str, data_dir=None, *, force: bool = False, start: str =
         inp, out = proc / FILES["ingest"], proc / FILES["normalize"]
         if _stale(out, inp, force):
             print("  RUN  normalize")
-            agg = workspace.aggregator(occupation)
-            normalize(agg.context(), Atoms.read(inp)).write(out, legacy=True)
-            agg.save()
-            print(agg.usage())
+            agg = workspace.aggregator(occupation, **({"budget_usd": budget} if budget else {}))
+            try:
+                normalize(agg.context(), Atoms.read(inp)).write(out, legacy=True)
+            finally:
+                agg.save()
+                print(agg.usage())
         else:
             print(f"  SKIP normalize   up to date: {out}")
     if "dedup" in stages:
@@ -96,12 +99,13 @@ def migrate_history(workdir: Path) -> list[str]:
 
 
 def build(occupation: str, *, fresh: bool = False, max_rounds: int | None = None, batch: bool = False,
-          spend_holdout: bool = False) -> Path:
+          spend_holdout: bool = False, budget: float | None = None) -> Path:
     """Processed tasks -> a task list (cluster, write, split, merge, refile, until no new task). -> build.json
 
     Reads process()'s output. Amends an adopted final.json unless `fresh`. `batch` routes the gpt judges
     through the OpenAI Batch API (half price, but blocks until each batch finishes). Refuses a frozen list
-    unless `spend_holdout` (or SPEND_HOLDOUT=1)."""
+    unless `spend_holdout` (or SPEND_HOLDOUT=1). `budget` (USD, else config budget_usd) stops the run with
+    BudgetExceeded once the estimated spend reaches it; the verdicts paid for so far stay cached."""
     workspace.load_dotenv()
     spend = spend_holdout or os.environ.get("SPEND_HOLDOUT", "0") == "1"
     if not spend and (n := frozen_holdout(occupation)) > 0:
@@ -111,7 +115,8 @@ def build(occupation: str, *, fresh: bool = False, max_rounds: int | None = None
     if not corpus.exists():
         raise SystemExit(f"{corpus} not found — run `tasknet process {occupation}` first.")
     atoms = Atoms.read(corpus)
-    agg = workspace.aggregator(occupation, soc=atoms.code, **({"batch": {"api": True}} if batch else {}))
+    over = {**({"batch": {"api": True}} if batch else {}), **({"budget_usd": budget} if budget else {})}
+    agg = workspace.aggregator(occupation, soc=atoms.code, **over)
     for line in migrate_history(agg.workdir):
         print(f"  migrated {line}")
     final = agg.workdir / "final.json"

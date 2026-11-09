@@ -172,6 +172,7 @@ class Embeddings:
                 insert = []
                 for i in range(0, len(miss), self.BATCH):
                     chunk = miss[i:i + self.BATCH]
+                    self.engine.check_budget()
                     resp = self.engine.with_retries(
                         lambda: self.engine.client(self.model).embeddings.create(model=self.model, input=chunk),
                         label=self.model)

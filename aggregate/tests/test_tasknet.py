@@ -125,3 +125,25 @@ def test_history_files_migrate_to_ledgers(tmp_path):
     assert pipeline.migrate_history(tmp_path) == ["history/split_verdicts.json -> ledgers/defuse_seen.json"]
     assert json.loads((tmp_path / "ledgers" / "defuse_seen.json").read_text()) == {"k": {"verdict": "keep"}}
     assert (tmp_path / "ledgers" / "sharpen_seen.json").read_text() == "{}"     # an existing ledger is never overwritten
+
+
+def test_budget_stops_the_run_through_a_fail_open_judge(tmp_path):
+    from types import SimpleNamespace as NS
+    from tasknet import Aggregator, Config
+    from tasknet.engine import BudgetExceeded
+
+    calls = []
+
+    def create(**kw):
+        calls.append(kw["model"])
+        return NS(choices=[NS(message=NS(content='{"one_duty": true}'), finish_reason="stop")],
+                  usage=NS(prompt_tokens=1_000_000, completion_tokens=0, prompt_tokens_details=None))
+    client = NS(chat=NS(completions=NS(create=create)))
+    agg = Aggregator(Config.load(prewarm={"on": False}, budget_usd=1.0), client=client, workdir=tmp_path / "w",
+                     cache_dir=tmp_path / "c")
+    ctx = agg.context(tasknet.Atoms([{"source": "s1", "task": "Wash dishes.", "title": "Dishwashers"}]))
+    ctx.judges.duties("Wash dishes.", ["Wash dishes."])               # gpt-5.4-mini, 1M input tokens: $0.75
+    ctx.judges.duties("Scrub pots.", ["Scrub pots."])                 # $1.50 now: the cap is reached
+    with pytest.raises(BudgetExceeded):
+        ctx.judges.duties("Stack plates.", ["Stack plates."])         # duties fails open on Exception, not on this
+    assert len(calls) == 2 and agg.engine.spent() == pytest.approx(1.5)

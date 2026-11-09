@@ -51,6 +51,7 @@ tasknet process lawyers --data-dir path/to/sessions    # default: $DATA_DIR/inte
 tasknet audit lawyers                                  # every session task accounted for (no API calls)
 tasknet build lawyers                                  # amend the adopted final.json, or build fresh if none
 tasknet build lawyers --fresh                          # ignore final.json, build from scratch
+tasknet build lawyers --budget 10                      # stop once the estimated spend reaches $10
 tasknet verify results/aggregation/lawyers/build.json  # check the invariants (no API calls)
 cp results/aggregation/lawyers/build.json results/aggregation/lawyers/final.json   # adopt it
 ```
@@ -70,6 +71,9 @@ tasks = tasknet.load_tasks("lawyers", which="build")
 - **The published lists are frozen.** `build` refuses to rebuild an occupation listed in
   `results/evaluation/heldout_frozen.json`, because a rebuild would absorb the held-out workers.
   `SPEND_HOLDOUT=1` overrides that.
+- `--budget USD` (or `budget_usd` in the config) stops `process` or `build` once the run's estimated spend, from
+  the prices in `configs.yml`, reaches it; everything paid for so far stays cached, so re-running continues
+  where it stopped. Calls already in flight finish, and Batch API calls are not metered.
 - Every model call is cached under `cache/processing/` and `cache/aggregation/`, so re-running unchanged work
   costs little. A failed call is never cached. `tests/test_cache_keys.py` pins every judge's key, so a code
   change that would orphan the cache fails the tests.

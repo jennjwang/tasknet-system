@@ -5,6 +5,8 @@
 # LLM_API_KEY + LLM_BASE_URL for one endpoint that serves both. Changing a MODEL or a PROMPT changes every cache key of that judge: a cold re-spend.
 
 seed: 0                      # best-effort reproducibility on a cache miss
+budget_usd: 0                # stop the run once its estimated live spend (prices below) reaches this; 0 = no cap.
+                             # Batch API calls (--batch) are not metered, so they do not count toward it
 min_sources: 2               # the publishing floor: a family needs this many distinct sources (workers, employers)
 cache_dir: cache/aggregation # verdict cache (one JSON per section) and the embedding store; relative to the workdir
 prompt_set: ""               # "fja": <name>_fja.txt is tried before <name>.txt for every prompt

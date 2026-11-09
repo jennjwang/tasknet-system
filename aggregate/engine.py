@@ -37,6 +37,11 @@ def is_reasoning(model) -> bool:
     return bool(model) and bare_model(model).startswith(("gpt-5", "o1", "o3", "claude"))
 
 
+class BudgetExceeded(BaseException):
+    """The run's estimated spend reached config budget_usd. A BaseException, like KeyboardInterrupt, so the judges'
+    fail-open `except Exception` handlers cannot swallow it: the run stops, and the caller's cleanup still runs."""
+
+
 def _env(name) -> str:
     return (os.environ.get(name) or "").strip()
 
@@ -136,7 +141,9 @@ class Engine:
                 time.sleep(wait)
 
     def create(self, model, messages, **kw):
-        """One chat.completions call through the retry ladder, usage recorded. -> the raw response."""
+        """One chat.completions call through the retry ladder, usage recorded. -> the raw response. Raises
+        BudgetExceeded before the call once the estimated spend has reached budget_usd."""
+        self.check_budget()
         r = self.with_retries(lambda: self.client(model).chat.completions.create(model=model, messages=messages, **kw),
                               label=bare_model(model))
         self.record_usage(model, r)
@@ -206,6 +213,18 @@ class Engine:
         i_rate, o_rate = (self.config.get("prices", {}) or {}).get(model, (0.0, 0.0))
         billed = max(e["in"] - e["cached"], 0)
         return (billed * i_rate + e["cached"] * i_rate * 0.5 + e["out"] * o_rate) / 1_000_000
+
+    def spent(self) -> float:
+        """The run's estimated spend so far, in USD (configs.yml prices)."""
+        with self._usage_lock:
+            return sum(self._cost(m, e) for m, e in self.usage.items())
+
+    def check_budget(self) -> None:
+        """Raise BudgetExceeded once the estimated spend reaches budget_usd (0 or unset: no cap). Calls already in
+        flight finish, so a run can end a little past the cap."""
+        cap = float(self.config.get("budget_usd", 0) or 0)
+        if cap > 0 and (s := self.spent()) >= cap:
+            raise BudgetExceeded(f"estimated spend ${s:.2f} reached the budget of ${cap:.2f}")
 
     def usage_report(self) -> str:
         """The run's token usage as a printable table; "" if nothing was called."""

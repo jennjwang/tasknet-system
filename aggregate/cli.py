@@ -26,6 +26,7 @@ def main(argv: list[str] | None = None) -> int:
 
     p = sub.add_parser("process", help="interview sessions -> results/processing/<occ>/3_deduped.csv")
     p.add_argument("occupation")
+    p.add_argument("--budget", type=float, help="stop once the estimated spend reaches this many USD (default: budget_usd in configs.yml, 0 = no cap)")
     p.add_argument("--data-dir", help="directory of session JSONs (default: $DATA_DIR/interviews/<occ>)")
     p.add_argument("--force", action="store_true", help="re-run every selected stage, ingest from an empty file")
     p.add_argument("--from", dest="start", choices=STAGES, default=STAGES[0], help="first stage to run")
@@ -33,6 +34,7 @@ def main(argv: list[str] | None = None) -> int:
 
     b = sub.add_parser("build", help="processed tasks -> results/aggregation/<occ>/build.json")
     b.add_argument("occupation")
+    b.add_argument("--budget", type=float, help="stop once the estimated spend reaches this many USD (default: budget_usd in configs.yml, 0 = no cap)")
     b.add_argument("--fresh", action="store_true", help="ignore an adopted final.json and build from scratch")
     b.add_argument("--max-rounds", type=int, help="cap on chain cycles (default: chain.max_cycles, 3)")
     b.add_argument("--batch", action="store_true", help="OpenAI Batch API: half price, blocks until done")
@@ -47,12 +49,23 @@ def main(argv: list[str] | None = None) -> int:
     if args.home:
         os.environ["WORKSPACE"] = str(Path(args.home).expanduser().resolve())
     from . import pipeline
+    from .engine import BudgetExceeded
+    try:
+        return _run(args, pipeline)
+    except BudgetExceeded as e:
+        print(f"\nSTOPPED: {e}. Everything paid for so far is cached; re-run to continue.", file=sys.stderr)
+        return 3
+
+
+def _run(args, pipeline) -> int:
     if args.cmd == "process":
-        out = pipeline.process(args.occupation, args.data_dir, force=args.force, start=args.start, end=args.end)
+        out = pipeline.process(args.occupation, args.data_dir, force=args.force, start=args.start, end=args.end,
+                               budget=args.budget)
         print(f"\nOutput: {out}")
         return 0
     if args.cmd == "build":
-        out = pipeline.build(args.occupation, fresh=args.fresh, max_rounds=args.max_rounds, batch=args.batch)
+        out = pipeline.build(args.occupation, fresh=args.fresh, max_rounds=args.max_rounds, batch=args.batch,
+                             budget=args.budget)
         print(f"\nOutput: {out}")
         return 0
     if args.cmd == "audit":
