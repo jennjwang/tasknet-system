@@ -12,4 +12,4 @@ tested these modifications.
   interviewer/data/onet-related.json                related occupations (built by interviewer/scripts/build_onet_related.mjs)
 
 Source: O*NET database, National Center for O*NET Development, https://www.onetcenter.org/database.html
-The pipeline's O*NET task statements are not redistributed; aggregate/fetch_onet.py downloads them.
+The pipeline's O*NET task statements are not redistributed; `tasknet onet` (tasknet/onet.py) downloads them.

@@ -1,0 +1,3 @@
+[submodule "aggregate"]
+	path = aggregate
+	url = https://github.com/S-ONET/aggregate.git

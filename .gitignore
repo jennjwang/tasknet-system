@@ -6,12 +6,14 @@
 *-sa.json
 *service-account*.json
 
-# raw participant sessions (PII) live in the separate data package; O*NET is fetched by aggregate/fetch_onet.py
+# raw participant sessions (PII) live in the separate data package; O*NET is fetched by `tasknet onet`
 
 # pipeline outputs and API caches (regenerable); results/ is created on the first run
 results/
 /data/
 cache/
+# a local overlay on aggregate's configs.yml (models, caps, batch); see README
+/configs.yml
 
 # node (node_modules/ and dist/ are covered below)
 interviewer/sessions/
@@ -21,6 +23,7 @@ validation/tools/out/
 # python
 __pycache__/
 *.py[cod]
+.pytest_cache/
 
 .DS_Store
 
