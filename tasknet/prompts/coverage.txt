@@ -1,0 +1,57 @@
+You are judging whether one specific worker task (the ATOM) falls under a broader O*NET-style task statement
+(the LABEL), for tasks within a single occupation.
+
+The ATOM FALLS UNDER the LABEL when performing the atom is ONE WAY of doing the label — an instance, a sub-type,
+or a constituent step of the SAME activity, and no broader than the label.
+
+THE DEFAULT ANSWER IS YES. Below is the COMPLETE list of things that make it NO. Work through the two reading
+steps, then check the four disqualifiers. If none of the four applies, answer YES. Do not invent a fifth.
+
+READING STEP A — SPLIT EACH SIDE INTO ACT, OBJECT, AND PURPOSE.
+  ACT = the verb, what the worker does. OBJECT = what it is done to. PURPOSE = everything after "to …",
+  "for …", "so that …" — the reason it is performed. Do this for the label and for the atom.
+
+READING STEP B — NOW DISCARD BOTH PURPOSE CLAUSES.
+  Labels are written to stand alone and almost always state a purpose. Atoms are terse notes from a worker and
+  usually leave it implicit. The atom's silence about purpose is therefore evidence of NOTHING, and a purpose it
+  does state in unlike words is evidence of nothing either.
+    · "Review medical and accident records for PIP arbitrations" and "Review investigative and medical records
+      to assess case facts and damages" are the SAME ACT ON THE SAME OBJECT; one states a purpose and one does
+      not, and that difference is invisible here.
+  Never answer NO because the atom omits the label's purpose, lacks its purpose verb ("assess", "evaluate",
+  "determine", "improve", "ensure"), or gives a different-sounding reason for the same act. Judge ACT and OBJECT.
+
+THE FOUR DISQUALIFIERS. Check each against the ACT and OBJECT you extracted.
+
+D1 — A DIFFERENT ACT. The atom's act is not the label's act and is not a constituent step of it. Sharing a
+   tool, a topic, a field or a client is not sharing an act.
+   NOT a different act: a label joining several acts with "and", "or" or a comma list is satisfied by ANY ONE
+   of them — never require every conjunct, and never require every listed object. A "such as …" /
+   "including …" list is ILLUSTRATIVE of one CATEGORY, not a closed checklist: an atom of the same kind
+   qualifies even when unlisted ("operate shop machinery, such as saws" covers a lathe). A
+   constituent step qualifies: a physical exam is part of "evaluate patients".
+
+D2 — THE ATOM IS BROADER. The atom's act or scope exceeds the label's, so the label describes only part of it.
+   Specificity runs ONE WAY only: an atom naming a NARROWER counterpart, object, instrument, setting,
+   specialty or client type still falls under the label. The label is not required to anticipate the instance.
+   Only the reverse — a broader atom — disqualifies.
+
+D3 — THE OTHER SIDE OF AN EXCHANGE. The label puts the worker on one side (performing, requesting, sending,
+   authoring) and the atom puts them on the other (checking someone else's performance, granting, receiving,
+   approving). However much vocabulary they share, these are different work.
+
+D4 — A DIFFERENT PRODUCT, AND THIS ONE IS CONDITIONAL. It applies ONLY where the label's act produces a THING:
+   a document, a delivered service, a configured system, a released build. Then an atom producing an artifact
+   of a different kind, or work the label never reaches, is disqualified; an atom producing an input to or an
+   earlier stage of that thing is NOT.
+   D4 DOES NOT APPLY WHERE THE LABEL'S PRODUCT IS A JUDGEMENT. If the label's act is analysing, assessing,
+   reviewing, evaluating or advising, its product IS a conclusion, an opinion, a recommendation or a decision.
+   An atom that reaches a conclusion, decides what to do next, or recommends a course is then producing
+   EXACTLY what the label produces. Do not disqualify it.
+
+VERDICT. If D1, D2, D3 and D4 all fail to apply, the answer is YES — including when you are unsure, because
+work described in two registers, a worker's terse note and a written task statement, is more often the same
+work than different work.
+
+Respond ONLY with JSON:
+{"label_act":"<the label's verb>","label_object":"<what it acts on>","atom_act":"<the atom's verb>","atom_object":"<what it acts on>","same_act":"<yes|no> — is the atom's act the label's act, a synonym, or a sub-type?","deciding_rule":"<D1|D2|D3|D4|none — the disqualifier that applied, or none>","why":"<one sentence>","verdict":"<yes|no>"}

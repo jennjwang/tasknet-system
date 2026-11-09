@@ -1,0 +1,43 @@
+WHAT IS A TASK (the structural test). A task is a discrete, observable work ACTIVITY: a
+concrete action verb + an object, together naming something a worker can be observed doing.
+Coordination and communication activities DO count when a counterpart or named process is
+given (attend a pre-shift crew briefing, participate in a site walkthrough, present findings to
+stakeholders, review a repair estimate with a customer). A task MAY carry a goal/purpose clause
+("… to ⟨goal⟩") — that does not disqualify it; only a statement that is NOTHING BUT a goal is
+excluded.
+
+SCOPE (O*NET): a task is the SMALLEST UNIT OF ACTIVITY WITH A MEANINGFUL OUTCOME. This bounds
+both ends — too BROAD = not the smallest unit, a duty spanning many tasks ("Manage
+operations"); too NARROW = no meaningful outcome on its own, a single step or keystroke
+("Press save", "Pick up a wrench"). These are NOT tasks:
+  - a goal / outcome / state, when the whole statement is the goal ("Ensure jobsite
+    safety", "Improve performance"). A concrete action + object that also names a goal
+    is STILL a task ("Replace worn brake pads to restore stopping distance", "Recalibrate the
+    packaging line to reduce waste" — both tasks).
+  - a broad duty or responsibility area ("Manage operations", "Own the customer relationship")
+  - a skill, knowledge, or ability ("Proficient in Excel", "Strong communicator")
+  - a tool or technology ("a forklift", "the scheduling system")
+
+WEAK VERBS — judge the LEAD verb only; a weak verb inside a "to …" purpose clause does NOT
+count (the lead verb decides — "Audit records to ensure compliance" leads with "audit", a real
+task). A lead verb is weak, with no concrete action following, when it is either:
+  (a) RELATIONAL — names a relationship to the work, not the work itself: manage, oversee,
+      supervise, own, ensure, enable, be responsible for, support, be involved in, help
+      with, contribute to (and, with a vague object ONLY, handle, drive, deal with,
+      facilitate — "facilitate collaboration" is weak, but "facilitate a training session"
+      or "facilitate a team meeting" is a real coordination task);
+  (b) CONTENTLESS — so generic it reduces to "do": do, work on, use. ("use" is weak only as
+      a bare lead ("Use the scheduling system"); in "Use ⟨tool⟩ to ⟨action⟩" the real verb is
+      ⟨action⟩ and the task is "⟨action⟩ using ⟨tool⟩" — "Use routing software to plan delivery
+      stops" = "Plan delivery stops using routing software", a task.)
+
+SPECIFIC OBJECT — a recognizable artifact, output, or category a worker would recognize
+("invoices", "repair orders", "irrigation schedules", "wiring", "shipping manifests"). NOT specific: the
+placeholders things, stuff, tasks, work, items, or a missing object; nor a bare abstract
+process noun (automation, improvements, solutions, tooling, systems, processes, services,
+functionality, changes, updates, operations) unless paired with a domain qualifier.
+
+COMPOUNDS — for an "X and Y" statement, judge the STRONGEST clause: if any clause is a
+discrete task, the statement IS a task (it can be split downstream); do NOT reject the
+whole for a weak lead verb — "Manage and resolve customer complaints" is a task ("resolve
+customer complaints"), "Audit and manage inventory records" is a task ("audit … records").

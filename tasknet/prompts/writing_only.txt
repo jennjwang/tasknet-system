@@ -1,0 +1,136 @@
+A trained occupational analyst is reviewing a published task statement. Predict whether the analyst will
+object to HOW IT IS WRITTEN.
+
+WHOSE WORK THIS IS IS NOT YOUR QUESTION. Whether a neighbouring occupation does it, whether it is a
+supervisor's job, how many workers do it — none of that can make a well-built sentence faulty or a
+faulty sentence sound. A statement describing somebody else's work entirely is, for your purposes,
+CLEAN if the sentence is sound. You are judging the words.
+
+OCCUPATION: $title
+STATEMENT: $statement
+
+The occupation's published task list is given below FOR ONE PURPOSE ONLY: a sentence can claim an
+authority the occupation does not hold, and you cannot see that in the words alone. Use the list to
+calibrate WHAT THIS OCCUPATION DECIDES versus what it contributes to. Do NOT use it to ask whether the
+work belongs here — that is the other question, and it is not yours. If the work is a neighbour's but
+the sentence describes it accurately, there is no defect.
+$own_tasks
+
+{{include:writing_principles}}
+
+## NAME THE RULE YOU ARE APPLYING
+
+Every objection belongs to exactly one numbered section above, and `principle` is that section's name:
+
+  verb         §1 VERB SELECTION — the verb claims an authority the occupation does not hold or
+               understates one it does, names the forum instead of the work, or sits above the
+               activities' own verb when a sharper one is available. ALSO §1.4-1.4d: a container verb
+               from the offender list ("manage", "handle", "conduct", "oversee", "deal with", "pursue", "ensure",
+               "perform", "execute", "use", "utilize");
+               TWO OR MORE "-ing" clauses stacked in one statement (§1.4b — count them: a second
+               participial clause is the defect, whatever introduces it; ONE "by X-ing" MEANS clause
+               naming how the main verb's act is performed is allowed and NOT a defect, including up to
+               TWO coordinated gerunds inside it; THREE OR MORE gerunds in the clause is the
+               enumeration defect and IS flagged); a statement running well past
+               ~20 words (§1.4c); or a mandate verb ("represent", "serve", "act for") leading where a
+               concrete act should, outside §1.4d's exceptions.
+               BE ESPECIALLY WARY OF THE CHORE-ENUMERATION SHAPE: a responsibility head trailed by a
+               procedural inventory of its own chores — "including X-ing records, Y-ing responses, and
+               Z-ing with counterparts", or the same list dressed as nouns. Walking the reader through
+               the steps is the enumeration defect whatever the grammar; the members carry that detail,
+               and §1.4b says the chores are DROPPED first. A statement that cannot say what the worker
+               is answerable for without listing how they go about it draws this objection.
+  vocabulary   §2 VOCABULARY — house jargon, a clipped or abbreviated form, a term borrowed from an
+               adjacent field, a truncated statement.
+  fusion       §3.2 / §3.3 — the statement conjoins ACTIVITIES that are separate duties, or fuses reactive
+               with generative work. Two or more verbs, each with its own outcome.
+  objects      §3.1 / §3.1a / §3.1b / §3.4 — the OBJECT LIST is malformed: items that are not co-hyponyms,
+               two items that are near-synonyms of each other, "and" where alternatives want "or", or a
+               list drawn from ONE SPECIALTY where the occupation spans several (§3.4 — generalise to the
+               category that covers all of them).
+               §3.4 HAS A TEST YOU CAN RUN ON THE ACTIVITY LIST YOU WERE GIVEN. Take each item in the
+               statement's object list and find the activities that name it. If an item is named by ONE
+               activity while the rest of the list is named by several, that item is one worker's specialty
+               promoted into the statement, and the task has been narrowed to their subfield — say `objects`
+               and quote it. The category that covers what all the activities name is what belongs there.
+               A WELL-FORMED OBJECT LIST IS NOT A DEFECT AND IS NOT `fusion`. "unit, integration, and
+               automated tests", "charts, notes, and clinical documentation", "toileting, incontinence care,
+               and bathing" are one action over co-hyponyms, which §3.1 asks for. Naming several things the
+               SAME act applies to is the statement being specific, and specificity is wanted. Flag the list
+               only when you can say WHICH of the four rules above it breaks and quote the offending item.
+  clauses      §4 PURPOSE, OCCASION AND METHOD CLAUSES — an uninformative purpose clause, a purpose that
+               is untrue of part of the object list, an occasion clause that narrows nothing, or a
+               "by ..." / "through ..." tail that repeats the head's stems or smuggles a second duty.
+               A "by X-ing" clause enumerating the MEANS of the main act (§4.3) is legitimate and NOT
+               a defect, even where the head alone names the work.
+               ALSO §4.4, WHICH RUNS THE OTHER WAY: a lasting CONDITION standing in the OBJECT slot — a
+               disposition of people toward the worker or each other, a climate, a standing; something
+               that persists between acts and that no one could be watched doing — with no observable
+               act anywhere in the sentence. The goal has been promoted into the object and the work
+               dropped; the activity list you were given names the acts the statement should lead with.
+               Say `clauses` and quote the abstraction.
+  counterpart  §5 COUNTERPARTS — a coordinative task that does not name who it is done with, or names a
+               generic collective ("stakeholders", "other parties", "relevant teams") instead of a
+               counterpart.
+  acronym      AN INITIALISM OR ACRONYM LEFT UNEXPANDED. Say `acronym` and quote the letters. A term whose
+               expansion IS the jargon is still `acronym`: write the words and let §2 judge them.
+               THE TEST IS STRUCTURAL. Take every run of capitals in the sentence and ask one question of
+               each: do these letters stand for words? If they do it is an initialism and it is a defect --
+               whatever the letters are, however short, and whether or not you recognise the thing they
+               name. Ask it of each token you find rather than looking for terms you have seen before.
+               BREVITY AND FAMILIARITY ARE NOT EXEMPTIONS. A two-letter form reads as an ordinary word
+               rather than as initials; a form ubiquitous in the field stops looking like initials at all;
+               a form naming a well-known method or statute looks like a name. Each is still letters
+               standing for words. Slow down on the short ones.
+               DOMAIN VOCABULARY THAT IS NOT AN INITIALISM IS NOT THIS. "Hoyer lift", "Medicaid",
+               "gait belt" are words a practitioner says; they are not abbreviations and are not a defect.
+  face_valid   WOULD A PRACTITIONER RECOGNISE THIS AS HOW THE WORK IS DESCRIBED? The statement is true,
+               correctly scoped, and still reads as something no one in the occupation would say — an
+               assembled O*NET-ese construction, a noun-heavy paraphrase of a plain act, or a framing
+               borrowed from the list's own template rather than from the work. This is the one axis that
+               is about RECOGNITION rather than a rule, so it carries a higher bar: only say `face_valid`
+               when you can name what a practitioner would say instead. Do NOT use it as a home for
+               awkwardness you cannot otherwise place — that is what the paragraph below forbids.
+
+Pick the section the defect actually offends. Do NOT reach for a label because the sentence merely reads
+awkwardly — awkwardness is not a section, and if no section is offended there is no defect. `face_valid`
+is not an exception to that: it needs the sentence a practitioner would have written instead.
+
+## FIRM OBJECTIONS VERSUS QUESTIONS
+
+Objections come in two strengths.
+
+Three are FIRM: a false claim about what the worker does or decides (verb), a clipped word (vocabulary),
+two separate jobs in one sentence (fusion). The analyst states these flatly and asks for the fix. Predict
+a defect on these whenever you can quote the words.
+
+AND THE AUTHORITY CLAIM IS THE ONE MOST OFTEN MISSED, so test it explicitly on every statement rather
+than waiting for it to look wrong. Find the sentence's main verb and any verb in its purpose clause, and
+ask of each: does the published list above show this occupation MAKING that call, or only feeding it?
+A verb that settles something — determine, approve, authorise, set, decide, evaluate-in-order-to-decide —
+when the list shows the occupation advising, preparing, or recommending, is a false claim, and the softer
+verb is wanted. The reverse also counts: a verb that merely advises where the list shows the occupation
+doing the thing understates it, and the stronger verb is wanted. Both are defects of the VERB. Name the
+verb to change; do not conclude anything about who owns the task.
+
+House vocabulary (vocabulary) is a QUESTION rather than a firm objection: the analyst is asking whether a
+term is in general use or can be simplified, not asserting that it is wrong. So:
+  · A term that is ordinary English used in a slightly specialised way, or a widely current name for a
+    thing, is NOT a defect. An analyst recognises those and passes them.
+  · A term that only makes sense inside a particular workplace's process, or that reads as a metaphor
+    or a piece of internal shorthand, IS one. It is the kind of word a reader would have to be told.
+  When you are unsure which of those two a term is, say there is no defect.
+
+## CALIBRATION
+
+A defect is the exception, not the rule. It needs a trigger you can quote. Do not accumulate mild
+reservations into an objection: name one identifiable thing, or nothing. But do not shrink from a clear one
+either: a verb that claims a decision the sentence gives no basis for (verb), a truncated word
+(vocabulary), two jobs joined by "and" (fusion), or a coordinative task whose counterpart is
+"stakeholders" (counterpart) are all defects however fluent the sentence reads.
+
+Respond ONLY with JSON, no prose and no code fences:
+{"defect": true | false,
+ "principle": "verb" | "vocabulary" | "fusion" | "objects" | "clauses" | "counterpart" | "acronym" | "face_valid" | "none",
+ "trigger": "<the exact words from the statement, or empty>",
+ "confidence": <float 0-1>}

@@ -1,0 +1,101 @@
+FORM — pick the shape that best fits the content. Do NOT default to "such as"; leaning on it for every statement is a formulaic tell, and real O*NET lines VARY:
+  · BARE:         "<verb> <specific object>"                         — when the object alone already says it
+  · OBJECTS:      "<verb> <A>, <B>, or <C>"                          — alternative objects (Water lawns, trees, or plants)
+  · METHOD:       "<verb> <object>, using <means>"                   — when the means is the informative part
+  · PURPOSE:      "<verb> <object> to <result>" / "for <result>"     — when a shared result matters
+  · STANDARD:     "<verb> <object> to ensure <standard>"             — ONLY when the ensured thing is a SEPARATELY VERIFIABLE condition that could be FALSE while the activity is still performed (a code or policy it must conform to, a checkable state of the object). "Inspect fire-safety equipment to ensure it meets code" — equipment can be inspected and still fail code, so the clause draws a real line. If the "standard" merely restates the activity's own aim ("coordinate deliveries to ensure timely delivery"), use BARE instead.
+  · PEOPLE/TOPIC: "<verb> with <whom> about <topic>, <topic>, and <topic>"
+  · EXAMPLES:     "<verb> <object>, such as <kind> or <kind>"          — ONLY for genuine example KINDS of a category head, and TWO OR THREE of them, never more
+
+THESE ARE PARTS, NOT SEVEN EXCLUSIVE TEMPLATES. The normal shape of an O*NET line is an object slot plus AT MOST
+ONE modifier clause: "<verb> <A>, <B>, or <C> to <result>", or "<verb> <object>, such as <kind> or <kind>, to
+<result>". Take the object slot you need — bare, a short list, or a category with examples — and add at most one
+modifier: method, purpose, or standard — OR NONE, WHICH IS THE COMMONEST SHAPE OF ALL.
+
+START BARE AND ADD NOTHING YOU DO NOT NEED. The object slot on its own is already a complete task statement, and
+more than a third of real O*NET lines are exactly that: a verb, an object, a full stop. A modifier is not the
+finishing touch that makes a statement look finished — it is a claim that a reader could not tell WHAT the work
+is without it. Write the bare sentence first. Keep a modifier only if removing it would leave the activity
+genuinely unclear, and delete it whenever the object already says the thing. "Water lawns, trees, or plants"
+needs nothing after it; "to maintain healthy growth" only restates why anyone waters anything. A purpose clause
+that any reader could have supplied is padding, and padding is the most common way these statements go wrong.
+
+NEVER TWO MODIFIERS. "Review records, using case-management software, to decide next steps before each hearing"
+stacks means, purpose and occasion, and the sentence stops being readable. Pick the one modifier carrying the most
+information — usually the purpose, which is the commonest modifier in real O*NET lines by a wide margin — and
+if none of them carries much, drop them all. Let the phrasing be natural.
+
+## HOW THE SENTENCE IS BUILT
+
+- ONE NATURAL, GRAMMATICAL SENTENCE. If it contains a list, the items must be PARALLEL — the same grammatical form, each self-contained. Prefer noun phrases over gerunds ("permits, inspections, and site surveys", not "pulling permits, doing inspections").
+- ONE TASK, AT MOST TWO CLOSELY-LINKED VERBS — a single action, or two facets of one activity ("review and approve", "diagnose and repair"). NEVER a 3-or-more-verb compound: "mow, edge, and fertilize lawns" is "maintain lawns"; "analyze, build, and report metrics" keeps the ONE dominant verb or their common generalization.
+- NEVER GRAFT A SEPARATE ACTIVITY ON AS A TRAILING MODIFIER. "...interpreting diagnostic trouble codes using a compression tester" fuses reading codes with running a compression test. A tail may only elaborate HOW the head's own action is carried out. If an activity does not fit cleanly, drop it.
+- TWO OR THREE EXAMPLES AFTER "SUCH AS", NEVER MORE. "Such as" says the list is ILLUSTRATIVE, so a long one
+  contradicts its own opening: seven items is an inventory wearing an illustration's clothes, and a reader
+  takes it as a claim that the set is complete. Name the two or three a practitioner would recognise as the
+  most typical and stop. Nothing is lost by leaving the rest out -- "such as" has already said the list is
+  partial, which a bare list of objects has not.
+- NO "BY <VERB>ING" AND NO "THROUGH <VERB>ING". A means clause is a NOUN PHRASE after "using" -- never a gerund
+  clause. Write "Inspect residential electrical panels, using circuit testers and thermal imaging", not
+  "Inspect residential electrical panels by testing circuits, scanning for heat, and logging readings". A
+  "by ...ing" tail invites a chain of sub-steps: it turns one task into a procedure, buries the activity behind
+  its method, and reads as a workflow rather than a duty. IF THE METHOD IS THE INTERESTING PART, MAKE IT THE
+  VERB -- "Test circuits and scan panels for overheating" says more than "Perform panel inspections by testing
+  circuits and scanning for overheating".
+- NO BRAND, PRODUCT, OR PROGRAMME NAMES. Write what the thing IS, not what it is called: "a spreadsheet
+  application", not the vendor's name for one; "a powered pallet truck", not the manufacturer's model; "a
+  federal nutrition-assistance programme", not its initials. A trade name reads as a claim that the work
+  depends on that one product, it dates the statement, and it localises a duty that exists wherever the same
+  work is done under another name.
+  THE TEST: would a worker doing this job in another state, country, or firm read the sentence as describing
+  THEIR work? If the name is the thing that makes them say no, replace it with the category it belongs to.
+  This holds even where the name has become the ordinary word for the object -- a genericised trademark is
+  still a trademark, and the generic term always exists because that is what the trademark was coined against.
+- SENTENCE CASE, ONE SENTENCE. Capital letter, imperative verb first, nothing else capitalised except proper nouns the rule above still permits, full stop at the end (acronyms are written out in full -- see 2.2). Never Title Case, never open in lower case, never lead with a gerund.
+- PRESENT TENSE, IMPLIED PLURAL SUBJECT ("Prepare reports", not "Prepares reports"). Say "to <result>", never "in order to"; prefer "or" over "and"; no semicolons, forward slashes, "and/or", or "etc."; spell out any acronym.
+- LENGTH: aim for ~15 words. Go to 25 only when the activities genuinely span several DISTINCT KINDS the statement has to name — never pad, never exceed 25.
+
+## HOW MUCH TO ENUMERATE
+
+- TWO KINDS OF LIST, TWO DIFFERENT LIMITS. Do not confuse them:
+    · ILLUSTRATIONS — a "such as A, B, or C" list of EXAMPLES. Cap 3, each ONE broad KIND rather than a raw instance ("brake, suspension, and exhaust repairs", NOT "brake pads, rotors, calipers, and hoses"). These are a sample; a fourth adds nothing and the reader knows the list is partial.
+    · OBJECT / SCOPE — the things the work ACTS ON, ASSESSES, PRODUCES, or the parties it runs BETWEEN. Up to 5, and name every kind whose omission would misrepresent the work. This is CONTENT, not verbosity: "assess vehicle condition from road tests, diagnostic scans, fluid checks, tire measurements, and driver reports" is five objects and all five are the work; cutting to three would say the mechanic does not road-test.
+  When you must shorten, cut ILLUSTRATIONS first, then means and tools.
+- ONE LIST PER STATEMENT. NEVER both a multi-item object list AND a "such as" list: "Prepare reports, analyses, statements, packets, or presentations, such as variance analyses, management updates, or dashboards" is wrong twice over. Pick ONE place to enumerate — either the object names the kinds, or it names the category and the "such as" list gives them. Moving items from one into the other is not a fix; the total is what is capped.
+- SPEND THE ITEMS ON OBJECTS, NOT INPUTS OR TOOLS. Name WHAT THE WORK ACTS ON or PRODUCES, not the material it consumes or the software it uses. "Prepare breads, pastries, and celebration cakes" beats "Prepare baked goods, using flour, yeast, and proofing schedules": the second spends every slot on inputs and leaves the reader not knowing what is produced. Name inputs or tools only if slots remain.
+- KEEP SHARED SPECIFIC KINDS — over-generalizing is a failure, not a virtue. Where genuine object KINDS or output/decision TYPES are shared, keep them ("such as sedans, trucks, or motorcycles", NOT "vehicles"; "to approve, deny, or escalate", NOT "to decide"). An enabler ("using <means>") must characterize the WHOLE set — if the means differ, drop it rather than name one instance.
+- A PURPOSE OR ENABLER CLAUSE MUST APPLY TO EVERY ITEM IT FOLLOWS. "Order parts and shelve deliveries to keep the bins stocked" is WRONG — ordering does not stock the bins. If the clause is true of only one item, drop the clause or drop the items it does not cover.
+
+## WHAT THE WORDS MUST NOT BE
+
+- NO PLACEHOLDER NOUNS. "items", "information", "data", "materials", "activities", "content", "documentation" name nothing. Every noun must be a KIND a practitioner would recognise: "replace brake pads, rotors, or calipers", NOT "replace parts or components". The same goes for invented compounds ("installation controls", "readiness criteria") — if you cannot point to the wording that supports a term, do not write it.
+- NEVER A VAGUE UMBRELLA ("perform duties", "provide services", "handle matters", "manage operations"); name the concrete kind of work.
+- NO INDUSTRY, EMPLOYER, CLIENT TYPE, PRODUCT, BRAND, VENDOR, OR PLATFORM NAME, and no "for <field>" / "in <area>" / "such as <subfield>" tail naming which specialty the work happens to serve. Name the generic tool category or drop it ("using spreadsheet software", not the product). The statement has to read for EVERY worker in this occupation. For a welder, "Weld shipyard hull seams" is "Weld structural seams" — and if removing the sector word leaves the statement saying less, that word was doing the OBJECT's job, so name the object better.
+- A DELIVERY CHANNEL IS NOT A MEANS. "by phone, by video, in person, by email, in writing" is HOW a conversation reached someone, not what the work is, and the same judgement made in a meeting and made over the phone is one task — so naming the media identifies nothing while spending room a purpose clause needs. The METHOD shape is for a means that changes the work (an instrument, a technique, a class of tool), not the medium a message travelled through. Say who the work is done WITH and what it is FOR instead. Keep a channel only when the medium IS the work.
+- NAME PEOPLE AS PEOPLE. When the work is done WITH or FOR people, say so ("counsel clients about ..."), do not flatten them into a detached noun ("client information").
+
+## CHOOSE THE MOST SPECIFIC VERB THAT COVERS THE WORK
+
+A carrier verb — perform, conduct, provide, manage, handle, coordinate, carry out, do, undertake, give, exchange,
+ensure, oversee, support, facilitate — carries no action of its own. Whether it is acceptable depends entirely on
+the OBJECT it takes, and THE TEST IS WHETHER THE OBJECT IS A DISGUISED VERB.
+
+FORBIDDEN — the object is a nominalisation, so the real verb is already sitting there. Promote it. For a mechanic,
+"perform brake inspections" is "inspect the brakes"; "give a quote" is "quote the repair"; "conduct a road test" is
+"road-test the vehicle". For a baker, "conduct dough proofing" is "proof the dough". If you can turn the object
+back into a verb, you must.
+
+ACCEPTABLE — the object is a genuine CLASS of work that is not itself an action word, and the carrier verb is how
+practitioners speak. For a mechanic, "perform scheduled maintenance" is fine: maintenance is the recognised name of
+a body of work, not a verb wearing a noun ending.
+
+So the question is never "is this verb generic?" but "does the object already contain the verb?" If it does,
+rewrite. If the object is a real class of work, a carrier verb is correct — do not force a narrower one that covers
+only part of it.
+
+Examples (UNRELATED occupations — copy the FORM only, never the content — and note the VARIED shapes):
+- bare:      "Sharpen chef's knives" / "Sharpen paring knives" -> "Sharpen kitchen knives."
+- objects:   "Water the lawn" / "Water the shrubs" / "Water potted plants" -> "Water lawns, shrubs, or potted plants."
+- method:    "Log hours in the tracker" / "Check the timesheet against the roster" -> "Track labor hours, using scheduling software."
+- standard:  "Check smoke alarms" / "Test the extinguishers" -> "Inspect fire-safety equipment to ensure it meets code."   (the code is verifiable and can fail — that is what licenses "to ensure")
+- such as:   "Change tires" / "Jump-start batteries" / "Unlock cars" -> "Provide roadside assistance, such as tire, battery, and lockout service."

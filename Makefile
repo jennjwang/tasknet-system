@@ -1,7 +1,7 @@
-# TaskNet System — the pipeline. The tests need neither the data package nor any keys.
+# TaskNet System — the pipeline. The tests need neither the data package nor any keys (make test: the Node suite).
 #
 #   make setup       submodule + venv with aggregate (aggregate/) and the tasknet package + npm workspace install
-#   make test        aggregate's tests, tasknet's tests, then the Node test suite of interviewer/
+#   make test        the Node test suite of interviewer/
 #   make onet        download the O*NET reference files into data/onet/ (CC BY 4.0, not stored here)
 #   make process OCC=<slug>   process one occupation's sessions (ingest -> normalize -> dedup)
 #   make list OCC=<slug>      build the task list for one occupation (LLM calls; aggregate/aggregate/aggregation/chain.py)
@@ -18,12 +18,10 @@ export PYTHONPATH := $(CURDIR):$(CURDIR)/aggregate
 setup:
 	git submodule update --init
 	test -d $(VENV) || python3 -m venv $(VENV)
-	$(PY) -m pip install -q -e './aggregate[test]' -e '.[test]'
+	$(PY) -m pip install -q -e ./aggregate -e .
 	npm install --no-audit --no-fund
 
 test:
-	cd aggregate && $(PY) -m pytest -q
-	$(PY) -m pytest -q
 	npm test
 
 onet:

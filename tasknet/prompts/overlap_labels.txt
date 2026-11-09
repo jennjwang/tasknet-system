@@ -1,0 +1,115 @@
+Two task statements from ONE occupation's published task list were flagged as possibly overlapping. Decide
+ONE thing: do these two lines' CLAIMS overlap — is there an act that appears on both? You are ROUTING, not
+merging. Whether an overlapping pair is one duty the inventory owes once, or two duties whose boundary needs
+rewording, is decided further down the chain BY THE MEMBER ACTIVITIES under each label, not by you: you see
+two sentences and nothing else, which is the right instrument for the routing question and the wrong one for
+the merge question. Answer the routing question and stop.
+
+THE TEST IS HOW THE TWO LINES READ. These statements ARE the deliverable — almost every reader will see them and
+never see the activities beneath them. So ask: reading these two lines side by side, would a worker in this
+occupation say "that is the same job duty, written twice"? If yes, say YES. Do not ask how long the list is or
+whether it "has room" for both; a duplicate reads as a duplicate in a list of ten or a hundred.
+Ask it about the WORK, not the sentences. Two statements can share almost no words and still be one duty,
+because each writer reached for different instances, different paperwork, or a different moment in the cycle.
+
+{{include:task_dimensions}}
+
+DECIDE IN THIS ORDER. STEPS 1-2 ARE A GATE, NOT FACTORS TO WEIGH.
+
+STEP 1 — LIST THE ACTS EACH LINE NAMES. A line can name more than one: read its lead verb AND any act in an
+"and ..." clause or a trailing clause. Collapse near-synonyms into one act before comparing (record, log, enter,
+file, maintain and document are ONE act; plan, prepare and develop are ONE act; assess, evaluate and grade are
+ONE act).
+
+STEP 2 — IF NO ACT APPEARS ON BOTH LISTS, ANSWER NO AND STOP. This is the case this judge gets wrong most
+often: measured against hand labels it answered YES to seven pairs in a row whose acts were disjoint. A shared
+OBJECT, a shared POPULATION served, a shared DATA SOURCE, a shared SETTING or a shared PURPOSE is NOT a shared
+act. Delivering a service and inspecting one are two acts. Working out what is wrong and instructing someone are
+two acts. Informing a client and building rapport with them are two acts. Producing a figure and advising
+someone what to do about it are two acts. In every one of those the two lines share their object and still
+describe different work, and a published inventory owes both lines.
+
+WHEN YOU GENUINELY CANNOT TELL, ANSWER YES. You are the FIRST of two judges. A wrong YES costs one look at
+the pair's member activities downstream, where the two lines are read against the concrete work beneath them
+and the default is to keep both — a wrong YES publishes nothing. A wrong NO is FINAL: the pair is never looked
+at again, and if the claims do overlap the inventory ships the overlap. The two errors are not symmetric, so
+uncertainty resolves to YES.
+THIS IS NOT A LICENCE TO SKIP STEP 2, AND IT DOES NOT SOFTEN IT. The tie-break applies ONLY where you cannot
+tell whether an act appears on both lists. Where you CAN tell and it does not — where the only thing shared is
+an object, a population served, a data source, a setting, a tool, a document format, or a carrier verb — the
+answer is NO and it is not close. Answering YES on act-disjoint pairs is the failure this judge is measured on:
+against hand labels it once answered YES to seven such pairs in a row. Doubt about a SHARED ACT resolves to
+yes; the absence of one does not.
+
+STEP 3 — IF AN ACT APPEARS ON BOTH LISTS, THE ANSWER IS YES. If ONE side names an act the other also names,
+that is enough, even when each side names a second act of its own — the overlap is what matters, not the
+surplus. The shapes below are what a shared act LOOKS LIKE; they are not a further test to pass. They fall in
+two families and BOTH ANSWER YES, because both are pairs a reader could file the same activity under.
+
+SAY YES — one duty written twice:
+* THE SAME ACT ON DIFFERENT SPECIALTIES, PRACTICE AREAS, CASE TYPES, OR CLIENT SEGMENTS. This list describes an
+  OCCUPATION, not a person, so the subject the work is applied to is which INSTANCE a given member happens to
+  see — not a second duty. Two lines that name one act and differ only in the field it is aimed at are one line
+  the inventory owes once, with the fields as examples. It does not matter that the two specialisms need
+  different bodies of knowledge, or that no single member does both: an occupation-level inventory that carries
+  one line per specialty hides the activity they share, and the most widespread work in the job then appears
+  nowhere as itself.
+* SAME ACTION, SAME OBJECT, different WORDS FOR THE SAME SET. For a groundskeeper, "Trim hedges, shrubs, and
+  borders" and "Trim ornamental plantings, such as topiary or screening hedges" are one duty written twice —
+  the two lists name the SAME plantings, not two groups of them.
+  BUT A NARROWING MODIFIER IS NOT A DIFFERENT EXAMPLE. If one side's object is the other's object PLUS a
+  qualifier that CUTS DOWN THE SET OF CASES — a scope, a horizon, a named subgroup — the narrower side
+  is a SUB-TYPE, and sub-types are TWO duties. A STAGE OF THE SURROUNDING PROCESS IS NOT SUCH A QUALIFIER:
+  it says WHEN along a sequence the same act happens, and the act is the same act at every point, so it
+  does not cut the cases down. A different TRIGGER does cut them down — see the dimensions above.
+  A MODIFIER THAT NAMES WHERE THE ACT LANDS IS NOT A NARROWING. Saying which system, file, register, tool or
+  format the same act is performed into or with does not cut the set of cases down — it says the same thing more
+  concretely. "Record the scores" and "enter the scores into the district system" are ONE act on ONE object; the
+  system is where it goes, not a subgroup of it. Same for a named tool, a named form, or a named format.
+  THE TEST, and apply it to the CASES rather than the words: would a worker doing the broader side ever be
+  doing something the narrower side does NOT cover? If the only thing the narrower side adds is where the work
+  lands or what it is done with, they are one duty. If it covers only SOME of the triggers or subgroups the
+  other covers, they are two — but covering only some STAGES is not a difference.
+* One names the ARTIFACT produced, the other the ACTIVITY that produces it, over the same work.
+
+ALSO SAY YES for these — two duties, but you only reach them when an act appears on both lists, so the
+lines' claims overlap and a reader could file the same activity under either. The chain will hold them apart
+on the members; your job is only to route them there, so do NOT withhold a YES because the work divides:
+* BUILDING OR SETTING SOMETHING UP, against MAINTAINING OR FIXING IT AFTERWARDS. These are two acts separated
+  in time. Creating a plan, a document or a system is not the
+  same act as revising it once it is in use, even when the same worker owns both and even when the second act
+  reads as a continuation of the first. Two lines, not one.
+* SUB-TYPES OF ONE OBJECT ARE TWO DUTIES, and so is ONE ACT FOR TWO READERS OR FROM TWO TRIGGERS. A worker handling two categories of the same document, or
+  performing one act for two different audiences, or performing it once because something went wrong and again
+  because it was scheduled, is doing work a published inventory owes TWO lines. Do not merge on a shared act
+  alone — the reader and the trigger are distinguishing, not incidental.
+  A TRIGGER IS NOT A STAGE, AND ONLY THE TRIGGER DIVIDES. A trigger is the event that makes the work start; it
+  divides because it can change what the worker does. A STAGE is a position in a sequence that ONE act runs
+  through — the early instance of a thing and the late one — and it does NOT divide, because the act is the
+  same act at both. If the only difference between two candidates is how far along the surrounding process
+  they sit, that is ONE duty with both moments as instances.
+  A SECOND EXCEPTION, AND IT IS THE SPECIALTY CASE ABOVE: a sub-type that is only the PRACTICE AREA, CASE TYPE
+  or CLIENT SEGMENT the act is aimed at does not divide the duty. Two categories of one document are two duties
+  when handling each is a different job — a different trigger, a different reader, a different act. They are
+  ONE duty when the only difference is which field of the occupation's work the document belongs to, because
+  that is which instance a member happens to see. Ask what the worker does differently, not what the document
+  is called: if the answer is "the same steps, on a different subject", it is one line.
+* GENUINELY DIFFERENT ACTIONS, even on the same object — for a mechanic, inspecting brakes and replacing brake
+  pads are separate duties: different tools, different skills, either can happen without the other. This holds
+  when one act ordinarily follows the other in the same cycle: diagnosing a fault and repairing it are two
+  duties, and a shared object noun does not make them one.
+* Work only some members do, where the ACT ITSELF is one those members alone perform — a distinct procedure or
+  authority, not the same procedure aimed at a different subject.
+A DIFFERENT NOUN IS NOT ENOUGH. Before refusing the merge, name what a worker would actually have to do
+differently. If the only thing you can name is that the two statements mention different items or different
+paperwork, the answer is YES. A different ACT is enough to refuse the merge, even inside one cycle — the
+question that remains is whether an act still appears on both lists.
+
+ANSWER WITH ONE WORD:
+  yes  an act appears on BOTH lists — either shape family above. One duty written twice, or two duties whose
+       claims overlap: both answer yes, because both need the pair looked at against its members.
+  no   distinct duties with no shared act: you stopped at step 2, or the only thing shared is a field,
+       a setting, a tool, a document format, or a carrier verb (manage, handle, conduct, support)
+       standing in for different work.
+
+Answer with ONLY 'yes' or 'no'.

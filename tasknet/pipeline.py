@@ -5,7 +5,7 @@
 
 aggregate (the git submodule at aggregate/) does the work: aggregate.processing.normalize (split, filter,
 rewrite, debrand), aggregate.processing.dedup, and Aggregator.build (the chain). This module adds the
-interview study's own parts: where the sessions and outputs live, the TaskNet keys (tasknet.env), the O*NET
+interview study's own parts: where the sessions and outputs live, the O*NET
 reference statements (tasknet.onet), the held-out freeze guard, and a configs.yml overlay in the workspace.
 The CSVs keep their legacy column names (session_id, task_name, onet_code, onet_title, original_task_name).
 """
@@ -19,7 +19,7 @@ from pathlib import Path
 from aggregate import Aggregator, Atoms, Config, Prompts
 from aggregate.processing import dedup, normalize
 
-from . import env, onet
+from . import onet
 from .ingest import read_sessions
 from .paths import cache_dir, env_path, interviews_dir, load_env, results_dir, workspace
 
@@ -39,9 +39,10 @@ def prompts(cfg: Config) -> Prompts:
     prompts/task_dimensions.txt, replaces the packaged prompt of that name, which sits in a subdirectory; that is
     how the task definition is changed without editing the submodule.
 
-    tasknet/prompts/ holds the paper's wording of the four prompts aggregate rewords ("cluster", where aggregate
-    says "family"): cluster, dispose, synthesize and synthesize_repair. They are what the paper prints, and a
-    prompt's text is part of its cache key, so they also keep every verdict cached by the earlier in-tree code."""
+    tasknet/prompts/ holds every prompt of the TaskNet System, the text the paper prints, so a new aggregate pin
+    never changes what runs here; aggregate supplies only the prompts this system does not have (the batched
+    and evaluation judges). A prompt's text is part of its cache key, so these also keep every verdict cached by
+    the earlier in-tree code."""
     extra = [workspace() / "prompts"] if (workspace() / "prompts").is_dir() else []
     extra += [TASKNET_PROMPTS]
     extra += [workspace() / d for d in (cfg.get("prompt_dirs") or [])]
@@ -49,11 +50,12 @@ def prompts(cfg: Config) -> Prompts:
 
 
 def aggregator(workdir=None, *, client=None, **overrides) -> Aggregator:
-    """An Aggregator over the workspace's config, prompts and cache, with the TaskNet keys (tasknet.env);
-    `client` replaces every model client (the audit passes one that refuses calls)."""
+    """An Aggregator over the workspace's config, prompts and cache. aggregate routes the keys documented in
+    .env.example (LLM_*, OPENAI_*, CLAUDE_*; no default endpoint); `client` replaces every model client (the
+    audit passes one that refuses calls)."""
     load_env()
     cfg = config(**overrides)
-    return Aggregator(cfg, router=None if client else env.router, client=client, workdir=workdir,
+    return Aggregator(cfg, client=client, workdir=workdir,
                       cache_dir=cache_dir(), prompts=prompts(cfg))
 
 

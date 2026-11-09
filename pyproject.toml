@@ -13,9 +13,6 @@ dependencies = [
     "openai>=1.0",
 ]
 
-[project.optional-dependencies]
-test = ["pytest>=8"]
-
 [project.scripts]
 tasknet = "tasknet.cli:main"
 
@@ -24,6 +21,3 @@ include = ["tasknet*"]
 
 [tool.setuptools.package-data]
 tasknet = ["prompts/*.txt"]
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]

@@ -1,0 +1,284 @@
+WRITING PRINCIPLES FOR A TASK STATEMENT. These govern HOW the statement is written — not what work it
+describes, and not who owns that work, which are separate questions settled elsewhere.
+
+## 1. VERB SELECTION
+
+1.1 THE VERB MUST NAME THE ACTUAL AUTHORITY RELATION. "Advise" implies non-binding expertise supplied on
+    request; use it only where the worker has no authority over the outcome. For downward or
+    peer-directed communication, the verb is "direct", "instruct", "assign", or "update".
+    TEST: name the recipient, then ask whether the worker can be overruled by them. If the recipient is a
+    client, a court, a board, or anyone the worker serves, "advise" is right. If the recipient is the
+    worker's own staff or peers -- anyone who takes the worker's word as the operative instruction -- pick
+    one of the four verbs above. The tell is a recipient INSIDE the worker's own operation.
+1.2 THE VERB MUST NOT UNDERSTATE THE DELIVERABLE. If the worker produces the change, the verb is
+    "develop", "implement", or "revise". "Recommend" terminates the worker's involvement at the proposal
+    and is wrong wherever the work continues past it.
+    TEST: ask who acts next. If the sentence ends at a proposal and SOMEONE ELSE would have to act for the
+    work to be finished, "recommend" is right. If nobody else appears -- if the worker is the one who
+    would carry it out -- the verb has stopped short of the deliverable. Say what they produce.
+1.3 THE VERB MUST NOT CLAIM AN OUTCOME THE WORKER DOES NOT OWN. Verbs naming an organisational or
+    political result — advance, secure, win, drive — attribute a multi-party outcome to one worker.
+    Re-anchor the verb on the worker's own contribution and demote the outcome to the purpose clause.
+1.4 PREFER THE LOWEST-ABSTRACTION VERB THAT IS STILL OCCUPATION-STANDARD. An umbrella verb is acceptable
+    only if a practitioner at any employer would use the term unprompted. Otherwise decompose into the
+    concrete action.
+    THE USUAL OFFENDERS NAME NO ACT AT ALL: "manage", "handle", "conduct", "oversee", "deal with", "pursue",
+    "ensure", and the synonyms of "do" — "perform", "execute", "use", "utilize". Each is a container for whatever follows it, which is why
+    statements led by them always grow an enumeration behind — the vague head forces the tail to do the
+    work. Replace the container with what the worker actually does; if no single concrete verb covers the
+    activities, that is evidence of TWO tasks, not license for an umbrella.
+1.4a LEAD WITH THE RESPONSIBILITY, NOT ITS FIRST CHORE. Where a statement covers the several acts that
+    upkeep one continuing responsibility — opening a new file, running a stocktake, supervising staff,
+    keeping one set of books — the HEAD VERB names the responsibility, and the chores follow in AT MOST
+    ONE subordinate participial clause carrying a noun list ("Open new tenancy files, preparing reference
+    checks and inventory records..."), never as a flat list of coordinate verbs with the
+    responsibility buried or absent, and never as stacked "-ing" clauses — 1.4b's one-clause cap holds
+    for this form too.
+    TEST: read the head verb and object alone. If they name a step ("send reference requests") rather
+    than the thing the worker is answerable for ("open new tenancy files"), re-anchor the sentence on the
+    responsibility.
+1.4b GERUNDS ARE A LAST RESORT. A statement carries AT MOST ONE participial ("-ing") clause. Chores and
+    steps beyond that are DROPPED — the members carry the detail, and a statement need not enumerate its
+    chores — or written another way. DROP THE CHORES, KEEP THE TEXTURE: the trimmed statement keeps a short
+    tail naming the object kinds, the counterpart, or two or three OCCASIONS the duty serves ("for X, Y, or
+    Z", "such as A or B"). A statement stripped to a bare verb and object has been over-trimmed — the target
+    register is a finite verb (or two), an object list, a findable counterpart, and an occasions tail: a genuine second step takes a finite verb ("Prepare X and
+    monitor Y"), an enumeration becomes a "such as" NOUN list, an outcome goes in the purpose clause.
+    Stacked gerunds are the enumeration defect wearing grammar — two or more "-ing" clauses in one
+    statement is the same smell as a verb chain, whatever introduces them.
+    ONE "by X-ing" MEANS CLAUSE IS ALLOWED. Where the method carries the act's judgement or skill,
+    a statement may carry one "by"-clause naming it — the standard O*NET shape, and it counts as the one
+    permitted participial, not a stack, even when it coordinates TWO gerunds ("by taking X and
+    reviewing Y"). TWO GERUNDS IS THE CEILING: three or more in the clause is the enumeration defect
+    wearing "by" — keep the one or two moves that carry the judgement; the members hold the rest. The clause names
+    the means of the MAIN verb; a gerund that is its own errand is a second duty and stays out.
+1.4c A STATEMENT IS ABOUT 15 WORDS. That length holds one verb, one object list with an example or two,
+    and one clause — which is all one duty needs. A statement pushing past ~20 words is carrying a second
+    duty, a redundant clause, or an enumeration that belongs in a "such as" list cut to two or three
+    items. Trim to what a reviewer can take in at a glance; the members carry the detail.
+1.4d THE VERB MUST NAME THE WORK, NOT THE MANDATE. "Represent", "serve", and "act for" name the
+    RELATIONSHIP under which work happens, not the work: everything an agent does for the principal who
+    engaged them is representation, so a represent-led sentence says only who the worker was for. Lead with the concrete
+    act performed under the mandate and demote the mandate to the purpose clause: "Survey boundaries, stake
+    corners, and file the plat TO ACT FOR owners in a dispute" names the work and keeps the
+    relationship. EXCEPTION: where standing in the role is itself the act — entering an appearance,
+    covering a hearing where presence is the duty, or carrying a matter through an engagement whose span
+    is the task ("from data calls to negotiated findings") — the role verb stands.
+1.5 THE VERB MUST NAME THE WORK, NOT THE FORUM IT HAPPENED IN. "Meet with", "discuss", "check in with",
+    "attend" and "talk to" name an occasion, not an accomplishment — they tell a reader where the worker
+    was, not what they did or what changed. Name the act the occasion exists to perform and let the
+    setting go, or demote it to an occasion clause where it is what makes the task distinct. For a
+    building surveyor, "meet with contractors about defects" names the meeting; "agree remedial work
+    with contractors" names the duty.
+    TEST: ask what is different afterwards. If the only answer is "the conversation happened", the verb
+    has named the forum. A verb that survives names something checkable — a decision reached, an
+    instruction given, information obtained, an approval granted.
+    NOT THIS: a conversational duty is not banned. Where the talking IS the work, use the specific verb
+    for it — "interview", "negotiate", "counsel" — not the generic container.
+
+## 2. VOCABULARY
+
+2.1 NO HOUSE JARGON. The test: would this term appear in a job posting from a different employer, using a
+    different methodology, in a different sector? If not, replace it with the plain equivalent.
+2.2 NO CLIPPED OR ABBREVIATED FORMS, AND NO BARE ACRONYMS. Write the full word, and write out what the
+    initials stand for.
+    TEST: a CLIPPING is one word with its end cut off -- restore the letters and you recover ordinary
+    English ("admin" -> "administrative", "spec" -> "specification"). An ACRONYM is the initials of several
+    words. Both are written out; they differ only in how.
+    NO EXCEPTION AND NO PARENTHETICAL. Not "<expansion> (<acronym>)": the initials add length where length
+    is scarcest and tell a reader who already knew them nothing. Where the expansion alone reads badly the
+    term is house jargon under 2.1 and the fix is a plainer phrase, not a shorter one.
+    THERE IS NO EXEMPTION FOR NAMES. A named method, standard, programme or statute whose initials stand
+    for words is written out like any other. Nor for clipped names: "C-section" is "caesarean section". The
+    only question is whether the short form stands for something longer.
+    A CLIPPING INSIDE A COMPOUND IS STILL A CLIPPING, and the compound is where it hides, because it reads
+    as the name of a thing rather than as a shortened word: "app store", "in-app purchase", "admin panel",
+    "spec review", "config file". Restore the letters.
+    NOT A DEFECT: a capital that stands for no word at all -- "X-ray", "type 2", a model number. There is
+    nothing to expand.
+
+2.3 TERMS MUST BE NATIVE TO THE OCCUPATION. A term borrowed from an adjacent field signals the statement
+    was drafted from the wrong template. Replace it with the occupation's own term.
+    TEST: take each noun in turn and ask whose vocabulary it belongs to. A noun naming another trade's
+    subject matter -- its livestock, its castings, its permits, its tolerances -- is borrowed even when
+    the surrounding sentence is impeccable, and even when this occupation sometimes encounters the thing.
+    Name what THIS occupation tracks about it instead.
+2.4 STATEMENTS MUST BE COMPLETE. No mid-word or mid-clause truncation. Every statement is a grammatical
+    sentence ending in a period.
+2.5 A TERM MET ONLY IN ONE SPECIALTY DOES NOT BELONG IN AN OCCUPATION-LEVEL STATEMENT, whatever slot it
+    fills — object, artifact, counterpart, procedure, statute, system, or setting. The statement describes
+    the occupation; a term only one practice area's practitioners would use of their own work narrows the
+    statement to that subfield and silently excludes everyone else.
+    TEST: ask which practitioners could use this term of their own work. If only those in one practice
+    area, sector, or client base could, replace it with the covering term at the occupation's level.
+    AN ENUMERATED LIST OF SPECIALTY TERMS IS THE SAME DEFECT IN PLURAL, and the commoner shape, because it
+    looks like coverage: each item is one practice area's instance, and the list silently excludes every
+    specialty not on it.
+    THE FIX KEEPS THE SHARED CORE BY NAME AND COVERS THE REST WITH ONE OPEN TAIL. An item every
+    practitioner recognises stays; the specialty items fold into one covering phrase ("and other property
+    owners", "or other regulated filings"). Where no item on the list is shared-core, the covering term
+    replaces the whole list. The covering term must still be concrete — a role, an artifact kind, a
+    category a reader can point to — never a collective that names nobody (2.1 and 5.2 still apply).
+    NOT THIS: a concrete example inside a shared-core list is not a specialty term. "Such as" examples
+    every practitioner recognises make a statement better (3.1a); the test is whether the term is met only
+    inside one subfield, not whether it is specific.
+
+## 3. SCOPE — ONE TASK, ONE ACTIVITY
+
+3.1 OBJECT LISTS MUST BE CO-HYPONYMS. Every item in an "A, B, or C" list must name a thing the SAME
+    activity is applied to. If one item is produced by a genuinely different process, it belongs in its
+    own statement.
+    TEST: substitute each item into the head on its own and ask whether the worker is doing the same thing
+    each time. Same activity on different instances is ONE list, however varied the items look and however
+    differently each reaches its recipient. A different activity splits out.
+    Do NOT additionally require the items to match on workflow and on counterpart: that three-way test
+    fails almost every real list and is the main source of wrong splits.
+3.1a A LIST OF NEAR-SYNONYMS IS ONE ITEM. Co-hyponymy is necessary, not sufficient. Where two or three items
+    name the same thing at slightly different scope or duration, they cost length and carry no information,
+    and the sentence starts to read like a form rather than like the work. Collapse them to the plainest one
+    and spend the words on a concrete example instead: one example a practitioner would recognise says more
+    than three abstract near-equivalents.
+    TEST: read the list in order and ask what item 2 tells a reader that item 1 did not. If the only answer is
+    that it can be bigger, longer-term, more formal or more detailed, it is the same item twice — keep one.
+    NOT THIS: this does not license dropping a genuinely different object to shorten a list. The items being
+    collapsed have to be the same thing described twice, not two things the same activity is applied to.
+3.1b OBJECT LISTS JOIN WITH "OR", NOT "AND". THE STATEMENT DESCRIBES AN OCCUPATION, NOT A PERSON, and that
+    settles the conjunction. The list was assembled from activities reported by SEVERAL different workers, so
+    it names what different practitioners do — one member handles the first kind of work on that list, another
+    the second, a third neither. "A, B, and C" asserts that whoever does this task does all three, every time it occurs, which is
+    false of an occupation by construction. "A, B, or C" says the activity applies to any of them, which is
+    what a task inventory means.
+    IT ALSO STOPS THE LIST READING AS SEPARATE DUTIES. A conjunction is how two duties are written, so "and"
+    invites the reader to count the items; "or" tells them these are alternatives within one duty.
+    TEST: put "any of" in front of the list. If the sentence is still a true description of the occupation's
+    work, the list is disjunctive and takes "or". At occupation level almost every object list is — including
+    ones a single worker really does handle together on a single occasion, because the next worker does not.
+    THIS IS ABOUT OBJECTS, NOT VERBS. Verbs joined by "and" are governed by 3.2, which permits them where they
+    are successive steps of one process — "draft and file", "record and submit". Do not change those.
+    NOT THIS: the only objects that keep "and" are ones that are not alternatives at all — inseparable parts of
+    a single artifact or act, where naming one without the others describes nothing anyone does.
+
+3.2 VERB LISTS MUST NOT CONJOIN DISTINCT ACTIVITIES, AND SUCCESSIVE STEPS OF ONE PROCESS ARE NOT DISTINCT.
+    Two shapes are acceptable. "Verb1 ... or Verb2 ..." where the verbs are ALTERNATIVE realisations of one
+    activity, either of which finishes the job. And "Verb1 and Verb2 ..." where they are SUCCESSIVE STEPS of
+    one process over the SAME object, ON ONE OCCASION — drafting a document and then checking it before it goes
+    out, deciding an outcome and then telling whoever needs to know, fitting a part and then testing that it
+    works. A worker who did the first and not the second has left one job half done, and a statement naming both
+    describes that job completely rather than fusing two. Otherwise split the statement, or raise it to a
+    genuine superordinate verb.
+    NOT SUCCESSIVE, THOUGH IT SOUNDS IT: setting a rule and later applying it, making a plan and later working
+    to it, producing a thing and later maintaining it. Each pair is one act done once and another done
+    repeatedly afterwards, on occasions of its own — the second is not the finish of the first, it is the job
+    the first made possible. Those split.
+    BUT THE CHORES OF ONE ONGOING RESPONSIBILITY STAY TOGETHER, and this bounds the paragraph above: where
+    the acts are the upkeep of one thing the worker is answerable for — recording entries and chasing the
+    unresolved ones, directing daily work and periodically appraising it — no one of them is a duty on its
+    own, and naming two or three of them describes the responsibility completely rather than fusing tasks.
+    SUPERVISING ONE'S OWN STAFF IS THE COMMONEST SUCH RESPONSIBILITY, and its chores span both directions
+    and all consequences: assigning and directing their work, answering their questions, unblocking their
+    tasks, appraising their performance and settling what follows from the appraisal. A statement naming
+    several of these is one supervisory duty described completely — question-and-answer inside the
+    worker's own operation is not an exchange of sides, and an appraisal's consequences are not a second
+    act.
+    The produce-then-maintain split is for deliverables that leave the worker's own bookkeeping and are
+    used by others.
+    TEST: ask whether the second verb would ever be performed by someone who had NOT done the first, on a
+    different occasion and for its own reason. If yes, they are separate duties and they split. If the second
+    exists only because the first was done, they are one duty and they stay.
+    NOT THIS: doing the work and WRITING ITS RESULT INTO A RECORD are not steps of one process. The recording
+    is nearly always already a task of its own, so a statement naming both annexes that task's act — which is
+    how one line comes to read as a duplicate of another.
+3.3 REACTIVE AND GENERATIVE WORK ARE SEPARATE TASKS. Handling reported problems is a different activity
+    from eliciting new requirements, even when both occur in the same conversation with the same
+    counterpart.
+3.4 OBJECT LISTS MUST BE DRAWN FROM THE OCCUPATION'S SHARED CORE, NOT ONE SPECIALTY. Where an occupation
+    spans practice areas, specialty-specific objects narrow the statement to a subfield; generalise the
+    list to the category that covers all of them.
+
+## 4. PURPOSE, OCCASION AND METHOD CLAUSES
+
+4.1 A PURPOSE CLAUSE MUST BE INFORMATIVE. Drop it where the verb already entails it.
+    THE EASIEST CASE TO MISS IS THE MORPHOLOGICAL ONE: the clause is built on a word already standing in the
+    head, so it restates it without repeating it. For a building surveyor, "measure floor areas to take
+    measurements" and "schedule inspection visits to arrange scheduling" both say one thing twice, and neither
+    reads as a restatement until you line the words up. CHECK THE STEMS, not the sense: if a noun or verb in
+    your clause shares a root with a word in the head, the clause is the head with "to" in front. Say what the
+    work FEEDS or DECIDES, or drop it.
+    TEST: delete the clause and read the sentence again. If nothing was lost -- if a reader could have
+    predicted the clause from the verb and object alone -- it was empty and it goes. Clauses naming what
+    happens to anything sent anywhere ("for review", "for approval", "for their records") almost always
+    fail this: submissions are reviewed by definition. Keep the clause only where it names the decision or
+    outcome at stake, which a reader could not have guessed.
+4.2 A PURPOSE CLAUSE MUST BE TRUE OF EVERY ITEM IN THE OBJECT LIST. If it holds for only part of the
+    list, either drop the clause or split the statement.
+4.2a AN OCCASION CLAUSE MUST NARROW WHEN THE WORK HAPPENS. "as needed", "when required", "in the course of
+    the work", "on an ongoing basis", "during or after the working day" — these name no occasion at all. They
+    are true of every moment the task could occur, so they add length and tell a reader nothing about when to
+    expect the work.
+    TEST: name an occasion the clause EXCLUDES. "before each shift" excludes mid-shift; "after an inspection
+    finding" excludes the routine case; "at intake" excludes everything later. If you cannot name a time the
+    clause rules out, delete it — the sentence is stronger without it.
+    KEEP THE CLAUSE where the occasion is what makes this task different from a neighbouring one: the same act
+    performed at a different trigger can be a different duty, and then the trigger is load-bearing and belongs
+    in the sentence.
+
+4.3 A METHOD CLAUSE MUST INFORM, AND AN INFORMATIVE ONE IS WELCOME. A "by ..." or "through ..." tail
+    naming HOW the act is performed — the one or two moves that carry its judgement or skill ("by
+    reviewing records and examining the patient") — is the standard O*NET shape for method
+    and is LEGITIMATE even where the head alone already names the work: the method is the texture a reviewer
+    wants. The clause is a DEFECT in exactly two cases: it REPEATS the head's stems ("measure areas by
+    taking measurements" — check the roots, as 4.1 does), or it SMUGGLES A SECOND DUTY — a means item
+    that is not a constituent move of the MAIN act but its own errand with its own occasion.
+    IF THE HEAD GOES EMPTY without the clause — the "by ..." was carrying the only real content — the
+    head was a category and the clause's contents are the actual tasks: promote one of them to the verb.
+    NOT THIS, AND THE EXCEPTION IS NARROWER THAN IT SOUNDS. Naming a shared end and putting the activities
+    after "through" is the repair for ONE defect: a statement whose activities need DIFFERENT VERBS and would
+    read as two or three separate tasks if written as coordinate verb phrases. It does NOT apply to one verb
+    over several objects — "prepare A, B, and C for X" is a plain object list and stays one.
+    TEST THE EXCEPTION BEFORE CLAIMING IT: ask whether a single verb covers every activity. If one does, there
+    was no defect to repair, and the "through" clause has traded a clean list for a category — which is the
+    defect this principle exists to catch, arrived at from the other side. Never use the shape for a manner or
+    a step.
+    AND THE EXCEPTION IS NEVER A GERUND CHAIN. "by A-ing, B-ing, and C-ing" strings three activities behind
+    the head the way a conjunction strings duties in front of it — the shape hides an enumeration, it does
+    not repair one. Where the exception genuinely applies, name at most TWO activities after "through", or
+    use the participial responsibility form of 1.4a; three or more "-ing" clauses after "by" or "through"
+    is the defect itself, whatever the head says.
+
+4.4 A STATE IS A GOAL, NOT A TASK. Some statements put a lasting condition where the object belongs — a
+    disposition of people toward the worker or each other, a climate, a standing — something no single act
+    produces, that persists between acts, and that no one could be watched doing. Work acts on an object a
+    reader can see acted on; a condition like that is what the work is FOR. A statement whose object is such
+    a condition has promoted its goal into the object slot and dropped the work: for a hotel concierge,
+    "Build rapport with returning guests" names nothing a reader could watch. Write the observable act as
+    the verb and object, and the condition as the purpose clause: "Greet returning guests by name and check
+    in during their stay to build rapport." The activities name the acts; take the one or two that carry
+    the duty.
+    TEST: ask what the worker was seen DOING. If the sentence names no observable act, the work is missing
+    and a goal is standing in its place.
+
+## 5. COUNTERPARTS
+
+5.1 INHERENTLY COORDINATIVE TASKS NAME THE COUNTERPART. Use published occupation titles where the
+    counterpart is a specific occupation, and add "and other staff" to keep the statement open.
+5.2 A GENERIC COLLECTIVE IS NOT A COUNTERPART. "stakeholders", "other parties", "personnel", "relevant teams",
+    "decision-makers", "the business" — these name nobody. They tell a reader that somebody was involved without
+    saying who, and they are to a counterpart what a bare category is to an object list: the reach without the
+    evidence. Name the role, the function or the occupation; where the activities genuinely span several, name
+    the two or three that recur and add "and other staff" to keep it open.
+    A GENERIC WORD IS FINE AS THE OPEN TAIL, NEVER AS THE WHOLE COUNTERPART. 5.1 asks for that tail on purpose,
+    so "the site foreman and other trades" is right while "other trades" alone is not — exactly as a category may
+    head an object list but not replace it. Before flagging, check whether at least ONE named party appears
+    beside the generic one. If one does, the sentence has its counterpart and the tail is doing its job.
+    TEST: could a reader go and find the person? For a building firm, "the site foreman" and "the parts
+    supplier" are findable; "stakeholders" is not. If the word survives being swapped for any other group in
+    any other trade, it is naming nobody.
+    THIS ONE IS WORTH ITS OWN LINE because a reviewer rejects it on sight: it reads as a statement written
+    without asking who the work was for, and one such word can sink an otherwise sound sentence.
+5.3 A COUNTERPART MUST BE SHARED-CORE, NOT SPECIALTY. This is 2.5 applied to the counterpart slot: a
+    counterpart met only in one specialty's cases narrows the statement to that subfield the same way a
+    specialty object does (3.4). Keep the counterpart every practitioner meets by name and fold specialty
+    counterparts into the open tail (5.1); where none is shared-core, the covering role replaces the list.
+    For a veterinarian, "negotiate treatment plans with dairy herd owners, racehorse trainers, or kennel
+    operators" is three specialties, not the occupation — "with animal owners" covers them and everyone
+    unlisted. The tail must still ride on a findable named party, never a collective (5.2).

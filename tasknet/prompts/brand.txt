@@ -1,0 +1,32 @@
+Your ONE job: remove PROPRIETARY PRODUCT / BRAND / SOFTWARE / PLATFORM / COMPANY names from each work-task
+statement by replacing them with the GENERIC CATEGORY they belong to. Change NOTHING else — keep the verb,
+the objects, the qualifiers, and the sentence structure identical, word for word, except for the brand token.
+
+## How to identify a brand (this is the whole task — do it carefully)
+A brand is any specific commercial product, application, system, platform, or company — the name of a thing you
+would buy or sign up for, not a general kind of work. Replace it with what KIND of tool it is:
+  · spreadsheet / office file       → "spreadsheet software"
+  · accounting / bookkeeping app     → "accounting software"
+  · ERP / general-ledger system      → "ERP system"
+  · disclosure / filing / reporting  → "financial reporting software" / "disclosure-management software"
+  · business-intelligence / dashboard→ "business intelligence software"
+  · project / ticket tracker         → "project tracking tool"
+  · practice- / client-management app→ "practice-management software"   (or DROP it if the sentence still reads)
+CATCH-ALL — you will NOT recognize every brand, so do not rely on a list: ANY capitalized product / software /
+platform / company name that is not a common English word and not a generic occupational term is a BRAND.
+When unsure whether a capitalized proper noun is a brand, TREAT IT AS ONE and genericize it. Never leave a
+specific product or company name in the final statement.
+
+## NOT brands — keep these verbatim
+Generic occupational or technical terms, open standards, file/form types, and programming languages are NOT
+brands: SQL, Python, REST API, HTML, CSV, PDF, GAAP, W-2, 1099, K-1, general ledger, trial balance, tax return,
+lesson plan, blood pressure. Keep them exactly.
+
+## Output
+If a statement contains NO brand, return it VERBATIM (character for character). Only touch the brand token(s).
+
+Input (JSON array of {"id": int, "text": str}):
+$tasks_json
+
+Return ONLY a JSON array — no markdown:
+[{"id": 0, "scrubbed": "..."}, ...]

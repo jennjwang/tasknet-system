@@ -1,0 +1,78 @@
+You are screening work tasks collected from workers describing their jobs, across many
+occupations. For each task decide: keep, remove, or rewrite. This is the single quality
+screen — it both drops non-tasks and cuts tasks too vague to be useful. It is keep-biased:
+when genuinely borderline, KEEP or REWRITE rather than remove (a later pass cleans phrasing).
+
+WHY THE BIAS IS REAL, NOT A PLEASANTRY. Removal is the one decision here that cannot be undone:
+a task you drop is gone from the occupation's list, and no later pass can miss it because no
+later pass will ever see it. A task you keep that is clumsily worded gets rewritten downstream,
+and one too vague to survive is dropped later by a step that can see the whole list. So REMOVE
+only what you are confident is not a work task at all. Do not remove a real activity for how
+it is phrased.
+
+Shared definitions of what counts as a task (statement-quality rules — atomicity, concrete
+verbs, proprietary names — are NOT here: they are rewrite jobs for stage2_normalize /
+stage3_atomize, not keep/remove screening criteria):
+{{include:task_definitions}}
+
+KEEP if it describes a recognizable, specific work activity as written — the object names a
+real artifact, output, tool, or process in some occupation, even briefly ("Fix leaks",
+"Torque head bolts", "Review purchase orders", "Attend daily crew huddles").
+
+A task need NOT be recurring or ongoing. A one-off, project, or time-bound activity is still a
+task — do not remove it merely because it happens once or "in the next few weeks". Judge the
+underlying activity and ignore scheduling/timeframe framing; REWRITE to drop the timeframe and
+any narrative framing when a concrete activity is recoverable:
+  "Getting the corporate website up and running in the next few weeks" → rewrite: "Launch the corporate website"
+  "Migrating the team to the new CRM this quarter"                     → rewrite: "Migrate the team to the new CRM"
+
+REWRITE if the text clearly refers to a real work activity but is phrased as a noun phrase,
+artifact description, or is missing an action verb — and a minimal verb addition makes it a
+proper task. Supply the minimal rewrite (add a verb; do not invent detail):
+  "warehouse receiving paperwork" → rewrite: "Process warehouse receiving paperwork"
+  "quarterly financial reports" → rewrite: "Prepare quarterly financial reports"
+  "irrigation schedules"        → rewrite: "Create irrigation schedules"
+  "conveyor belt alignment"     → rewrite: "Align conveyor belts"
+
+REMOVE if any of these apply — the NON-TASK and TOO-VAGUE categories:
+- NOT A REAL TASK: too vague to mean anything concrete ("work", "doing things", "stuff");
+  a knowledge, skill, or ability, not an activity ("proficient in Excel", "strong
+  communicator"); a goal/outcome or a generalized activity too broad to be a task
+  ("communicating with others", "processing information", "solving problems"); off-topic or
+  a narrative fragment with no recoverable task ("Rectify that time to time", "Handle it").
+- GENERIC OR MISSING OBJECT: the object could be swapped for "things"/"stuff" without loss
+  ("Fix things", "Build deliverables"), or is a bare abstract process noun with no domain
+  qualifier ("Write automation", "Improve processes"). NOT the same when the object is a
+  recognized artifact ("Patch tires", "File claims" — keep).
+- GENERIC OR MISSING ACTION: the lead verb reduces to "do" or "be" — a WEAK/RELATIONAL verb
+  from the shared list, or the catch-alls "do", "work on", "handle", "deal with", "get" — AND
+  the statement names no specific counterpart, population or artifact to act on ("Work on
+  cases", "Handle responsibilities", "Deal with clients"). NOT the same when the verb
+  specifies the activity ("Patch tires", "Triage work orders" — keep).
+  A WEAK LEAD VERB IS NEVER ON ITS OWN A REASON TO REMOVE. The shared list judges the verb;
+  this screen judges the whole statement. When a relational verb is aimed at someone or
+  something NAMED — supervise, support, help, oversee, provide, build, maintain, monitor,
+  coordinate — the statement is a real task, and the most it needs is a REWRITE to the
+  concrete verb. Removing it deletes work the list can never recover:
+    "Supervise residents and fellows caring for patients in the emergency room"  → KEEP
+    "Provide project updates, risks, and technical trade-offs to stakeholders"    → KEEP
+    "Support QA testing for backend changes after handoff"                        → KEEP
+    "Build supportive relationships with students through daily conversations"    → KEEP
+  Only the objectless version goes: "Supervise staff", "Provide support", "Build relationships".
+- PURPOSE-ONLY: the object itself is vague and a purpose clause carries all the meaning
+  ("Improve performance", "Enhance quality"). A concrete object + purpose is fine ("Repair
+  equipment to reduce downtime", "Patch tires to prevent blowouts" — keep).
+- WHOLE-JOB RESTATEMENT — a FIRM remove (the keep-bias does NOT apply here). First STRIP any
+  scheduling / setting / occasion qualifier ("during shifts", "each day", "on the floor", "in the
+  department"); if what REMAINS is just a generic verb on the very population or output the
+  occupation exists to serve — with no specific object, method, or step — REMOVE it. It restates
+  the whole job, not a task within it: "repair vehicles each day", "serve customers on the floor",
+  "sell products all shift" → REMOVE. KEEP the instant a specific object, method, or step survives
+  the strip ("rebuild transmissions", "serve banquet tables", "sell service contracts").
+
+Input (JSON array of {"id": int, "text": str}):
+$tasks_json
+
+Return ONLY a JSON array — no markdown, no explanation:
+[{"id": 0, "keep": true, "rewrite": null}, ...]
+Set rewrite to a string when rewriting, null otherwise. keep must be true when rewrite is set.
