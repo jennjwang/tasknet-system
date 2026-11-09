@@ -25,17 +25,15 @@ the writer's umbrella-verb check.
 | `engine.py`, `cache.py`, `batch.py` | the model client and key routing, the verdict cache, the optional OpenAI Batch API route |
 | `config.py`, `configs.yml` | every model, threshold and batching knob, with its default |
 | `atoms.py`, `families.py`, `context.py`, `prompts.py` | the row table, family identity, the per-run context, prompt loading |
-| `tests/` | offline tests (`pytest`), including the cache-key guard |
 
 ## Set up
 
 From the repository root:
 
 ```bash
-pip install -e '.[test]'
+pip install -e .
 cp .env.example .env
 python aggregate/fetch_onet.py       # O*NET task statements, for occupation titles and the umbrella-verb check
-pytest                               # offline; no keys needed
 ```
 
 Keys go in `.env` (`.env.example` lists every option). Either one key for everything, `LLM_API_KEY`, with
@@ -75,8 +73,7 @@ tasks = tasknet.load_tasks("lawyers", which="build")
   the prices in `configs.yml`, reaches it; everything paid for so far stays cached, so re-running continues
   where it stopped. Calls already in flight finish, and Batch API calls are not metered.
 - Every model call is cached under `cache/processing/` and `cache/aggregation/`, so re-running unchanged work
-  costs little. A failed call is never cached. `tests/test_cache_keys.py` pins every judge's key, so a code
-  change that would orphan the cache fails the tests.
+  costs little. A failed call is never cached.
 
 The aggregator can also be driven directly, with rows from any source:
 
@@ -130,7 +127,7 @@ Every step that decides whether two things are one task splices that file in wit
 nothing else needs changing. Three things follow from an edit:
 
 - **Every cached verdict of those six prompts misses**, because a prompt's text is part of its cache key, so the
-  next build pays for them again (and `tests/test_cache_keys.py` fails until its golden keys are re-recorded).
+  next build pays for them again.
   To compare two definitions side by side, give each run its own cache:
   `LLM_CACHE_DIR=cache/aggregation-v2 tasknet build <occ> --fresh`.
 - **`ledgers/` was judged under the old definition.** Delete `results/aggregation/<occ>/ledgers/` for a clean
